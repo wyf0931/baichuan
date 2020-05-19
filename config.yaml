@@ -45,12 +45,12 @@ params:
   debug: false
   since: '2018'
   gitRepo: ''
-  logoTitle: 自省
+  logoTitle: Scott-Blog
   keywords:
     - Java
     - 分布式
     - 数据
-  description: 博客主要记录个人学习与工作的经验，以及所思所想
+  description: 莫道君行早，更有早行人。
   archivePaginate: 20
   showArchiveCount: true
   dateFormatToUse: '2006-01-02'
