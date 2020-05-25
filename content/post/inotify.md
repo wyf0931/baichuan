@@ -3,7 +3,7 @@ title: "Inotify简介"
 author: Scott
 tags:
   - Linux
-  - 定时任务
+  - 工具
 categories: []
 date: 2020-05-25T19:49:39+08:00
 draft: false
