@@ -1,9 +1,7 @@
-cd /opt/zhizhiting-blog
-
-echo 'start pull new contents ...'
-git pull
+git-pull.sh
 
 echo 'start build contents ...'
-hugo >> /opt/zhizhiting-blog/log/crontab-task.log 2&1
+cd /opt/zhizhiting-blog
+hugo
 echo 'build end.'
 
