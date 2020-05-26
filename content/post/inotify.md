@@ -1,5 +1,5 @@
 ---
-title: "Inotify简介"
+title: "Inotify 简介"
 author: Scott
 tags:
   - Linux
@@ -9,7 +9,7 @@ date: 2020-05-25T19:49:39+08:00
 draft: false
 ---
 
-**Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， Linux 内核从2.6.13起，加入了 Inotify 支持。**
+Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， Linux 内核从2.6.13起，加入了 Inotify 支持。
 
 <!--more-->
 
