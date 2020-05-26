@@ -12,9 +12,8 @@ date: 2019-07-02 16:17:00
 
 ### 下载并解压 JDK
 首先需要在Oracle 官网下载 JDK 安装包。
-{% note %}
-官网地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
-{% endnote %}
+
+> 官网地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 
 我下载的是 *jdk-8u131-linux-x64.tar.gz*：

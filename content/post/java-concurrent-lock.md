@@ -2,7 +2,7 @@
 title: Java 高级并发对象之 Lock 对象
 author: Scott
 tags:
-  - 并发
+  - 高并发
   - Java
 categories: []
 date: 2019-07-01 15:25:00
