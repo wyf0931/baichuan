@@ -1,0 +1,1 @@
+*/1 * * * * /opt/zhizhiting-blog/bin/rebuild.sh >> /opt/zhizhiting-blog/log/crontab-task.log
