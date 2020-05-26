@@ -37,7 +37,7 @@ Ubuntu:
 apt-get install inotify-tools
 ```
 
-### 二、inotify-tools 命令介绍
+### 二、inotify-tools 介绍
 
 `inotify-tools` 主要包括两个命令：`inotifywait` 、`inotifywatch`。
 
@@ -112,13 +112,13 @@ Events:
 	unmount		file system containing file or directory unmounted
 ```
 
-### 三、示例
+### 三、使用案例
 
-监听`/opt/blog` 目录下的文件变化，在发生指定的事件时（`modify`, `create`, `move`, `delete`）调用 `hugo` 编译。
+监听`/opt/blog/post` 目录下的文件变化，在发生指定的事件时（`modify`, `create`, `move`, `delete`）调用 `hugo` 编译。
 
 ```shell
 while true; do
-    if [[ "$(inotifywatch -r -t 5 -e modify,create,move,delete /opt/blog 2>&1)" =~ filename ]]; then
+    if [[ "$(inotifywatch -r -t 5 -e modify,create,move,delete /opt/blog/post 2>&1)" =~ filename ]]; then
 	cd /opt/blog;
     	hugo;
     fi;
