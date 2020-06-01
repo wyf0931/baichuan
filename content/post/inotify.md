@@ -1,5 +1,5 @@
 ---
-title: "Inotify 简介"
+title: "Linux Inotify 机制简介"
 author: Scott
 tags:
   - Linux
@@ -9,15 +9,15 @@ date: 2020-05-25T19:49:39+08:00
 draft: false
 ---
 
-Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， Linux 内核从2.6.13起，加入了 Inotify 支持。
+Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， **Linux 内核从 2.6.13 起，加入了 Inotify 支持**。
 
 <!--more-->
 
-通过 *Inotify* 可以监控文件系统中添加、删除，修改、移动等各种事件，利用这个内核接口，第三方软件就可以监控文件系统下文件的各种变化情况，而` inotify-tools` 正是实施这样监控的软件。
+通过 Inotify 可以监控文件系统中添加、删除，修改、移动等各种事件，利用这个内核接口，第三方软件就可以监控文件系统下文件的各种变化情况，而` inotify-tools` 正是实施这样监控的软件。
 
-*Inotify* 实际是一种事件驱动机制，它为应用程序监控文件系统事件提供了实时响应事件的机制，而无须通过诸如*cron* 等的轮询机制来获取事件。*cron* 等机制不仅无法做到实时性，而且消耗大量系统资源。相比之下，*inotify* 基于事件驱动，可以做到对事件处理的实时响应，也没有轮询造成的系统资源消耗，是非常自然的事件通知接口，也与自然世界事件机制相符合。
+Inotify 实际是一种事件驱动机制，它为应用程序监控文件系统事件提供了实时响应事件的机制，而无须通过诸如 cron 等的轮询机制来获取事件。cron 等机制不仅无法做到实时性，而且消耗大量系统资源。相比之下，**inotify 基于事件驱动，可以做到对事件处理的实时响应，也没有轮询造成的系统资源消耗**，是非常自然的事件通知接口，也与自然世界事件机制相符合。
 
-常见的实现 *inotify* 机制的软件有：
+常见的实现 inotify 机制的软件有：
 
 - `inotify-tools`
 - `sersync`
@@ -41,10 +41,10 @@ apt-get install inotify-tools
 
 `inotify-tools` 主要包括两个命令：`inotifywait` 、`inotifywatch`。
 
-- `inotifywait` 在被监控的文件或目录上等待特定文件系统事件（open close delete等）发生，执行后处于阻塞状态，适合在shell脚本中使用；
+- `inotifywait` 在被监控的文件或目录上等待特定文件系统事件（`open`/`close`/`delete`等）发生，执行后处于阻塞状态，适合在shell脚本中使用；
 - `inotifywatch` 收集被监控的文件系统使用的统计数据，指文件系统事件发生的次数统计。
 
-文件监控主要依赖 `inotifywatch`。以下是 `inotifywatch` 的help信息：
+文件监控主要依赖 `inotifywatch`。以下是 `inotifywatch` 的帮助信息：
 
 ```shell
 ubuntu@VM-0-3-ubuntu:~$ inotifywait -h
