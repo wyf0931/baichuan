@@ -13,7 +13,7 @@ Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机
 
 <!--more-->
 
-### Inotify 机制介绍
+### 一、Inotify 机制介绍
 
 Inotify 实际是一种事件驱动机制，它为应用程序监控文件系统事件提供了实时响应事件的机制，而无须通过诸如 cron 等的轮询机制来获取事件。cron 等机制不仅无法做到实时性，而且消耗大量系统资源。相比之下，**inotify 基于事件驱动，可以做到对事件处理的实时响应，也没有轮询造成的系统资源消耗**，是非常自然的事件通知接口，也与自然世界事件机制相符合。
 
@@ -25,7 +25,7 @@ Inotify 实际是一种事件驱动机制，它为应用程序监控文件系统
 
 通过 Inotify 可以监控文件系统中添加、删除，修改、移动等各种事件，利用这个内核接口，第三方软件就可以监控文件系统下文件的各种变化情况，而 ` inotify-tools` 正是实施这样监控的软件。以下介绍 ` inotify-tools` 的安装与应用。
 
-### 一、安装 inotify-tools
+### 二、安装 inotify-tools
 
 CentOS:
 
@@ -39,7 +39,7 @@ Ubuntu:
 apt-get install inotify-tools
 ```
 
-### 二、inotify-tools 介绍
+### 三、inotify-tools 介绍
 
 `inotify-tools` 主要包括两个命令：`inotifywait` 、`inotifywatch`。
 
@@ -114,7 +114,7 @@ Events:
 	unmount		file system containing file or directory unmounted
 ```
 
-### 三、inotify-tools 应用
+### 四、inotify-tools 应用
 
 监听`/opt/blog/post` 目录下的文件变化，在发生指定的事件时（`modify`, `create`, `move`, `delete`）调用 `hugo` 编译。
 
