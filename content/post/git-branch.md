@@ -15,29 +15,29 @@ date: 2020-06-01T13:37:49+08:00
 
 1. 查看所有分支（本地+远程）
 
-```shell
+```bash
 git branch -a
 ```
 
 2. 删除本地分支
 
-```shell
+```bash
 # <branch-name> 为分支名称
 git branch -d <branch-name>
 ```
 
 3. 删除远程分支
-```shell
+```bash
 # <branch-name> 为分支名称
 git push origin --delete <branch-name>
 ```
 
 4. 查看每个分支最后一次提交的版本
-```shell
+```bash
 git branch -v
 ```
 5. 复制分支
-```shell
+```bash
 # <new-branch-name> 为新分支名称
 # <old-branch> 为原分支名称。该参数可以省略，默认为当前分支。
 git branch -c <old-branch> <new-branch-name>
@@ -45,7 +45,7 @@ git branch -c <old-branch> <new-branch-name>
 
 ### 二、帮助文档
 
-```shell
+```bash
 git branch -h
 usage: git branch [<options>] [-r | -a] [--merged | --no-merged]
    or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
