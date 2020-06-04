@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scikit-learn on Mehameha</title>
+    <link>/tags/scikit-learn/</link>
+    <description>Recent content in scikit-learn on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Jul 2019 17:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/scikit-learn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scikit-learn 选择合适的评估算法</title>
+      <link>/post/scikit-learn-choosing/</link>
+      <pubDate>Thu, 11 Jul 2019 17:11:00 +0000</pubDate>
+      
+      <guid>/post/scikit-learn-choosing/</guid>
+      <description>机器学习最麻烦的问题是找到合适的评估器（estimator）。评估器的选择依赖于数据类型和问题本身。针对不同数据集和问题类型，下图可以作为评估器选择的一个参考指南： 从 START 开始，首先看数据的样本是否大于 50，小于则需要收集更多的数据。 由图中可以看到，有四类算法： 分类（Classifi</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenCV on Mehameha</title>
+    <link>/tags/OpenCV/</link>
+    <description>Recent content in OpenCV on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 15 Jul 2019 16:23:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/OpenCV/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 OpenCV 转换图像颜色空间</title>
+      <link>/post/change_colorspaces/</link>
+      <pubDate>Mon, 15 Jul 2019 16:23:00 +0000</pubDate>
+      
+      <guid>/post/change_colorspaces/</guid>
+      <description>&lt;p&gt;本文介绍如何通过 opencv 来修改图像的色彩空间，比如：&lt;em&gt;BGR ↔ Gray,  BGR ↔ HSV&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 OpenCV 对图像进行几何变换</title>
+      <link>/post/geometric_transformations_of_images/</link>
+      <pubDate>Sun, 14 Jul 2019 13:20:00 +0000</pubDate>
+      
+      <guid>/post/geometric_transformations_of_images/</guid>
+      <description>&lt;p&gt;本文介绍如何使用 OpenCV 对图像进行平移、旋转、仿射变换等几何变换操作。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

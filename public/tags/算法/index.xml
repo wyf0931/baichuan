@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Mehameha</title>
+    <link>/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 Jul 2019 14:38:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>中文分词算法介绍</title>
+      <link>/post/chinese-word-segmention/</link>
+      <pubDate>Mon, 08 Jul 2019 14:38:00 +0000</pubDate>
+      
+      <guid>/post/chinese-word-segmention/</guid>
+      <description>背景 英文以空格作为分隔符，而中文词语之间没有分隔； 在中文里，“词”和“词组”边界模糊现代汉语的基本表达单元虽然为“词”，且以双字或者多字词居多，但由于人们认识水平的不同，对词和短语的边界很难去区分； 中文分词的方法其实不局限于中文应用，也被应用到英文处理，如手写识别，单词之间的空格</description>
+    </item>
+    
+  </channel>
+</rss>

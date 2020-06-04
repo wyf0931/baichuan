@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>InfluxDB on Mehameha</title>
+    <link>/tags/InfluxDB/</link>
+    <description>Recent content in InfluxDB on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 Jul 2019 14:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/InfluxDB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>InfluxDB 安装包下载</title>
+      <link>/post/influxdb-download/</link>
+      <pubDate>Wed, 03 Jul 2019 14:56:00 +0000</pubDate>
+      
+      <guid>/post/influxdb-download/</guid>
+      <description>&lt;p&gt;本文介绍 InfluxDB 的多种下载方式，以 v1.7.1 版本为例。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Red Hat / CentOS 上安装 InfluxDB</title>
+      <link>/post/linux-influxdb-install/</link>
+      <pubDate>Wed, 03 Jul 2019 14:47:00 +0000</pubDate>
+      
+      <guid>/post/linux-influxdb-install/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Red Hat 或 CentOS 上安装 InfluxDB。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

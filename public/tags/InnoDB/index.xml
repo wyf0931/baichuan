@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>InnoDB on Mehameha</title>
+    <link>/tags/InnoDB/</link>
+    <description>Recent content in InnoDB on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Aug 2019 14:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/InnoDB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>InnoDB 存储引擎架构</title>
+      <link>/post/innodb-architecture/</link>
+      <pubDate>Thu, 01 Aug 2019 14:20:00 +0000</pubDate>
+      
+      <guid>/post/innodb-architecture/</guid>
+      <description>&lt;p&gt;InnoDB 是一种通用存储引擎，可以实现高可靠性与高性能。在 MySQL 5.7 中，InnoDB 是默认的 MySQL 存储引擎，若使用 &lt;code&gt;CREATE TABLE&lt;/code&gt; 语句建表时未带 &lt;code&gt;ENGINE =&lt;/code&gt; 的子句，系统会默认创建 InnoDB 表。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL InnoDB Table 最佳实践</title>
+      <link>/post/mysql-table-best-practice/</link>
+      <pubDate>Wed, 03 Jul 2019 14:32:00 +0000</pubDate>
+      
+      <guid>/post/mysql-table-best-practice/</guid>
+      <description>&lt;p&gt;本文总结了一些 MySQL InnoDB 引擎中关于表的一些最佳实践。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL InnoDB 锁类型介绍</title>
+      <link>/post/mysql-innodb-lock-type/</link>
+      <pubDate>Wed, 03 Jul 2019 12:24:00 +0000</pubDate>
+      
+      <guid>/post/mysql-innodb-lock-type/</guid>
+      <description>本节介绍 InnoDB 的锁类型： 共享和排他锁（Shared and Exclusive Locks） 意向锁（Intention Locks） 记录锁（Record Locks） 区间锁 / 间隙锁（Gap Locks) 意向插入锁（Insert Intention Locks） 自增锁（AUTO-INC Locks） Next-Key Locks 共享和排他锁（Shared and Exclusive Locks） InnoDB 实</description>
+    </item>
+    
+  </channel>
+</rss>

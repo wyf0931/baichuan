@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器学习 on Mehameha</title>
+    <link>/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 机器学习 on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 30 Jul 2019 17:29:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>什么是机器学习？</title>
+      <link>/post/what-is-ml/</link>
+      <pubDate>Tue, 30 Jul 2019 17:29:00 +0000</pubDate>
+      
+      <guid>/post/what-is-ml/</guid>
+      <description>&lt;p&gt;机器学习是一种数据分析技术，让计算机执行人和动物与生俱来的活动：从经验中学习。机器学习算法使用计算方法直接从数据中“学习”信息，而不依赖于预定方程模型。当可用于学习的样本数量增加时，这些算法可自适应提高性能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scikit-learn 选择合适的评估算法</title>
+      <link>/post/scikit-learn-choosing/</link>
+      <pubDate>Thu, 11 Jul 2019 17:11:00 +0000</pubDate>
+      
+      <guid>/post/scikit-learn-choosing/</guid>
+      <description>机器学习最麻烦的问题是找到合适的评估器（estimator）。评估器的选择依赖于数据类型和问题本身。针对不同数据集和问题类型，下图可以作为评估器选择的一个参考指南： 从 START 开始，首先看数据的样本是否大于 50，小于则需要收集更多的数据。 由图中可以看到，有四类算法： 分类（Classifi</description>
+    </item>
+    
+  </channel>
+</rss>

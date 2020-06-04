@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>servlet on Mehameha</title>
+    <link>/tags/servlet/</link>
+    <description>Recent content in servlet on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Jun 2019 18:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/servlet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Groovy Servlet 使用指南</title>
+      <link>/post/groovy-servlet/</link>
+      <pubDate>Fri, 28 Jun 2019 18:20:00 +0000</pubDate>
+      
+      <guid>/post/groovy-servlet/</guid>
+      <description>我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 .groovy 源文件并转换为字节码。 Groovlet使用示例如下： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } println &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Groovy Servlet&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt; Hello, ${request.remoteHost}: ${session.counter}! ${new Date()} &amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot; session.counter = session.counter + 1 或者，使用 MarkupBuilder 执行相同的操作： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } html.html { // html is implicitly bound</description>
+    </item>
+    
+  </channel>
+</rss>

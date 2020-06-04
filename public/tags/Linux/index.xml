@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Mehameha</title>
+    <link>/tags/Linux/</link>
+    <description>Recent content in Linux on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 25 May 2020 19:49:39 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/Linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Inotify 机制简介</title>
+      <link>/post/inotify/</link>
+      <pubDate>Mon, 25 May 2020 19:49:39 +0800</pubDate>
+      
+      <guid>/post/inotify/</guid>
+      <description>&lt;p&gt;Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， &lt;strong&gt;Linux 内核从 2.6.13 起，加入了 Inotify 支持&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu apt 国内镜像站</title>
+      <link>/post/ubuntu-apt-change-mirror/</link>
+      <pubDate>Mon, 19 Aug 2019 12:03:00 +0000</pubDate>
+      
+      <guid>/post/ubuntu-apt-change-mirror/</guid>
+      <description>&lt;p&gt;由于国内网络环境问题，apt 安装会很慢，可以改为国内镜像站，提高速度。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看Linux端口使用情况</title>
+      <link>/post/linux-port/</link>
+      <pubDate>Mon, 05 Aug 2019 16:35:00 +0000</pubDate>
+      
+      <guid>/post/linux-port/</guid>
+      <description>&lt;p&gt;本文将会介绍如何根据端口号来查找对应的进程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看Linux版本信息</title>
+      <link>/post/linux-version/</link>
+      <pubDate>Mon, 05 Aug 2019 16:18:00 +0000</pubDate>
+      
+      <guid>/post/linux-version/</guid>
+      <description>&lt;p&gt;本文介绍一些用于查看linux系统版本信息的常用命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Red Hat / CentOS 上安装 InfluxDB</title>
+      <link>/post/linux-influxdb-install/</link>
+      <pubDate>Wed, 03 Jul 2019 14:47:00 +0000</pubDate>
+      
+      <guid>/post/linux-influxdb-install/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Red Hat 或 CentOS 上安装 InfluxDB。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 生成 SSH Key</title>
+      <link>/post/linux-generate-ssh-key/</link>
+      <pubDate>Fri, 28 Jun 2019 14:17:00 +0000</pubDate>
+      
+      <guid>/post/linux-generate-ssh-key/</guid>
+      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
+    </item>
+    
+  </channel>
+</rss>

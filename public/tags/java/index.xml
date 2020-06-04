@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Mehameha</title>
+    <link>/tags/java/</link>
+    <description>Recent content in java on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 Dec 2019 12:56:52 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intellij IDEA 配置 Google Code Style</title>
+      <link>/post/intellij-google-code-style-config/</link>
+      <pubDate>Fri, 20 Dec 2019 12:56:52 +0800</pubDate>
+      
+      <guid>/post/intellij-google-code-style-config/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Intellij IDEA 中配置Google 开源的  Java Code Style。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

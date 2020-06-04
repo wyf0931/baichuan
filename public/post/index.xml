@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mehameha</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 04 Jun 2020 14:17:12 +0800</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>劝学</title>
+      <link>/post/quanxue/</link>
+      <pubDate>Thu, 04 Jun 2020 14:17:12 +0800</pubDate>
+      
+      <guid>/post/quanxue/</guid>
+      <description>原文链接：https://hanyu.baidu.com/shici/detail?pid=ce5a1d99f57411e59979c8e0eb15ce01 君子曰：学不可以已。 青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴，不复挺者，輮使之然</description>
+    </item>
+    
+    <item>
+      <title>Git 分支管理</title>
+      <link>/post/git-branch/</link>
+      <pubDate>Mon, 01 Jun 2020 13:37:49 +0800</pubDate>
+      
+      <guid>/post/git-branch/</guid>
+      <description>&lt;p&gt;本文主要介绍 Git 分支管理相关操作。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>高并发系统中的尾延迟</title>
+      <link>/post/tail-latency/</link>
+      <pubDate>Tue, 26 May 2020 20:32:26 +0800</pubDate>
+      
+      <guid>/post/tail-latency/</guid>
+      <description>&lt;p&gt;尾延迟（Tail Latency）是指系统中那些总会存在的少量延迟高于均值的响应。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux Inotify 机制简介</title>
+      <link>/post/inotify/</link>
+      <pubDate>Mon, 25 May 2020 19:49:39 +0800</pubDate>
+      
+      <guid>/post/inotify/</guid>
+      <description>&lt;p&gt;Inotify 是一种强大的、细粒度的、异步的文件系统事件监控机制， &lt;strong&gt;Linux 内核从 2.6.13 起，加入了 Inotify 支持&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>101 个 NumPy 数据分析练习（1～20）</title>
+      <link>/post/numpy-excrise-numpy/</link>
+      <pubDate>Thu, 06 Feb 2020 20:33:20 +0800</pubDate>
+      
+      <guid>/post/numpy-excrise-numpy/</guid>
+      <description>&lt;p&gt;此练习的目的是灵活应用 Numpy，成为一种参考。&lt;strong&gt;练习题分为4个难度级别，其中 L1 最容易，L4 最困难。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Maven Deploy Plugin 使用方法</title>
+      <link>/post/maven-deploy-plugin/</link>
+      <pubDate>Thu, 02 Jan 2020 11:23:00 +0000</pubDate>
+      
+      <guid>/post/maven-deploy-plugin/</guid>
+      <description>&lt;p&gt;本文介绍Maven 项目中如何通过 deploy plugin 配置来跳过某些不需要 deploy 的maven 模块。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Intellij IDEA 配置 Google Code Style</title>
+      <link>/post/intellij-google-code-style-config/</link>
+      <pubDate>Fri, 20 Dec 2019 12:56:52 +0800</pubDate>
+      
+      <guid>/post/intellij-google-code-style-config/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Intellij IDEA 中配置Google 开源的  Java Code Style。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 事务处理简介</title>
+      <link>/post/mysql-innodb-transaction/</link>
+      <pubDate>Fri, 06 Sep 2019 18:38:00 +0000</pubDate>
+      
+      <guid>/post/mysql-innodb-transaction/</guid>
+      <description>&lt;p&gt;本文简单介绍事务特性、事务并发问题、 MySQL 事务隔离级别和相关操作语句。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 基础知识总结</title>
+      <link>/post/java-basic-wiki/</link>
+      <pubDate>Wed, 04 Sep 2019 15:41:00 +0000</pubDate>
+      
+      <guid>/post/java-basic-wiki/</guid>
+      <description>一、线程 1、新建线程 继承 Thread 类，重写 run 方法； 实现 Runnable 接口； 实现 Callable 接口； 注意： 由于 Java 不能多继承，所以推荐使用接口方式创建线程。 2、线程状态与转化 Java 中的 RUNNABLE 状态对应操作系统中的 READY 、RUNNING ； Java 中的 synchronized 方法或块代码会触发 BLOCKED 状态； 使用 java.util.concurrent.locks 加锁，会触发 WAITING 、TIMED_WAITING 状态； 3、线</description>
+    </item>
+    
+    <item>
+      <title>微服务架构体系治理</title>
+      <link>/post/microservice-manage/</link>
+      <pubDate>Tue, 27 Aug 2019 16:58:00 +0000</pubDate>
+      
+      <guid>/post/microservice-manage/</guid>
+      <description>&lt;p&gt;本文是在天弘基金李鑫的演讲稿上提炼而来，介绍微服务架构深度治理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu apt 国内镜像站</title>
+      <link>/post/ubuntu-apt-change-mirror/</link>
+      <pubDate>Mon, 19 Aug 2019 12:03:00 +0000</pubDate>
+      
+      <guid>/post/ubuntu-apt-change-mirror/</guid>
+      <description>&lt;p&gt;由于国内网络环境问题，apt 安装会很慢，可以改为国内镜像站，提高速度。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一个基于数据库的动态配置实现</title>
+      <link>/post/config-with-spring/</link>
+      <pubDate>Thu, 15 Aug 2019 19:15:00 +0000</pubDate>
+      
+      <guid>/post/config-with-spring/</guid>
+      <description>&lt;p&gt;基于spring boot 实现一个简易的动态配置注入功能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>怎样修改 MySQL 中列大小或增删列？</title>
+      <link>/post/mysql-ddl-modify-column/</link>
+      <pubDate>Wed, 07 Aug 2019 11:14:00 +0000</pubDate>
+      
+      <guid>/post/mysql-ddl-modify-column/</guid>
+      <description>&lt;p&gt;在系统运行过程中，经常会遇到实际数据长度超过预先设计的长度，此时就需要调整列大小。本文主要介绍如何在MySQL中调整列大小与列类型。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看Linux端口使用情况</title>
+      <link>/post/linux-port/</link>
+      <pubDate>Mon, 05 Aug 2019 16:35:00 +0000</pubDate>
+      
+      <guid>/post/linux-port/</guid>
+      <description>&lt;p&gt;本文将会介绍如何根据端口号来查找对应的进程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>查看Linux版本信息</title>
+      <link>/post/linux-version/</link>
+      <pubDate>Mon, 05 Aug 2019 16:18:00 +0000</pubDate>
+      
+      <guid>/post/linux-version/</guid>
+      <description>&lt;p&gt;本文介绍一些用于查看linux系统版本信息的常用命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL 整数类型介绍</title>
+      <link>/post/mysql-integer-types/</link>
+      <pubDate>Thu, 01 Aug 2019 14:43:00 +0000</pubDate>
+      
+      <guid>/post/mysql-integer-types/</guid>
+      <description>&lt;p&gt;MySQL 支持 SQL 标准整数类型 &lt;code&gt;INTEGER&lt;/code&gt;（&lt;code&gt;INT&lt;/code&gt;）和 &lt;code&gt;SMALLINT&lt;/code&gt;。作为标准的扩展，MySQL 还支持整数类型&lt;code&gt;TINYINT&lt;/code&gt;、&lt;code&gt;MEDIUMINT&lt;/code&gt; 和 &lt;code&gt;BIGINT&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>InnoDB 存储引擎架构</title>
+      <link>/post/innodb-architecture/</link>
+      <pubDate>Thu, 01 Aug 2019 14:20:00 +0000</pubDate>
+      
+      <guid>/post/innodb-architecture/</guid>
+      <description>&lt;p&gt;InnoDB 是一种通用存储引擎，可以实现高可靠性与高性能。在 MySQL 5.7 中，InnoDB 是默认的 MySQL 存储引擎，若使用 &lt;code&gt;CREATE TABLE&lt;/code&gt; 语句建表时未带 &lt;code&gt;ENGINE =&lt;/code&gt; 的子句，系统会默认创建 InnoDB 表。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>什么是机器学习？</title>
+      <link>/post/what-is-ml/</link>
+      <pubDate>Tue, 30 Jul 2019 17:29:00 +0000</pubDate>
+      
+      <guid>/post/what-is-ml/</guid>
+      <description>&lt;p&gt;机器学习是一种数据分析技术，让计算机执行人和动物与生俱来的活动：从经验中学习。机器学习算法使用计算方法直接从数据中“学习”信息，而不依赖于预定方程模型。当可用于学习的样本数量增加时，这些算法可自适应提高性能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>怎样处理 InterruptedException</title>
+      <link>/post/java-interrupted-exception/</link>
+      <pubDate>Mon, 22 Jul 2019 21:45:00 +0000</pubDate>
+      
+      <guid>/post/java-interrupted-exception/</guid>
+      <description>&lt;p&gt;您在编写一个测试程序，程序需要暂停一段时间，于是调用&lt;code&gt;Thread.sleep()&lt;/code&gt;。但是编译器或 IDE 报错说没有处理检查到的 &lt;code&gt;InterruptedException&lt;/code&gt;。&lt;code&gt;InterruptedException&lt;/code&gt; 是什么呢，为什么必须处理它？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 代码回滚操作</title>
+      <link>/post/git-reset-ops/</link>
+      <pubDate>Mon, 22 Jul 2019 17:34:00 +0000</pubDate>
+      
+      <guid>/post/git-reset-ops/</guid>
+      <description>&lt;p&gt;本文介绍在不同场景下回滚代码的常用命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 OpenCV 转换图像颜色空间</title>
+      <link>/post/change_colorspaces/</link>
+      <pubDate>Mon, 15 Jul 2019 16:23:00 +0000</pubDate>
+      
+      <guid>/post/change_colorspaces/</guid>
+      <description>&lt;p&gt;本文介绍如何通过 opencv 来修改图像的色彩空间，比如：&lt;em&gt;BGR ↔ Gray,  BGR ↔ HSV&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 OpenCV 对图像进行几何变换</title>
+      <link>/post/geometric_transformations_of_images/</link>
+      <pubDate>Sun, 14 Jul 2019 13:20:00 +0000</pubDate>
+      
+      <guid>/post/geometric_transformations_of_images/</guid>
+      <description>&lt;p&gt;本文介绍如何使用 OpenCV 对图像进行平移、旋转、仿射变换等几何变换操作。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scikit-learn 选择合适的评估算法</title>
+      <link>/post/scikit-learn-choosing/</link>
+      <pubDate>Thu, 11 Jul 2019 17:11:00 +0000</pubDate>
+      
+      <guid>/post/scikit-learn-choosing/</guid>
+      <description>机器学习最麻烦的问题是找到合适的评估器（estimator）。评估器的选择依赖于数据类型和问题本身。针对不同数据集和问题类型，下图可以作为评估器选择的一个参考指南： 从 START 开始，首先看数据的样本是否大于 50，小于则需要收集更多的数据。 由图中可以看到，有四类算法： 分类（Classifi</description>
+    </item>
+    
+    <item>
+      <title>AMQP 与其他中间件标准之间的差异</title>
+      <link>/post/amqp-differentiated/</link>
+      <pubDate>Thu, 11 Jul 2019 15:02:00 +0000</pubDate>
+      
+      <guid>/post/amqp-differentiated/</guid>
+      <description>与其他标准之间的差异 AMQP 与其他中间件标准的不同之处主要有： 互操作性（INTEROPERABLE） 所有 AMQP 客户端与服务端均可进行互操作。不同的编程语言可以轻松地进行通信。为了从网络中删除专有协议，可以对旧的消息代理（broker）进行改造。可以将消息传递作为云服务启用。 可靠（RELIA</description>
+    </item>
+    
+    <item>
+      <title>AMQP 架构介绍</title>
+      <link>/post/amqp_architecture/</link>
+      <pubDate>Thu, 11 Jul 2019 11:23:00 +0000</pubDate>
+      
+      <guid>/post/amqp_architecture/</guid>
+      <description>&lt;p&gt;AMQP 1.0 版本规定了三个主要部分的基本语义：&lt;strong&gt;网络协议&lt;/strong&gt;、&lt;strong&gt;消息协议&lt;/strong&gt; 和 &lt;strong&gt;代理服务&lt;/strong&gt; 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>捭阖（鬼谷子）</title>
+      <link>/post/guiguzi-baihe/</link>
+      <pubDate>Wed, 10 Jul 2019 10:56:00 +0000</pubDate>
+      
+      <guid>/post/guiguzi-baihe/</guid>
+      <description>原文地址：http://yuedu.163.com/book_reader/fda7e976-5bdf-49cb-ad56-98777ff4f8f6_4 原文 粤若稽古(3)，圣人之在天地间也，为状生之先(4)。观阴阳(5)之开阖以命物(6)，知存亡之门户(7)，筹策(8)万类(9)</description>
+    </item>
+    
+    <item>
+      <title>HTML5 设计原理</title>
+      <link>/post/html5-desigin/</link>
+      <pubDate>Tue, 09 Jul 2019 14:33:00 +0000</pubDate>
+      
+      <guid>/post/html5-desigin/</guid>
+      <description>&lt;p&gt;原文是 Jeremy Keith 在 Fronteers 2010 上的主题演讲。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>扩充式扩展与增量式扩展</title>
+      <link>/post/expansibility/</link>
+      <pubDate>Mon, 08 Jul 2019 16:24:00 +0000</pubDate>
+      
+      <guid>/post/expansibility/</guid>
+      <description>我们平台的产品越来越多，产品的功能也越来越多。平台的产品为了适应各 BU 和部门以及产品线的需求，势必会将很多不相干的功能凑在一起，客户可以选择性的使用。为了兼容更多的需求，每个产品，每个框架，都在不停的扩展，而我们经常会选择一些扩展的扩展方式，也就是将新旧功能扩展成一个通用实现。我想</description>
+    </item>
+    
+    <item>
+      <title>防痴呆设计</title>
+      <link>/post/dummy/</link>
+      <pubDate>Mon, 08 Jul 2019 16:17:00 +0000</pubDate>
+      
+      <guid>/post/dummy/</guid>
+      <description>最近有点痴呆，因为解决了太多的痴呆问题。服务框架实施面超来超广，已有 50 多个项目在使用，每天都要去帮应用查问题，来来回回，发现大部分都是配置错误，或者重复的文件或类，或者网络不通等，所以准备在新版本中加入防痴呆设计。估且这么叫吧，可能很简单，但对排错速度还是有点帮助，希望能抛砖引玉</description>
+    </item>
+    
+    <item>
+      <title>软件设计常识总结</title>
+      <link>/post/basic_design_knowledge/</link>
+      <pubDate>Mon, 08 Jul 2019 16:01:00 +0000</pubDate>
+      
+      <guid>/post/basic_design_knowledge/</guid>
+      <description>这篇文章是梁飞在设计dubbo时总结的一些经验，非常有价值。 API与SPI分离 框架或组件通常有两类客户，一个是使用者，一个是扩展者。API (Application Programming Interface) 是给使用者用的，而 SPI (Service Provide Interface) 是给扩展者用的。在设计时，尽量把它们隔离开，而不要混在一起。也就是说，使用者是看不到扩展者写的实现的。 比如：一</description>
+    </item>
+    
+    <item>
+      <title>云服务的类型</title>
+      <link>/post/type_of_cloud_services/</link>
+      <pubDate>Mon, 08 Jul 2019 14:51:00 +0000</pubDate>
+      
+      <guid>/post/type_of_cloud_services/</guid>
+      <description>&lt;p&gt;在谈论云计算时，有 IaaS、SaaS 与 PaaS 三个主要类别，包含不同级别的托管服务，了解它们，可轻松组合使用这些类型的基础结构，借助云的灵活性，以适当的组合达到最佳效果。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中文分词算法介绍</title>
+      <link>/post/chinese-word-segmention/</link>
+      <pubDate>Mon, 08 Jul 2019 14:38:00 +0000</pubDate>
+      
+      <guid>/post/chinese-word-segmention/</guid>
+      <description>背景 英文以空格作为分隔符，而中文词语之间没有分隔； 在中文里，“词”和“词组”边界模糊现代汉语的基本表达单元虽然为“词”，且以双字或者多字词居多，但由于人们认识水平的不同，对词和短语的边界很难去区分； 中文分词的方法其实不局限于中文应用，也被应用到英文处理，如手写识别，单词之间的空格</description>
+    </item>
+    
+    <item>
+      <title>云部署模型</title>
+      <link>/post/cloud_deployment_models/</link>
+      <pubDate>Mon, 08 Jul 2019 14:38:00 +0000</pubDate>
+      
+      <guid>/post/cloud_deployment_models/</guid>
+      <description>&lt;p&gt;云计算非常灵活，可以选择部署它的方式。 所选的云部署模型取决于你的预算，以及安全性、可伸缩性和维护需求。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>云计算的优势</title>
+      <link>/post/benefits_of_cloud_computing/</link>
+      <pubDate>Mon, 08 Jul 2019 14:30:00 +0000</pubDate>
+      
+      <guid>/post/benefits_of_cloud_computing/</guid>
+      <description>&lt;p&gt;云计算是一种灵活的服务方法。 公司可以选择使用云来存储数据和执行逻辑（大规模使用云计算），也可以使用尽可能少的云计算来满足业务需求。 现有企业可能选择逐渐过渡的方式以节省基础结构费用和管理费用（称为“提升和转移”），而新企业可以从一开始就采用云。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>什么是云计算？</title>
+      <link>/post/what_is_cloud_computing/</link>
+      <pubDate>Mon, 08 Jul 2019 14:21:00 +0000</pubDate>
+      
+      <guid>/post/what_is_cloud_computing/</guid>
+      <description>&lt;p&gt;云计算会租用其他公司计算机上的存储空间或 CPU 周期等资源。 只需为所用的部分付费。 提供这些服务的公司称为云提供商。 某些提供商包括 Microsoft、Amazon 和 Google。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Groovy 与 Java 的区别</title>
+      <link>/post/groovy-deffence-java/</link>
+      <pubDate>Wed, 03 Jul 2019 15:13:00 +0000</pubDate>
+      
+      <guid>/post/groovy-deffence-java/</guid>
+      <description>在 Groovy 语言设计之初，就遵从了 Least Surprise 原则，可以让 Java 程序员更快适应 Groovy。 我们列出了 Java 和 Groovy 之间的所有主要区别。 默认导入 Groovy 默认情况下导入以下包和类，可以不用显式的以 import 语句来导入它们： java.io.* java.lang.* java.math.BigDecimal java.math.BigInteger java.net.* java.util.* groovy.lang.* groovy.util.* 多方法（Multi-methods） 在 Groovy 中，将在运行时选择将调用的方法，称为运行时调度</description>
+    </item>
+    
+    <item>
+      <title>InfluxDB 安装包下载</title>
+      <link>/post/influxdb-download/</link>
+      <pubDate>Wed, 03 Jul 2019 14:56:00 +0000</pubDate>
+      
+      <guid>/post/influxdb-download/</guid>
+      <description>&lt;p&gt;本文介绍 InfluxDB 的多种下载方式，以 v1.7.1 版本为例。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Red Hat / CentOS 上安装 InfluxDB</title>
+      <link>/post/linux-influxdb-install/</link>
+      <pubDate>Wed, 03 Jul 2019 14:47:00 +0000</pubDate>
+      
+      <guid>/post/linux-influxdb-install/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Red Hat 或 CentOS 上安装 InfluxDB。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL InnoDB Table 最佳实践</title>
+      <link>/post/mysql-table-best-practice/</link>
+      <pubDate>Wed, 03 Jul 2019 14:32:00 +0000</pubDate>
+      
+      <guid>/post/mysql-table-best-practice/</guid>
+      <description>&lt;p&gt;本文总结了一些 MySQL InnoDB 引擎中关于表的一些最佳实践。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JDK 故障排除工具介绍</title>
+      <link>/post/jdk-tools-trouble-shooting/</link>
+      <pubDate>Wed, 03 Jul 2019 12:24:00 +0000</pubDate>
+      
+      <guid>/post/jdk-tools-trouble-shooting/</guid>
+      <description>&lt;p&gt;下面的工具可以用来解决特定的故障排除任务。
+本文中的工具目前还在试验阶段，不推荐使用，使用前请三思。在未来的 JDK 版本中可能会移除。有些工具目前无法在 Windows 平台上使用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL InnoDB 锁类型介绍</title>
+      <link>/post/mysql-innodb-lock-type/</link>
+      <pubDate>Wed, 03 Jul 2019 12:24:00 +0000</pubDate>
+      
+      <guid>/post/mysql-innodb-lock-type/</guid>
+      <description>本节介绍 InnoDB 的锁类型： 共享和排他锁（Shared and Exclusive Locks） 意向锁（Intention Locks） 记录锁（Record Locks） 区间锁 / 间隙锁（Gap Locks) 意向插入锁（Insert Intention Locks） 自增锁（AUTO-INC Locks） Next-Key Locks 共享和排他锁（Shared and Exclusive Locks） InnoDB 实</description>
+    </item>
+    
+    <item>
+      <title>JVM 平台相关 JMX Bean 介绍</title>
+      <link>/post/jvm-jmx-bean/</link>
+      <pubDate>Wed, 03 Jul 2019 12:05:00 +0000</pubDate>
+      
+      <guid>/post/jvm-jmx-bean/</guid>
+      <description>&lt;p&gt;本文介绍JVM 平台自带的一些 MXBean，及其所管理的虚拟机模块。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>J2SE HotSpot 虚拟机 GC 调优指南</title>
+      <link>/post/J2SE-HotSpot-VM-GC-tuning/</link>
+      <pubDate>Wed, 03 Jul 2019 10:44:00 +0000</pubDate>
+      
+      <guid>/post/J2SE-HotSpot-VM-GC-tuning/</guid>
+      <description>JVM 为垃圾收集器、堆大小和运行时编译器提供了依赖于平台的默认选项。这些选项符合不同类型应用程序的需求，同时需要较少的命令行调整。此外，基于行为的调优动态调整堆的大小，以满足应用程序的指定行为。 本节介绍这些默认选项和基于行为的调优。 垃圾收集器、堆和运行时编译器默认选项 服务器级机器定义</description>
+    </item>
+    
+    <item>
+      <title>Java Enum 类型介绍</title>
+      <link>/post/java-enum/</link>
+      <pubDate>Wed, 03 Jul 2019 10:24:00 +0000</pubDate>
+      
+      <guid>/post/java-enum/</guid>
+      <description>&lt;p&gt;本文主要介绍 Java 中枚举类型的定义及使用方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装 JDK 8 </title>
+      <link>/post/ubuntu-install-jdk8/</link>
+      <pubDate>Tue, 02 Jul 2019 16:17:00 +0000</pubDate>
+      
+      <guid>/post/ubuntu-install-jdk8/</guid>
+      <description>&lt;p&gt;本文介绍如何在 Ubuntu 环境安装 Oracle JDK。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 整数类型与取值范围</title>
+      <link>/post/java-integer/</link>
+      <pubDate>Tue, 02 Jul 2019 16:03:00 +0000</pubDate>
+      
+      <guid>/post/java-integer/</guid>
+      <description>&lt;style&gt;
+table th:nth-of-type(1){
+width: 10%;
+}
+table th:nth-of-type(2){
+width: 20%;
+}
+table th:nth-of-type(3){
+width: 30%;
+}
+table th:nth-of-type(4){
+width: 30%;
+}
+table th:nth-of-type(5){
+width: 10%;
+}
+&lt;/style&gt;
+
+&lt;p&gt;本文主要介绍JVM中整数类型以及各类型值的范围区间。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM 运行时数据区介绍</title>
+      <link>/post/jvm-runtime-data-areas/</link>
+      <pubDate>Tue, 02 Jul 2019 14:47:00 +0000</pubDate>
+      
+      <guid>/post/jvm-runtime-data-areas/</guid>
+      <description>&lt;p&gt;JVM 定义了在执行程序期间使用的各种运行时数据区（Run-Time Data Areas），其中一些数据区的生命周期与 JVM 进程相同，其他数据区是每个线程拥有一个，其生命周期与线程的生命周期相同。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>scoop-install</title>
+      <link>/post/scoop-install/</link>
+      <pubDate>Tue, 02 Jul 2019 14:41:32 +0000</pubDate>
+      
+      <guid>/post/scoop-install/</guid>
+      <description>&lt;p&gt;Scoop 是 Windows 的命令行安装程序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 高级并发对象之 Lock 对象</title>
+      <link>/post/java-concurrent-lock/</link>
+      <pubDate>Mon, 01 Jul 2019 15:25:00 +0000</pubDate>
+      
+      <guid>/post/java-concurrent-lock/</guid>
+      <description>本文主要介绍 Java 并发控制中常用的 Lock 对象。 同步代码依赖于一种简单的可重入锁。这种锁很容易使用，但有很多限制。 java.util.concurrent.locks 包支持更复杂的锁定方式。我们不会详细的研究这个包，而是将重点放在它最基本的接口Lock上。 锁对象非常像 synchronized 代码使用的隐式锁。与隐式锁一样，一次只有一个线程拥有一个 Lock 对象。Loc</description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud Data Flow 安装指南</title>
+      <link>/post/spring-data-flow-install/</link>
+      <pubDate>Mon, 01 Jul 2019 11:40:00 +0000</pubDate>
+      
+      <guid>/post/spring-data-flow-install/</guid>
+      <description>&lt;p&gt;本文主要介绍 Spring cloud dataflow 的二进制包在 Linux 环境的安装与启动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java 常用技术总结</title>
+      <link>/post/java-techs/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/java-techs/</guid>
+      <description>Java 构建线程：Runable、Callable 、Thread Java 并发安全：synchronized、Lock（ReentrantLock、ReadWriteLock） Java 关键词：volatile、synchronized Java 常用集合（ConcurrentHashMap、HashMap、H</description>
+    </item>
+    
+    <item>
+      <title>Java 线程生命周期</title>
+      <link>/post/java-thread-lifecycle/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/java-thread-lifecycle/</guid>
+      <description>&lt;p&gt;Java 线程生命周期是什么呢？在不同阶段又有什么含义呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Groovy Servlet 使用指南</title>
+      <link>/post/groovy-servlet/</link>
+      <pubDate>Fri, 28 Jun 2019 18:20:00 +0000</pubDate>
+      
+      <guid>/post/groovy-servlet/</guid>
+      <description>我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 .groovy 源文件并转换为字节码。 Groovlet使用示例如下： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } println &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Groovy Servlet&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt; Hello, ${request.remoteHost}: ${session.counter}! ${new Date()} &amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot; session.counter = session.counter + 1 或者，使用 MarkupBuilder 执行相同的操作： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } html.html { // html is implicitly bound</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - List</title>
+      <link>/post/groovy-syntax-list/</link>
+      <pubDate>Fri, 28 Jun 2019 18:15:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-list/</guid>
+      <description>Groovy 用逗号分隔值，并用方括号括起来，用来表示列表（List）。Groovy 没有自己定义集合类，Groovy 列表本质是 JDK 的 java.util.List。List 默认的实现类是 java.util.ArrayList，你也可以自己指定其他实现类。 // 定义一个由逗号分隔的数字型列表，并用方括</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - 关键字</title>
+      <link>/post/groovy-syntax-keywords/</link>
+      <pubDate>Fri, 28 Jun 2019 17:49:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-keywords/</guid>
+      <description>以下是 Groovy 语言的所有关键字： as assert break case catch class const continue def default do else enum extends false finally for goto if implements import in instanceof interface new null package return super switch this throw throws trait true try while 原文地址：http://groovy-lang.org/syntax.html</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - 标识符</title>
+      <link>/post/groovy-syntax-identifiers/</link>
+      <pubDate>Fri, 28 Jun 2019 17:49:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-identifiers/</guid>
+      <description>普通标识符 标识符以字母、$ 或下划线开头，不能以数字开头。字符必须在以下范围之内： &amp;lsquo;a&amp;rsquo; ~ &amp;lsquo;z&amp;rsquo;（小写 ascii 字符） &amp;lsquo;A&amp;rsquo; ~ &amp;lsquo;Z&amp;rsquo;（大写 ascii 字符） &amp;lsquo;\u00C0&amp;rsquo; ~ &amp;lsquo;\u00D6&amp;rsquo; &amp;lsquo;\u00D8&amp;rsquo; ~ &amp;lsquo;\u00F6&amp;rsquo; &amp;lsquo;\u00F8&amp;rsquo; ~ &amp;lsquo;\u00FF&amp;rsquo; &amp;lsquo;\u0100&amp;rsquo; ~ &amp;lsquo;\uFFFE&amp;rsquo; 后续字符可以是字母或数字。 这是一些有效的标识符示例（这些是变量名）： def name def item3 def with_underscore</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - 注释</title>
+      <link>/post/groovy-syntax-comment/</link>
+      <pubDate>Fri, 28 Jun 2019 17:41:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-comment/</guid>
+      <description>Groovy 的语法源自 Java 语法，但 Groovy 的特定构造对其进行了增强，并允许某些简化。 单行注释 单行注释以 // 开头，可以在行中的任何位置找到。// 直到行尾的字符被视为注释的一部分。 // a standalone single line comment println &amp;quot;hello&amp;quot; // a comment till the end of the line 多行注释 多行注释以 /* 开头，可以在行中的任何位置找到。/* 后面的字符将被视为注释的一部分，包</description>
+    </item>
+    
+    <item>
+      <title>Groovy 环境安装</title>
+      <link>/post/groovy-install/</link>
+      <pubDate>Fri, 28 Jun 2019 17:13:00 +0000</pubDate>
+      
+      <guid>/post/groovy-install/</guid>
+      <description>以 Groovy 的二进制发行版，安装过程如下： 首先，下载 Groovy 的二进制发行版并将其解压缩到本地文件系统上的某个文件中； 将 GROOVY_HOME 环境变量设置为解压缩发行版文件的目录； 将 GROOVY_HOME/bin 添加到 PATH 环境变量中； 将 JAVA_HOME 环境变量指向你的 JDK。OS X 上是 /Library/Java/Home，其他 unix 环境通常是 /usr/java 。如果你已经装过 Ant</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - Boolean</title>
+      <link>/post/groovy-syntax-boolean/</link>
+      <pubDate>Fri, 28 Jun 2019 17:05:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-boolean/</guid>
+      <description>Boolean 是一种特殊的数据类型，用于表示真值：true 和 false。将此数据类型用于跟踪真/假条件的简单标志。 布尔值可以存储在变量中，分配到字段中，就像任何其他数据类型一样： def myBooleanVariable = true boolean untypedBooleanVar = false booleanField = true true 和 false是唯一的两个原始布尔值。但是更复杂的布尔表达式可以使用逻辑运算符表示。 此外，G</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - Map</title>
+      <link>/post/groovy-syntax-map/</link>
+      <pubDate>Fri, 28 Jun 2019 17:00:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-map/</guid>
+      <description>Map 有时在其他语言中称为字典或关联数组，Groovy 也有 Map 功能。 Map 将键与值相关联，用冒号分隔键和值，使用逗号分隔每个键/值对，以及用方括号括起的整个键和值。 // 我们定义了一个颜色名称的 map，与它们的十六进制编码的 html 色值相映射 def colors = [red: &#39;#FF0000&#39;, green: &#39;#00FF00&#39;, blue: &#39;#0000FF&#39;] // 我们使用下标符号来检查与 red 键相关联的内</description>
+    </item>
+    
+    <item>
+      <title>Linux 生成 SSH Key</title>
+      <link>/post/linux-generate-ssh-key/</link>
+      <pubDate>Fri, 28 Jun 2019 14:17:00 +0000</pubDate>
+      
+      <guid>/post/linux-generate-ssh-key/</guid>
+      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
+    </item>
+    
+    <item>
+      <title>Groovy 语法 - 数组</title>
+      <link>/post/groovy-syntax-arrays/</link>
+      <pubDate>Fri, 28 Jun 2019 11:27:00 +0000</pubDate>
+      
+      <guid>/post/groovy-syntax-arrays/</guid>
+      <description>Groovy 复用了列表的方括号作为数组的符号，但是为了制作这样的文字数组，你需要通过强制或类型声明来明确地定义数组的类型。 // 使用显式变量类型声明定义字符串数组 String[] arrStr = [&#39;Ananas&#39;, &#39;Banana&#39;, &#39;Kiwi&#39;] // 断言我们创建了一个字符串数组 assert arrStr instanceof String[] assert !(arrStr instanceof List) // 使用 as 运算符创建一个 int 数组 def numArr = [1, 2, 3] as int[] // 断言我们创建了一个原始 int 数组</description>
+    </item>
+    
+    <item>
+      <title>团队分享制度</title>
+      <link>/post/team-sharing/</link>
+      <pubDate>Thu, 27 Jun 2019 19:26:00 +0000</pubDate>
+      
+      <guid>/post/team-sharing/</guid>
+      <description>背景 互联网是一个快速变化的技术行业，随着行业成熟度的不断提升，职能分工也在不断细化，各方向的技术深度也在持续加深，研发人员应保持积极的心态持续学习，主动跟进前沿技术发展趋势，储备技术能力，为业务发展提供应有的专业支持，驱动业务发展。 技术分享的好处 从团队建设角度看，有助于实现团队知</description>
+    </item>
+    
+    <item>
+      <title>将进酒</title>
+      <link>/post/qiang-jin-jiu/</link>
+      <pubDate>Thu, 27 Jun 2019 19:26:00 +0000</pubDate>
+      
+      <guid>/post/qiang-jin-jiu/</guid>
+      <description>《将进酒》原是汉乐府短箫铙歌的曲调，题目意绎即“劝酒歌”，故古词有“将进酒，乘大白”云。作者这首“填之以申己意”（萧士赟《分类补注李太白诗》）的名篇，约作于天宝十一载（752），他当时与友人岑勋在嵩山另一好友元丹丘的颍阳山居为客，三人尝登高饮宴（《酬岑勋见寻就元丹丘对酒相待以诗见</description>
+    </item>
+    
+    <item>
+      <title>本经阴符七术</title>
+      <link>/post/beng-jing-yin-fu-qi-shu/</link>
+      <pubDate>Thu, 27 Jun 2019 19:22:00 +0000</pubDate>
+      
+      <guid>/post/beng-jing-yin-fu-qi-shu/</guid>
+      <description>鬼谷子的主要著作有《鬼谷子》及《本经阴符七术》。《鬼谷子》侧重于权谋策略及言谈辩论技巧，而《本经阴符七术》则集中于养神蓄锐之道。《本经阴符七术》在中国古代的哲学和兵学中都占有重要的地位。他也作为道教的一部重要道经，历代对它的注解都不在少数。《本经阴符七术》、《持枢》、《中经》，道</description>
+    </item>
+    
+    <item>
+      <title>Groovy 程序结构</title>
+      <link>/post/groovy-program-structure/</link>
+      <pubDate>Thu, 27 Jun 2019 19:15:00 +0000</pubDate>
+      
+      <guid>/post/groovy-program-structure/</guid>
+      <description>本章主要讲 Groovy 编程语言的程序结构。 包（package） 包名称与 Java 中的角色完全相同。它们允许我们在没有任何冲突的情况下分离代码库。Groovy 类必须在类定义之前指定它们的包，否则假定使用默认包。 包的定义与 Java 非常相似： // defining a package named com.yoursite package com.yoursite 要在 com.yoursite.com 包中引用某个类 Foo，您需要使用全路径com.</description>
+    </item>
+    
+  </channel>
+</rss>

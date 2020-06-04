@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lock on Mehameha</title>
+    <link>/tags/Lock/</link>
+    <description>Recent content in Lock on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 03 Jul 2019 12:24:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/Lock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL InnoDB 锁类型介绍</title>
+      <link>/post/mysql-innodb-lock-type/</link>
+      <pubDate>Wed, 03 Jul 2019 12:24:00 +0000</pubDate>
+      
+      <guid>/post/mysql-innodb-lock-type/</guid>
+      <description>本节介绍 InnoDB 的锁类型： 共享和排他锁（Shared and Exclusive Locks） 意向锁（Intention Locks） 记录锁（Record Locks） 区间锁 / 间隙锁（Gap Locks) 意向插入锁（Insert Intention Locks） 自增锁（AUTO-INC Locks） Next-Key Locks 共享和排他锁（Shared and Exclusive Locks） InnoDB 实</description>
+    </item>
+    
+  </channel>
+</rss>

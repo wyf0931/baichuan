@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>架构设计 on Mehameha</title>
+    <link>/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+    <description>Recent content in 架构设计 on Mehameha</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 27 Aug 2019 16:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微服务架构体系治理</title>
+      <link>/post/microservice-manage/</link>
+      <pubDate>Tue, 27 Aug 2019 16:58:00 +0000</pubDate>
+      
+      <guid>/post/microservice-manage/</guid>
+      <description>&lt;p&gt;本文是在天弘基金李鑫的演讲稿上提炼而来，介绍微服务架构深度治理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一个基于数据库的动态配置实现</title>
+      <link>/post/config-with-spring/</link>
+      <pubDate>Thu, 15 Aug 2019 19:15:00 +0000</pubDate>
+      
+      <guid>/post/config-with-spring/</guid>
+      <description>&lt;p&gt;基于spring boot 实现一个简易的动态配置注入功能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>InnoDB 存储引擎架构</title>
+      <link>/post/innodb-architecture/</link>
+      <pubDate>Thu, 01 Aug 2019 14:20:00 +0000</pubDate>
+      
+      <guid>/post/innodb-architecture/</guid>
+      <description>&lt;p&gt;InnoDB 是一种通用存储引擎，可以实现高可靠性与高性能。在 MySQL 5.7 中，InnoDB 是默认的 MySQL 存储引擎，若使用 &lt;code&gt;CREATE TABLE&lt;/code&gt; 语句建表时未带 &lt;code&gt;ENGINE =&lt;/code&gt; 的子句，系统会默认创建 InnoDB 表。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AMQP 架构介绍</title>
+      <link>/post/amqp_architecture/</link>
+      <pubDate>Thu, 11 Jul 2019 11:23:00 +0000</pubDate>
+      
+      <guid>/post/amqp_architecture/</guid>
+      <description>&lt;p&gt;AMQP 1.0 版本规定了三个主要部分的基本语义：&lt;strong&gt;网络协议&lt;/strong&gt;、&lt;strong&gt;消息协议&lt;/strong&gt; 和 &lt;strong&gt;代理服务&lt;/strong&gt; 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTML5 设计原理</title>
+      <link>/post/html5-desigin/</link>
+      <pubDate>Tue, 09 Jul 2019 14:33:00 +0000</pubDate>
+      
+      <guid>/post/html5-desigin/</guid>
+      <description>&lt;p&gt;原文是 Jeremy Keith 在 Fronteers 2010 上的主题演讲。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>扩充式扩展与增量式扩展</title>
+      <link>/post/expansibility/</link>
+      <pubDate>Mon, 08 Jul 2019 16:24:00 +0000</pubDate>
+      
+      <guid>/post/expansibility/</guid>
+      <description>我们平台的产品越来越多，产品的功能也越来越多。平台的产品为了适应各 BU 和部门以及产品线的需求，势必会将很多不相干的功能凑在一起，客户可以选择性的使用。为了兼容更多的需求，每个产品，每个框架，都在不停的扩展，而我们经常会选择一些扩展的扩展方式，也就是将新旧功能扩展成一个通用实现。我想</description>
+    </item>
+    
+    <item>
+      <title>防痴呆设计</title>
+      <link>/post/dummy/</link>
+      <pubDate>Mon, 08 Jul 2019 16:17:00 +0000</pubDate>
+      
+      <guid>/post/dummy/</guid>
+      <description>最近有点痴呆，因为解决了太多的痴呆问题。服务框架实施面超来超广，已有 50 多个项目在使用，每天都要去帮应用查问题，来来回回，发现大部分都是配置错误，或者重复的文件或类，或者网络不通等，所以准备在新版本中加入防痴呆设计。估且这么叫吧，可能很简单，但对排错速度还是有点帮助，希望能抛砖引玉</description>
+    </item>
+    
+    <item>
+      <title>软件设计常识总结</title>
+      <link>/post/basic_design_knowledge/</link>
+      <pubDate>Mon, 08 Jul 2019 16:01:00 +0000</pubDate>
+      
+      <guid>/post/basic_design_knowledge/</guid>
+      <description>这篇文章是梁飞在设计dubbo时总结的一些经验，非常有价值。 API与SPI分离 框架或组件通常有两类客户，一个是使用者，一个是扩展者。API (Application Programming Interface) 是给使用者用的，而 SPI (Service Provide Interface) 是给扩展者用的。在设计时，尽量把它们隔离开，而不要混在一起。也就是说，使用者是看不到扩展者写的实现的。 比如：一</description>
+    </item>
+    
+  </channel>
+</rss>
