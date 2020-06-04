@@ -1,5 +1,6 @@
 title: Mehameha
 baseURL: http://www.zhizhiting.com
+languageCode: zh-CN
 theme: maupassant
 paginate: 10
 PaginatePath: "page"
@@ -32,12 +33,12 @@ menu:
 
 summaryLength: 140
 hasCJKLanguage: true
-subtitle: "专注于Java、Python、项目管理、软件架构"
-keywords: "Java、Python、MySQL、Groovy、大数据"
+subtitle: 专注于Java、Python、项目管理、软件架构
+keywords: Java、Python、MySQL、Groovy、大数据
 disablePathToLower: true
 params:
-  busuanzi: false
-  description: "莫道君行早，更有早行人。"
+  busuanzi: true
+  description: 莫道君行早，更有早行人。
   toc: false
   sequenceDiagrams:
     enable: true
