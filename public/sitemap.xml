@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -115,6 +115,13 @@
   </url>
   
   <url>
+    <loc>/tags/Java/</loc>
+    <lastmod>2020-01-02T11:23:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/tags/Maven/</loc>
     <lastmod>2020-01-02T11:23:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -130,13 +137,6 @@
   
   <url>
     <loc>/post/intellij-google-code-style-config/</loc>
-    <lastmod>2019-12-20T12:56:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/java/</loc>
     <lastmod>2019-12-20T12:56:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

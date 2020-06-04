@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Groovy Servlet 使用指南 | Mehameha</title>
+    <meta property="og:title" content="Groovy Servlet 使用指南 - Mehameha">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-06-28T18:20:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-06-28T18:20:00&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="Groovy Servlet 使用指南">
+        <meta name="author" content="Scott">
+        
+    <meta property="og:url" content="/post/groovy-servlet/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="">
+                        Mehameha
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="">首页</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Groovy Servlet 使用指南</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年6月28日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 <code>.groovy</code> 源文件并转换为字节码。</p>
+<p>Groovlet使用示例如下：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#00a8c8">if</span> <span style="color:#f92672">(!</span><span style="color:#111">session</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#111">session</span> <span style="color:#f92672">=</span> <span style="color:#111">request</span><span style="color:#f92672">.</span><span style="color:#75af00">getSession</span><span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#00a8c8">if</span> <span style="color:#f92672">(!</span><span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#111">println</span> <span style="color:#d88200">&#34;&#34;&#34;
+</span><span style="color:#d88200">&lt;html&gt;
+</span><span style="color:#d88200">    &lt;head&gt;
+</span><span style="color:#d88200">        &lt;title&gt;Groovy Servlet&lt;/title&gt;
+</span><span style="color:#d88200">    &lt;/head&gt;
+</span><span style="color:#d88200">    &lt;body&gt;
+</span><span style="color:#d88200">        &lt;p&gt;
+</span><span style="color:#d88200">Hello, ${request.remoteHost}: ${session.counter}! ${new Date()}
+</span><span style="color:#d88200">        &lt;/p&gt;
+</span><span style="color:#d88200">    &lt;/body&gt;
+</span><span style="color:#d88200">&lt;/html&gt;
+</span><span style="color:#d88200">&#34;&#34;&#34;</span>
+<span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>或者，使用 <code>MarkupBuilder</code> 执行相同的操作：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="color:#00a8c8">if</span> <span style="color:#f92672">(!</span><span style="color:#111">session</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">session</span> <span style="color:#f92672">=</span> <span style="color:#111">request</span><span style="color:#f92672">.</span><span style="color:#75af00">getSession</span><span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#00a8c8">if</span> <span style="color:#f92672">(!</span><span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#111">html</span><span style="color:#f92672">.</span><span style="color:#75af00">html</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// html is implicitly bound to new MarkupBuilder(out)
+</span><span style="color:#75715e"></span>  <span style="color:#111">head</span> <span style="color:#f92672">{</span>
+      <span style="color:#111">title</span><span style="color:#f92672">(</span><span style="color:#d88200">&#39;Groovy Servlet&#39;</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">}</span>
+  <span style="color:#111">body</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">p</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Hello, ${request.remoteHost}: ${session.counter}! ${new Date()}&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">=</span> <span style="color:#111">session</span><span style="color:#f92672">.</span><span style="color:#75af00">counter</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><blockquote>
+<p>注意：代码中使用隐式变量来访问 session、request、out，由于没有类包装，感觉像是个脚本。</p>
+</blockquote>
+<h3 id="隐式变量">隐式变量</h3>
+<p>以下变量可以在 Groovlet 中直接使用：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>绑定</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>ServletRequest</td>
+<td>-</td>
+</tr>
+<tr>
+<td>response</td>
+<td>ServletResponse</td>
+<td>-</td>
+</tr>
+<tr>
+<td>context</td>
+<td>ServletContext</td>
+<td>-</td>
+</tr>
+<tr>
+<td>application</td>
+<td>ServletContext</td>
+<td>-</td>
+</tr>
+<tr>
+<td>session</td>
+<td>getSession(false)</td>
+<td>可以是 null（参考&lt;1&gt;）</td>
+</tr>
+<tr>
+<td>params</td>
+<td></td>
+<td>Map 对象</td>
+</tr>
+<tr>
+<td>headers</td>
+<td></td>
+<td>Map对象</td>
+</tr>
+<tr>
+<td>out</td>
+<td>response.getWriter()</td>
+<td>参考&lt;2&gt;</td>
+</tr>
+<tr>
+<td>sout</td>
+<td>response.getOutputStream()</td>
+<td>参考&lt;2&gt;</td>
+</tr>
+<tr>
+<td>html</td>
+<td>new MarkupBuilder(out)</td>
+<td>参考&lt;2&gt;</td>
+</tr>
+<tr>
+<td>json</td>
+<td>new StreamingJsonBuilder(out)</td>
+<td>参考&lt;2&gt;</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>如果已存在 <code>session</code> 对象，则仅设置 <code>session</code> 变量。请参阅上面示例中的 <code>if (session == null)</code> 检查。</li>
+<li>无法在 Groovlet 中重新分配这些变量。它们在第一次访问时受到约束，允许例如在使用之前调用<code>response</code> 对象上的<code>out</code>方法。</li>
+</ol>
+<h3 id="groovylet-配置">groovylet 配置</h3>
+<p>在<code>web.xml</code> 中添加以下代码：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;servlet&gt;</span>
+    <span style="color:#f92672">&lt;servlet-name&gt;</span>Groovy<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+    <span style="color:#f92672">&lt;servlet-class&gt;</span>groovy.servlet.GroovyServlet<span style="color:#f92672">&lt;/servlet-class&gt;</span>
+<span style="color:#f92672">&lt;/servlet&gt;</span>
+
+<span style="color:#f92672">&lt;servlet-mapping&gt;</span>
+    <span style="color:#f92672">&lt;servlet-name&gt;</span>Groovy<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+    <span style="color:#f92672">&lt;url-pattern&gt;</span>*.groovy<span style="color:#f92672">&lt;/url-pattern&gt;</span>
+<span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
+</code></pre></div><p>然后将所需的 groovy jar 文件放入<code>WEB-INF/lib</code>。</p>
+<p>将 <code>.groovy</code> 文件放在根目录中（即放置 html 文件的位置）。GroovyServlet 负责编译 <code>.groovy</code> 文件。</p>
+<p>以 tomcat 为例，可以像这样编辑 <code>tomcat/conf/server.xml</code>：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Context</span> <span style="color:#75af00">path=</span><span style="color:#d88200">&#34;/groovy&#34;</span> <span style="color:#75af00">docBase=</span><span style="color:#d88200">&#34;c:/groovy-servlet&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>通过 <code>http://localhost:8080/groovy/hello.groovy</code> 访问它。</p>
+<blockquote>
+<p>原文地址：http://groovy-lang.org/servlet.html</p>
+</blockquote>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="">Scott</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="/post/groovy-servlet/">/post/groovy-servlet/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/groovy-syntax-list/">Groovy 语法 - List</a></li>
+        
+        <li><a href="/post/groovy-syntax-keywords/">Groovy 语法 - 关键字</a></li>
+        
+        <li><a href="/post/groovy-syntax-identifiers/">Groovy 语法 - 标识符</a></li>
+        
+        <li><a href="/post/groovy-syntax-comment/">Groovy 语法 - 注释</a></li>
+        
+        <li><a href="/post/groovy-install/">Groovy 环境安装</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/groovy'>groovy</a></li>
+                
+                <li><a href='/tags/servlet'>servlet</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="/post/quanxue/" title="劝学">劝学</a>
+    </li>
+    
+    <li>
+        <a href="/post/git-branch/" title="Git 分支管理">Git 分支管理</a>
+    </li>
+    
+    <li>
+        <a href="/post/tail-latency/" title="高并发系统中的尾延迟">高并发系统中的尾延迟</a>
+    </li>
+    
+    <li>
+        <a href="/post/inotify/" title="Linux Inotify 机制简介">Linux Inotify 机制简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/numpy-excrise-numpy/" title="101 个 NumPy 数据分析练习（1～20）">101 个 NumPy 数据分析练习（1～20）</a>
+    </li>
+    
+    <li>
+        <a href="/post/maven-deploy-plugin/" title="Maven Deploy Plugin 使用方法">Maven Deploy Plugin 使用方法</a>
+    </li>
+    
+    <li>
+        <a href="/post/intellij-google-code-style-config/" title="Intellij IDEA 配置 Google Code Style">Intellij IDEA 配置 Google Code Style</a>
+    </li>
+    
+    <li>
+        <a href="/post/mysql-innodb-transaction/" title="MySQL 事务处理简介">MySQL 事务处理简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/java-basic-wiki/" title="Java 基础知识总结">Java 基础知识总结</a>
+    </li>
+    
+    <li>
+        <a href="/post/microservice-manage/" title="微服务架构体系治理">微服务架构体系治理</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="/tags/AMQP/">AMQP</a>
+    
+    <a href="/tags/HTML/">HTML</a>
+    
+    <a href="/tags/InfluxDB/">InfluxDB</a>
+    
+    <a href="/tags/InnoDB/">InnoDB</a>
+    
+    <a href="/tags/JMX/">JMX</a>
+    
+    <a href="/tags/JVM/">JVM</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/Linux/">Linux</a>
+    
+    <a href="/tags/Lock/">Lock</a>
+    
+    <a href="/tags/Maven/">Maven</a>
+    
+    <a href="/tags/MySQL/">MySQL</a>
+    
+    <a href="/tags/Numpy/">Numpy</a>
+    
+    <a href="/tags/OpenCV/">OpenCV</a>
+    
+    <a href="/tags/Python/">Python</a>
+    
+    <a href="/tags/data/">data</a>
+    
+    <a href="/tags/dubbo/">dubbo</a>
+    
+    <a href="/tags/git/">git</a>
+    
+    <a href="/tags/groovy/">groovy</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/scikit-learn/">scikit-learn</a>
+    
+    <a href="/tags/servlet/">servlet</a>
+    
+    <a href="/tags/spring/">spring</a>
+    
+    <a href="/tags/ubuntu/">ubuntu</a>
+    
+    <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+    
+    <a href="/tags/%E5%8D%8F%E8%AE%AE/">协议</a>
+    
+    <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="/tags/%E6%96%87%E5%8F%B2/">文史</a>
+    
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+    
+    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+    
+    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    
+    <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    
+    <a href="/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/">高并发</a>
+    
+    <a href="/tags/%E9%AC%BC%E8%B0%B7%E5%AD%90/">鬼谷子</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="">Mehameha By Scott</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+
+</html>

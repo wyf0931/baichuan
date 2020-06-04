@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Mehameha</title>
@@ -84,10 +84,10 @@
     
     <item>
       <title>Java</title>
-      <link></link>
+      <link>/tags/Java/</link>
       <pubDate>Thu, 02 Jan 2020 11:23:00 +0000</pubDate>
       
-      <guid></guid>
+      <guid>/tags/Java/</guid>
       <description></description>
     </item>
     
@@ -97,15 +97,6 @@
       <pubDate>Thu, 02 Jan 2020 11:23:00 +0000</pubDate>
       
       <guid>/tags/Maven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>/tags/java/</link>
-      <pubDate>Fri, 20 Dec 2019 12:56:52 +0800</pubDate>
-      
-      <guid>/tags/java/</guid>
       <description></description>
     </item>
     

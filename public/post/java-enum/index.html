@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Java Enum 类型介绍 | Mehameha</title>
+    <meta property="og:title" content="Java Enum 类型介绍 - Mehameha">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-07-03T10:24:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-07-03T10:24:00&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="Java Enum 类型介绍">
+        <meta name="author" content="Scott">
+        
+    <meta property="og:url" content="/post/java-enum/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="">
+                        Mehameha
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="">首页</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Java Enum 类型介绍</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年7月3日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>本文主要介绍 Java 中枚举类型的定义及使用方法。</p>
+<p>枚举（<code>Enum</code>）类型是一种特殊的数据类型，这类型的值是一组预定义的常量。该变量值必须在预定义的值中。常见的案例包括方向枚举（NORTH，SOUTH，EAST、WEST值）和星期几。</p>
+<p>因为它们是常量，所以<strong>枚举类型的字段的名称一般都大写</strong>。</p>
+<p>**在 Java 编程语言中，可以使用 <code>enum</code> 关键字定义枚举类型。**例如，你可以将星期几指定为下面这种枚举类型：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">enum</span> <span style="color:#111">Day</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">SUNDAY</span><span style="color:#f92672">,</span> <span style="color:#111">MONDAY</span><span style="color:#f92672">,</span> <span style="color:#111">TUESDAY</span><span style="color:#f92672">,</span> <span style="color:#111">WEDNESDAY</span><span style="color:#f92672">,</span>
+    <span style="color:#111">THURSDAY</span><span style="color:#f92672">,</span> <span style="color:#111">FRIDAY</span><span style="color:#f92672">,</span> <span style="color:#111">SATURDAY</span> 
+<span style="color:#f92672">}</span>
+</code></pre></div><p><strong>最好使用枚举类型来表示一组固定的常量</strong>。包括自然枚举类型，例如太阳系中的行星和数据集，在编译时已知道所有可能的值，例如菜单上的选项，命令行标志等等。</p>
+<p>下面的代码展示了上述中的 <code>Day</code> 枚举：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">EnumTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">Day</span> <span style="color:#111">day</span><span style="color:#f92672">;</span>
+    
+    <span style="color:#00a8c8">public</span> <span style="color:#75af00">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span> <span style="color:#111">day</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">day</span> <span style="color:#f92672">=</span> <span style="color:#111">day</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">switch</span> <span style="color:#f92672">(</span><span style="color:#111">day</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#00a8c8">case</span> <span style="color:#111">MONDAY</span><span style="color:#f92672">:</span>
+                <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">println</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Mondays are bad.&#34;</span><span style="color:#f92672">);</span>
+                <span style="color:#00a8c8">break</span><span style="color:#f92672">;</span>
+                    
+            <span style="color:#00a8c8">case</span> <span style="color:#111">FRIDAY</span><span style="color:#f92672">:</span>
+                <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">println</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Fridays are better.&#34;</span><span style="color:#f92672">);</span>
+                <span style="color:#00a8c8">break</span><span style="color:#f92672">;</span>
+                         
+            <span style="color:#00a8c8">case</span> <span style="color:#111">SATURDAY</span><span style="color:#f92672">:</span> <span style="color:#00a8c8">case</span> <span style="color:#111">SUNDAY</span><span style="color:#f92672">:</span>
+                <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">println</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Weekends are best.&#34;</span><span style="color:#f92672">);</span>
+                <span style="color:#00a8c8">break</span><span style="color:#f92672">;</span>
+                        
+            <span style="color:#00a8c8">default</span><span style="color:#f92672">:</span>
+                <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">println</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Midweek days are so-so.&#34;</span><span style="color:#f92672">);</span>
+                <span style="color:#00a8c8">break</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">static</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">main</span><span style="color:#f92672">(</span><span style="color:#111">String</span><span style="color:#f92672">[]</span> <span style="color:#111">args</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#111">EnumTest</span> <span style="color:#111">firstDay</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span><span style="color:#f92672">.</span><span style="color:#75af00">MONDAY</span><span style="color:#f92672">);</span>
+        <span style="color:#111">firstDay</span><span style="color:#f92672">.</span><span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">();</span>
+        <span style="color:#111">EnumTest</span> <span style="color:#111">thirdDay</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span><span style="color:#f92672">.</span><span style="color:#75af00">WEDNESDAY</span><span style="color:#f92672">);</span>
+        <span style="color:#111">thirdDay</span><span style="color:#f92672">.</span><span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">();</span>
+        <span style="color:#111">EnumTest</span> <span style="color:#111">fifthDay</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span><span style="color:#f92672">.</span><span style="color:#75af00">FRIDAY</span><span style="color:#f92672">);</span>
+        <span style="color:#111">fifthDay</span><span style="color:#f92672">.</span><span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">();</span>
+        <span style="color:#111">EnumTest</span> <span style="color:#111">sixthDay</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span><span style="color:#f92672">.</span><span style="color:#75af00">SATURDAY</span><span style="color:#f92672">);</span>
+        <span style="color:#111">sixthDay</span><span style="color:#f92672">.</span><span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">();</span>
+        <span style="color:#111">EnumTest</span> <span style="color:#111">seventhDay</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">EnumTest</span><span style="color:#f92672">(</span><span style="color:#111">Day</span><span style="color:#f92672">.</span><span style="color:#75af00">SUNDAY</span><span style="color:#f92672">);</span>
+        <span style="color:#111">seventhDay</span><span style="color:#f92672">.</span><span style="color:#75af00">tellItLikeItIs</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>输出为：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Mondays are bad.
+Midweek days are so-so.
+Fridays are better.
+Weekends are best.
+Weekends are best.
+</code></pre></div><p>Java 的枚举类型比其他编程语言的类型更强大。枚举声明定义了一个类（称为枚举类型）。枚举类体可以包括方法和其他字段。编译器在创建枚举时自动添加一些特殊方法。例如，它们有一个静态 <strong><code>values</code></strong> 方法，可以按照声明的顺序返回一个包含枚举所有值的数组，此方法通常与 <code>for-each</code> 结构配合使用来遍历枚举类型的值。例如，下面的 <code>Planet</code> 类中代码遍历太阳系中的所有行星。</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">for</span> <span style="color:#f92672">(</span><span style="color:#111">Planet</span> <span style="color:#111">p</span> <span style="color:#f92672">:</span> <span style="color:#111">Planet</span><span style="color:#f92672">.</span><span style="color:#75af00">values</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">printf</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Your weight on %s is %f%n&#34;</span><span style="color:#f92672">,</span> <span style="color:#111">p</span><span style="color:#f92672">,</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#75af00">surfaceWeight</span><span style="color:#f92672">(</span><span style="color:#111">mass</span><span style="color:#f92672">));</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p>由于 Java 语言不支持多继承（请参阅 <a href="http://docs.oracle.com/javase/tutorial/java/IandI/multipleinheritance.html">Multiple Inheritance of State, Implementation, and Type</a>），只能继承一个父类（请参阅 <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html">Declaring Classes</a>），而所有枚举隐式地继承了 <code>java.lang.Enum</code>，因此<strong>枚举不能继承任何类</strong>。</p>
+</blockquote>
+<p>在下面的例子中，<code>Planet</code> 是一个枚举类型，表示太阳系中的行星。它们被定义为具有恒定的质量和半径属性。</p>
+<p>每个枚举常量都用质量和半径参数的值声明。这些值在创建常量时传递给构造函数。 <strong>Java 要求在任何字段或方法之前首先定义常量。此外，当有字段和方法时，枚举常量的列表必须以分号结尾。</strong></p>
+<blockquote>
+<p>枚举类型的构造函数必须是 <code>package-private</code> 或 <code>private</code> 类型。它自动创建在枚举体开始的地方定义常量。你不能自己调用枚举构造函数。</p>
+</blockquote>
+<p>除了它的属性和构造函数，<code>Planet</code> 具有允许你检索每个行星上的对象的表面重力和重量的方法。这里是一个示例程序来获取你在地球的重量（任意单位），并计算和打印你在所有的行星的重量（单位相同）：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">enum</span> <span style="color:#111">Planet</span> <span style="color:#f92672">{</span>
+    <span style="color:#111">MERCURY</span> <span style="color:#f92672">(</span><span style="color:#111">3</span><span style="color:#f92672">.</span><span style="color:#75af00">303e</span><span style="color:#f92672">+</span><span style="color:#111">23</span><span style="color:#f92672">,</span> <span style="color:#111">2</span><span style="color:#f92672">.</span><span style="color:#75af00">4397e6</span><span style="color:#f92672">),</span>
+    <span style="color:#111">VENUS</span>   <span style="color:#f92672">(</span><span style="color:#111">4</span><span style="color:#f92672">.</span><span style="color:#75af00">869e</span><span style="color:#f92672">+</span><span style="color:#111">24</span><span style="color:#f92672">,</span> <span style="color:#111">6</span><span style="color:#f92672">.</span><span style="color:#75af00">0518e6</span><span style="color:#f92672">),</span>
+    <span style="color:#111">EARTH</span>   <span style="color:#f92672">(</span><span style="color:#111">5</span><span style="color:#f92672">.</span><span style="color:#75af00">976e</span><span style="color:#f92672">+</span><span style="color:#111">24</span><span style="color:#f92672">,</span> <span style="color:#111">6</span><span style="color:#f92672">.</span><span style="color:#75af00">37814e6</span><span style="color:#f92672">),</span>
+    <span style="color:#111">MARS</span>    <span style="color:#f92672">(</span><span style="color:#111">6</span><span style="color:#f92672">.</span><span style="color:#75af00">421e</span><span style="color:#f92672">+</span><span style="color:#111">23</span><span style="color:#f92672">,</span> <span style="color:#111">3</span><span style="color:#f92672">.</span><span style="color:#75af00">3972e6</span><span style="color:#f92672">),</span>
+    <span style="color:#111">JUPITER</span> <span style="color:#f92672">(</span><span style="color:#111">1</span><span style="color:#f92672">.</span><span style="color:#75af00">9e</span><span style="color:#f92672">+</span><span style="color:#111">27</span><span style="color:#f92672">,</span>   <span style="color:#111">7</span><span style="color:#f92672">.</span><span style="color:#75af00">1492e7</span><span style="color:#f92672">),</span>
+    <span style="color:#111">SATURN</span>  <span style="color:#f92672">(</span><span style="color:#111">5</span><span style="color:#f92672">.</span><span style="color:#75af00">688e</span><span style="color:#f92672">+</span><span style="color:#111">26</span><span style="color:#f92672">,</span> <span style="color:#111">6</span><span style="color:#f92672">.</span><span style="color:#75af00">0268e7</span><span style="color:#f92672">),</span>
+    <span style="color:#111">URANUS</span>  <span style="color:#f92672">(</span><span style="color:#111">8</span><span style="color:#f92672">.</span><span style="color:#75af00">686e</span><span style="color:#f92672">+</span><span style="color:#111">25</span><span style="color:#f92672">,</span> <span style="color:#111">2</span><span style="color:#f92672">.</span><span style="color:#75af00">5559e7</span><span style="color:#f92672">),</span>
+    <span style="color:#111">NEPTUNE</span> <span style="color:#f92672">(</span><span style="color:#111">1</span><span style="color:#f92672">.</span><span style="color:#75af00">024e</span><span style="color:#f92672">+</span><span style="color:#111">26</span><span style="color:#f92672">,</span> <span style="color:#111">2</span><span style="color:#f92672">.</span><span style="color:#75af00">4746e7</span><span style="color:#f92672">);</span>
+
+    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">final</span> <span style="color:#00a8c8">double</span> <span style="color:#111">mass</span><span style="color:#f92672">;</span>   <span style="color:#75715e">// in kilograms
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">final</span> <span style="color:#00a8c8">double</span> <span style="color:#111">radius</span><span style="color:#f92672">;</span> <span style="color:#75715e">// in meters
+</span><span style="color:#75715e"></span>    <span style="color:#111">Planet</span><span style="color:#f92672">(</span><span style="color:#00a8c8">double</span> <span style="color:#111">mass</span><span style="color:#f92672">,</span> <span style="color:#00a8c8">double</span> <span style="color:#111">radius</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">mass</span> <span style="color:#f92672">=</span> <span style="color:#111">mass</span><span style="color:#f92672">;</span>
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">radius</span> <span style="color:#f92672">=</span> <span style="color:#111">radius</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">double</span> <span style="color:#75af00">mass</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#00a8c8">return</span> <span style="color:#111">mass</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">double</span> <span style="color:#75af00">radius</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#00a8c8">return</span> <span style="color:#111">radius</span><span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// universal gravitational constant  (m3 kg-1 s-2)
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">static</span> <span style="color:#00a8c8">final</span> <span style="color:#00a8c8">double</span> <span style="color:#111">G</span> <span style="color:#f92672">=</span> <span style="color:#111">6</span><span style="color:#f92672">.</span><span style="color:#75af00">67300E</span><span style="color:#f92672">-</span><span style="color:#111">11</span><span style="color:#f92672">;</span>
+
+    <span style="color:#00a8c8">double</span> <span style="color:#75af00">surfaceGravity</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">G</span> <span style="color:#f92672">*</span> <span style="color:#111">mass</span> <span style="color:#f92672">/</span> <span style="color:#f92672">(</span><span style="color:#111">radius</span> <span style="color:#f92672">*</span> <span style="color:#111">radius</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#00a8c8">double</span> <span style="color:#75af00">surfaceWeight</span><span style="color:#f92672">(</span><span style="color:#00a8c8">double</span> <span style="color:#111">otherMass</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">return</span> <span style="color:#111">otherMass</span> <span style="color:#f92672">*</span> <span style="color:#111">surfaceGravity</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">static</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">main</span><span style="color:#f92672">(</span><span style="color:#111">String</span><span style="color:#f92672">[]</span> <span style="color:#111">args</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#f92672">(</span><span style="color:#111">args</span><span style="color:#f92672">.</span><span style="color:#75af00">length</span> <span style="color:#f92672">!=</span> <span style="color:#111">1</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">err</span><span style="color:#f92672">.</span><span style="color:#75af00">println</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Usage: java Planet &lt;earth_weight&gt;&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">exit</span><span style="color:#f92672">(-</span><span style="color:#111">1</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#00a8c8">double</span> <span style="color:#111">earthWeight</span> <span style="color:#f92672">=</span> <span style="color:#111">Double</span><span style="color:#f92672">.</span><span style="color:#75af00">parseDouble</span><span style="color:#f92672">(</span><span style="color:#111">args</span><span style="color:#f92672">[</span><span style="color:#111">0</span><span style="color:#f92672">]);</span>
+        <span style="color:#00a8c8">double</span> <span style="color:#111">mass</span> <span style="color:#f92672">=</span> <span style="color:#111">earthWeight</span><span style="color:#f92672">/</span><span style="color:#111">EARTH</span><span style="color:#f92672">.</span><span style="color:#75af00">surfaceGravity</span><span style="color:#f92672">();</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#f92672">(</span><span style="color:#111">Planet</span> <span style="color:#111">p</span> <span style="color:#f92672">:</span> <span style="color:#111">Planet</span><span style="color:#f92672">.</span><span style="color:#75af00">values</span><span style="color:#f92672">())</span>
+           <span style="color:#111">System</span><span style="color:#f92672">.</span><span style="color:#75af00">out</span><span style="color:#f92672">.</span><span style="color:#75af00">printf</span><span style="color:#f92672">(</span><span style="color:#d88200">&#34;Your weight on %s is %f%n&#34;</span><span style="color:#f92672">,</span>
+                             <span style="color:#111">p</span><span style="color:#f92672">,</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#75af00">surfaceWeight</span><span style="color:#f92672">(</span><span style="color:#111">mass</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>如果从命令行运行 <code>Planet.class</code>，参数为 <code>175</code>，你将看到以下输出：</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java Planet <span style="color:#ae81ff">175</span>
+Your weight on MERCURY is 66.107583
+Your weight on VENUS is 158.374842
+Your weight on EARTH is 175.000000
+Your weight on MARS is 66.279007
+Your weight on JUPITER is 442.847567
+Your weight on SATURN is 186.552719
+Your weight on URANUS is 158.397260
+Your weight on NEPTUNE is 199.207413
+</code></pre></div><blockquote>
+<p>原文地址：http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html</p>
+</blockquote>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="">Scott</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="/post/java-enum/">/post/java-enum/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="/post/quanxue/" title="劝学">劝学</a>
+    </li>
+    
+    <li>
+        <a href="/post/git-branch/" title="Git 分支管理">Git 分支管理</a>
+    </li>
+    
+    <li>
+        <a href="/post/tail-latency/" title="高并发系统中的尾延迟">高并发系统中的尾延迟</a>
+    </li>
+    
+    <li>
+        <a href="/post/inotify/" title="Linux Inotify 机制简介">Linux Inotify 机制简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/numpy-excrise-numpy/" title="101 个 NumPy 数据分析练习（1～20）">101 个 NumPy 数据分析练习（1～20）</a>
+    </li>
+    
+    <li>
+        <a href="/post/maven-deploy-plugin/" title="Maven Deploy Plugin 使用方法">Maven Deploy Plugin 使用方法</a>
+    </li>
+    
+    <li>
+        <a href="/post/intellij-google-code-style-config/" title="Intellij IDEA 配置 Google Code Style">Intellij IDEA 配置 Google Code Style</a>
+    </li>
+    
+    <li>
+        <a href="/post/mysql-innodb-transaction/" title="MySQL 事务处理简介">MySQL 事务处理简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/java-basic-wiki/" title="Java 基础知识总结">Java 基础知识总结</a>
+    </li>
+    
+    <li>
+        <a href="/post/microservice-manage/" title="微服务架构体系治理">微服务架构体系治理</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="/tags/AMQP/">AMQP</a>
+    
+    <a href="/tags/HTML/">HTML</a>
+    
+    <a href="/tags/InfluxDB/">InfluxDB</a>
+    
+    <a href="/tags/InnoDB/">InnoDB</a>
+    
+    <a href="/tags/JMX/">JMX</a>
+    
+    <a href="/tags/JVM/">JVM</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/Linux/">Linux</a>
+    
+    <a href="/tags/Lock/">Lock</a>
+    
+    <a href="/tags/Maven/">Maven</a>
+    
+    <a href="/tags/MySQL/">MySQL</a>
+    
+    <a href="/tags/Numpy/">Numpy</a>
+    
+    <a href="/tags/OpenCV/">OpenCV</a>
+    
+    <a href="/tags/Python/">Python</a>
+    
+    <a href="/tags/data/">data</a>
+    
+    <a href="/tags/dubbo/">dubbo</a>
+    
+    <a href="/tags/git/">git</a>
+    
+    <a href="/tags/groovy/">groovy</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/scikit-learn/">scikit-learn</a>
+    
+    <a href="/tags/servlet/">servlet</a>
+    
+    <a href="/tags/spring/">spring</a>
+    
+    <a href="/tags/ubuntu/">ubuntu</a>
+    
+    <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+    
+    <a href="/tags/%E5%8D%8F%E8%AE%AE/">协议</a>
+    
+    <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="/tags/%E6%96%87%E5%8F%B2/">文史</a>
+    
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+    
+    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+    
+    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    
+    <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    
+    <a href="/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/">高并发</a>
+    
+    <a href="/tags/%E9%AC%BC%E8%B0%B7%E5%AD%90/">鬼谷子</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="">Mehameha By Scott</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+
+</html>

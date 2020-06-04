@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Mehameha</title>
@@ -61,7 +61,7 @@
       <pubDate>Fri, 28 Jun 2019 14:17:00 +0000</pubDate>
       
       <guid>/post/linux-generate-ssh-key/</guid>
-      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
+      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
     </item>
     
   </channel>

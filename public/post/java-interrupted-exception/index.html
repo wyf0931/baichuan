@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>怎样处理 InterruptedException | Mehameha</title>
+    <meta property="og:title" content="怎样处理 InterruptedException - Mehameha">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-07-22T21:45:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-07-22T21:45:00&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="怎样处理 InterruptedException">
+        <meta name="author" content="Scott">
+        
+    <meta property="og:url" content="/post/java-interrupted-exception/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="">
+                        Mehameha
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="">首页</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">怎样处理 InterruptedException</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年7月22日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>您在编写一个测试程序，程序需要暂停一段时间，于是调用<code>Thread.sleep()</code>。但是编译器或 IDE 报错说没有处理检查到的 <code>InterruptedException</code>。<code>InterruptedException</code> 是什么呢，为什么必须处理它？</p>
+<p>对于 <code>InterruptedException</code>，一种常见的处理方式是 “生吞（swallow）” 它 —— 捕捉它，然后什么也不做（或者记录下它，不过这也好不到哪去）—— 就像后面的 <a href="https://www.ibm.com/developerworks/cn/java/j-jtp05236.html#code4">清单 4</a> 一样。不幸的是，这种方法忽略了这样一个事实：这期间可能发生中断，而中断可能导致应用程序丧失及时取消活动或关闭的能力。</p>
+<h3 id="阻塞方法">阻塞方法</h3>
+<p>当一个方法抛出 <code>InterruptedException</code> 时，它不仅告诉您它可以抛出一个特定的检查异常，而且还告诉您其他一些事情。例如，它告诉您它是一个*阻塞（blocking）*方法，如果您响应得当的话，它将尝试消除阻塞并尽早返回。</p>
+<p>阻塞方法不同于一般的要运行较长时间的方法。一般方法的完成只取决于它所要做的事情，以及是否有足够多可用的计算资源（CPU 周期和内存）。而阻塞方法的完成还取决于一些外部的事件，例如计时器到期，I/O 完成，或者另一个线程的动作（释放一个锁，设置一个标志，或者将一个任务放在一个工作队列中）。一般方法在它们的工作做完后即可结束，而阻塞方法较难于预测，因为它们取决于外部事件。阻塞方法可能影响响应能力，因为难于预测它们何时会结束。</p>
+<h3 id="线程中断">线程中断</h3>
+<p>每个线程都有一个与之相关联的 <code>Boolean</code> 属性，用于表示线程的<em>中断状态（interrupted status）</em>。中断状态初始时为 <code>false</code>；当另一个线程通过调用 <code>Thread.interrupt()</code> 中断一个线程时，会出现以下两种情况之一。如果那个线程在执行一个低级可中断阻塞方法，例如 <code>Thread.sleep()</code>、 <code>Thread.join()</code> 或<code>Object.wait()</code>，那么它将取消阻塞并抛出 <code>InterruptedException</code>。否则， <code>interrupt()</code> 只是设置线程的中断状态。 在被中断线程中运行的代码以后可以轮询中断状态，看看它是否被请求停止正在做的事情。中断状态可以通过 <code>Thread.isInterrupted()</code> 来读取，并且可以通过一个名为 <code>Thread.interrupted()</code> 的操作读取和清除。</p>
+<p>中断是一种协作机制。当一个线程中断另一个线程时，被中断的线程不一定要立即停止正在做的事情。相反，中断是礼貌地请求另一个线程在它愿意并且方便的时候停止它正在做的事情。有些方法，例如 <code>Thread.sleep()</code>，很认真地对待这样的请求，但每个方法不是一定要对中断作出响应。对于中断请求，不阻塞但是仍然要花较长时间执行的方法可以轮询中断状态，并在被中断的时候提前返回。 您可以随意忽略中断请求，但是这样做的话会影响响应。</p>
+<p>中断的协作特性所带来的一个好处是，它为安全地构造可取消活动提供更大的灵活性。我们很少希望一个活动立即停止；如果活动在正在进行更新的时候被取消，那么程序数据结构可能处于不一致状态。中断允许一个可取消活动来清理正在进行的工作，恢复不变量，通知其他活动它要被取消，然后才终止。</p>
+<h3 id="处理-interruptedexception">处理 InterruptedException</h3>
+<p>如果抛出 <code>InterruptedException</code> 意味着一个方法是阻塞方法，那么调用一个阻塞方法则意味着您的方法也是一个阻塞方法，而且您应该有某种策略来处理 <code>InterruptedException</code>。通常最容易的策略是自己抛出 <code>InterruptedException</code>，如清单 1 中 <code>putTask()</code> 和 <code>getTask()</code> 方法中的代码所示。 这样做可以使方法对中断作出响应，并且只需将 <code>InterruptedException</code> 添加到 <code>throws</code> 子句。</p>
+<p>清单 1. 不捕捉 InterruptedException，将它传播给调用者</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">TaskQueue</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">static</span> <span style="color:#00a8c8">final</span> <span style="color:#00a8c8">int</span> <span style="color:#111">MAX_TASKS</span> <span style="color:#f92672">=</span> <span style="color:#111">1000</span><span style="color:#f92672">;</span>
+ 
+    <span style="color:#00a8c8">private</span> <span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span> 
+        <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#111">LinkedBlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;(</span><span style="color:#111">MAX_TASKS</span><span style="color:#f92672">);</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">putTask</span><span style="color:#f92672">(</span><span style="color:#111">Task</span> <span style="color:#111">r</span><span style="color:#f92672">)</span> <span style="color:#00a8c8">throws</span> <span style="color:#111">InterruptedException</span> <span style="color:#f92672">{</span> 
+        <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">put</span><span style="color:#f92672">(</span><span style="color:#111">r</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#111">Task</span> <span style="color:#75af00">getTask</span><span style="color:#f92672">()</span> <span style="color:#00a8c8">throws</span> <span style="color:#111">InterruptedException</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">return</span> <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">take</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>有时候需要在传播异常之前进行一些清理工作。在这种情况下，可以捕捉 <code>InterruptedException</code>，执行清理，然后抛出异常。清单 2 演示了这种技术，该代码是用于匹配在线游戏服务中的玩家的一种机制。<code>matchPlayers()</code> 方法等待两个玩家到来，然后开始一个新游戏。如果在一个玩家已到来，但是另一个玩家仍未到来之际该方法被中断，那么它会将那个玩家放回队列中，然后重新抛出 <code>InterruptedException</code>，这样那个玩家对游戏的请求就不至于丢失。</p>
+<p>清单 2. 在重新抛出 InterruptedException 之前执行特定于任务的清理工作</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">PlayerMatcher</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#111">PlayerSource</span> <span style="color:#111">players</span><span style="color:#f92672">;</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#75af00">PlayerMatcher</span><span style="color:#f92672">(</span><span style="color:#111">PlayerSource</span> <span style="color:#111">players</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">players</span> <span style="color:#f92672">=</span> <span style="color:#111">players</span><span style="color:#f92672">;</span> 
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">matchPlayers</span><span style="color:#f92672">()</span> <span style="color:#00a8c8">throws</span> <span style="color:#111">InterruptedException</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+             <span style="color:#111">Player</span> <span style="color:#111">playerOne</span><span style="color:#f92672">,</span> <span style="color:#111">playerTwo</span><span style="color:#f92672">;</span>
+             <span style="color:#00a8c8">while</span> <span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                 <span style="color:#111">playerOne</span> <span style="color:#f92672">=</span> <span style="color:#111">playerTwo</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">null</span><span style="color:#f92672">;</span>
+                 <span style="color:#75715e">// Wait for two players to arrive and start a new game
+</span><span style="color:#75715e"></span>                 <span style="color:#111">playerOne</span> <span style="color:#f92672">=</span> <span style="color:#111">players</span><span style="color:#f92672">.</span><span style="color:#75af00">waitForPlayer</span><span style="color:#f92672">();</span> <span style="color:#75715e">// could throw IE
+</span><span style="color:#75715e"></span>                 <span style="color:#111">playerTwo</span> <span style="color:#f92672">=</span> <span style="color:#111">players</span><span style="color:#f92672">.</span><span style="color:#75af00">waitForPlayer</span><span style="color:#f92672">();</span> <span style="color:#75715e">// could throw IE
+</span><span style="color:#75715e"></span>                 <span style="color:#111">startNewGame</span><span style="color:#f92672">(</span><span style="color:#111">playerOne</span><span style="color:#f92672">,</span> <span style="color:#111">playerTwo</span><span style="color:#f92672">);</span>
+             <span style="color:#f92672">}</span>
+         <span style="color:#f92672">}</span>
+         <span style="color:#00a8c8">catch</span> <span style="color:#f92672">(</span><span style="color:#111">InterruptedException</span> <span style="color:#111">e</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>  
+             <span style="color:#75715e">// If we got one player and were interrupted, put that player back
+</span><span style="color:#75715e"></span>             <span style="color:#00a8c8">if</span> <span style="color:#f92672">(</span><span style="color:#111">playerOne</span> <span style="color:#f92672">!=</span> <span style="color:#00a8c8">null</span><span style="color:#f92672">)</span>
+                 <span style="color:#111">players</span><span style="color:#f92672">.</span><span style="color:#75af00">addFirst</span><span style="color:#f92672">(</span><span style="color:#111">playerOne</span><span style="color:#f92672">);</span>
+             <span style="color:#75715e">// Then propagate the exception
+</span><span style="color:#75715e"></span>             <span style="color:#00a8c8">throw</span> <span style="color:#111">e</span><span style="color:#f92672">;</span>
+         <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="不要生吞中断">不要生吞中断</h3>
+<p>有时候抛出 <code>InterruptedException</code> 并不合适，例如当由 <code>Runnable</code> 定义的任务调用一个可中断的方法时，就是如此。在这种情况下，不能重新抛出 <code>InterruptedException</code>，但是您也不想什么都不做。当一个阻塞方法检测到中断并抛出 <code>InterruptedException</code> 时，它清除中断状态。如果捕捉到 <code>InterruptedException</code> 但是不能重新抛出它，那么应该保留中断发生的证据，以便调用栈中更高层的代码能知道中断，并对中断作出响应。该任务可以通过调用 <code>interrupt()</code> 以 “重新中断” 当前线程来完成，如清单 3 所示。至少，每当捕捉到 <code>InterruptedException</code> 并且不重新抛出它时，就在返回之前重新中断当前线程。</p>
+<p>清单 3. 捕捉 InterruptedException 后恢复中断状态</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">TaskRunner</span> <span style="color:#00a8c8">implements</span> <span style="color:#111">Runnable</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#75af00">TaskRunner</span><span style="color:#f92672">(</span><span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">queue</span> <span style="color:#f92672">=</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span> 
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+             <span style="color:#00a8c8">while</span> <span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                 <span style="color:#111">Task</span> <span style="color:#111">task</span> <span style="color:#f92672">=</span> <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">take</span><span style="color:#f92672">(</span><span style="color:#111">10</span><span style="color:#f92672">,</span> <span style="color:#111">TimeUnit</span><span style="color:#f92672">.</span><span style="color:#75af00">SECONDS</span><span style="color:#f92672">);</span>
+                 <span style="color:#111">task</span><span style="color:#f92672">.</span><span style="color:#75af00">execute</span><span style="color:#f92672">();</span>
+             <span style="color:#f92672">}</span>
+         <span style="color:#f92672">}</span>
+         <span style="color:#00a8c8">catch</span> <span style="color:#f92672">(</span><span style="color:#111">InterruptedException</span> <span style="color:#111">e</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+             <span style="color:#75715e">// Restore the interrupted status
+</span><span style="color:#75715e"></span>             <span style="color:#111">Thread</span><span style="color:#f92672">.</span><span style="color:#75af00">currentThread</span><span style="color:#f92672">().</span><span style="color:#75af00">interrupt</span><span style="color:#f92672">();</span>
+         <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>处理 <code>InterruptedException</code> 时采取的最糟糕的做法是生吞它 —— 捕捉它，然后既不重新抛出它，也不重新断言线程的中断状态。对于不知如何处理的异常，最标准的处理方法是捕捉它，然后记录下它，但是这种方法仍然无异于生吞中断，因为调用栈中更高层的代码还是无法获得关于该异常的信息。（仅仅记录 <code>InterruptedException</code> 也不是明智的做法，因为等到人来读取日志的时候，再来对它作出处理就为时已晚了。） 清单 4 展示了一种使用得很广泛的模式，这也是生吞中断的一种模式：</p>
+<p>清单 4. 生吞中断 —— 不要这么做</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Don&#39;t do this 
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">TaskRunner</span> <span style="color:#00a8c8">implements</span> <span style="color:#111">Runnable</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#75af00">TaskRunner</span><span style="color:#f92672">(</span><span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">queue</span> <span style="color:#f92672">=</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span> 
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> 
+        <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+             <span style="color:#00a8c8">while</span> <span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                 <span style="color:#111">Task</span> <span style="color:#111">task</span> <span style="color:#f92672">=</span> <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">take</span><span style="color:#f92672">(</span><span style="color:#111">10</span><span style="color:#f92672">,</span> <span style="color:#111">TimeUnit</span><span style="color:#f92672">.</span><span style="color:#75af00">SECONDS</span><span style="color:#f92672">);</span>
+                 <span style="color:#111">task</span><span style="color:#f92672">.</span><span style="color:#75af00">execute</span><span style="color:#f92672">();</span>
+             <span style="color:#f92672">}</span>
+         <span style="color:#f92672">}</span>
+         <span style="color:#00a8c8">catch</span> <span style="color:#f92672">(</span><span style="color:#111">InterruptedException</span> <span style="color:#111">swallowed</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+             <span style="color:#75715e">/* DON&#39;T DO THIS - RESTORE THE INTERRUPTED STATUS INSTEAD */</span>
+         <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>如果不能重新抛出 <code>InterruptedException</code>，不管您是否计划处理中断请求，仍然需要重新中断当前线程，因为一个中断请求可能有多个 “接收者”。标准线程池 （<code>ThreadPoolExecutor</code>）worker 线程实现负责中断，因此中断一个运行在线程池中的任务可以起到双重效果，一是取消任务，二是通知执行线程线程池正要关闭。如果任务生吞中断请求，则 worker 线程将不知道有一个被请求的中断，从而耽误应用程序或服务的关闭。</p>
+<h3 id="实现可取消任务">实现可取消任务</h3>
+<p>语言规范中并没有为中断提供特定的语义，但是在较大的程序中，难于维护除取消外的任何中断语义。取决于是什么活动，用户可以通过一个 GUI 或通过网络机制，例如 JMX 或 Web 服务来请求取消。程序逻辑也可以请求取消。例如，一个 Web 爬行器（crawler）如果检测到磁盘已满，它会自动关闭自己，否则一个并行算法会启动多个线程来搜索解决方案空间的不同区域，一旦其中一个线程找到一个解决方案，就取消那些线程。</p>
+<p>仅仅因为一个任务是可取消的，并不意味着需要<em>立即</em> 对中断请求作出响应。对于执行一个循环中的代码的任务，通常只需为每一个循环迭代检查一次中断。取决于循环执行的时间有多长，任何代码可能要花一些时间才能注意到线程已经被中断（或者是通过调用 <code>Thread.isInterrupted()</code> 方法轮询中断状态，或者是调用一个阻塞方法）。 如果任务需要提高响应能力，那么它可以更频繁地轮询中断状态。阻塞方法通常在入口就立即轮询中断状态，并且，如果它被设置来改善响应能力，那么还会抛出<code>InterruptedException</code>。</p>
+<p>惟一可以生吞中断的时候是您知道线程正要退出。只有当调用可中断方法的类是 <code>Thread</code> 的一部分，而不是 <code>Runnable</code> 或通用库代码的情况下，才会发生这样的场景，清单 5 演示了这种情况。清单 5 创建一个线程，该线程列举素数，直到被中断，这里还允许该线程在被中断时退出。用于搜索素数的循环在两个地方检查是否有中断：一处是在 while 循环的头部轮询 <code>isInterrupted()</code> 方法，另一处是调用阻塞方法<code>BlockingQueue.put()</code>。</p>
+<p>清单 5. 如果知道线程正要退出的话，则可以生吞中断</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#00a8c8">class</span> <span style="color:#75af00">PrimeProducer</span> <span style="color:#00a8c8">extends</span> <span style="color:#111">Thread</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">private</span> <span style="color:#00a8c8">final</span> <span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">BigInteger</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span>
+ 
+    <span style="color:#111">PrimeProducer</span><span style="color:#f92672">(</span><span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">BigInteger</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">this</span><span style="color:#f92672">.</span><span style="color:#75af00">queue</span> <span style="color:#f92672">=</span> <span style="color:#111">queue</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#111">BigInteger</span> <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">BigInteger</span><span style="color:#f92672">.</span><span style="color:#75af00">ONE</span><span style="color:#f92672">;</span>
+            <span style="color:#00a8c8">while</span> <span style="color:#f92672">(!</span><span style="color:#111">Thread</span><span style="color:#f92672">.</span><span style="color:#75af00">currentThread</span><span style="color:#f92672">().</span><span style="color:#75af00">isInterrupted</span><span style="color:#f92672">())</span>
+                <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">put</span><span style="color:#f92672">(</span><span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#75af00">nextProbablePrime</span><span style="color:#f92672">());</span>
+        <span style="color:#f92672">}</span> <span style="color:#00a8c8">catch</span> <span style="color:#f92672">(</span><span style="color:#111">InterruptedException</span> <span style="color:#111">consumed</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">/* Allow thread to exit */</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+ 
+    <span style="color:#00a8c8">public</span> <span style="color:#00a8c8">void</span> <span style="color:#75af00">cancel</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#111">interrupt</span><span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="不可中断的阻塞方法">不可中断的阻塞方法</h3>
+<p>并非所有的阻塞方法都抛出 <code>InterruptedException</code>。输入和输出流类会阻塞等待 I/O 完成，但是它们不抛出 <code>InterruptedException</code>，而且在被中断的情况下也不会提前返回。然而，对于套接字 I/O，如果一个线程关闭套接字，则那个套接字上的阻塞 I/O 操作将提前结束，并抛出一个 <code>SocketException</code>。<code>java.nio</code> 中的非阻塞 I/O 类也不支持可中断 I/O，但是同样可以通过关闭通道或者请求 <code>Selector</code> 上的唤醒来取消阻塞操作。类似地，尝试获取一个内部锁的操作（进入一个 <code>synchronized</code> 块）是不能被中断的，但是 <code>ReentrantLock</code> 支持可中断的获取模式。</p>
+<h3 id="不可取消的任务">不可取消的任务</h3>
+<p>有些任务拒绝被中断，这使得它们是不可取消的。但是，即使是不可取消的任务也应该尝试保留中断状态，以防在不可取消的任务结束之后，调用栈上更高层的代码需要对中断进行处理。清单 6 展示了一个方法，该方法等待一个阻塞队列，直到队列中出现一个可用项目，而不管它是否被中断。为了方便他人，它在结束后在一个 finally 块中恢复中断状态，以免剥夺中断请求的调用者的权利。（它不能在更早的时候恢复中断状态，因为那将导致无限循环 —— <code>BlockingQueue.take()</code> 将在入口处立即轮询中断状态，并且，如果发现中断状态集，就会抛出 <code>InterruptedException</code>。）</p>
+<p>清单 6. 在返回前恢复中断状态的不可取消任务</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">public</span> <span style="color:#111">Task</span> <span style="color:#75af00">getNextTask</span><span style="color:#f92672">(</span><span style="color:#111">BlockingQueue</span><span style="color:#f92672">&lt;</span><span style="color:#111">Task</span><span style="color:#f92672">&gt;</span> <span style="color:#111">queue</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">boolean</span> <span style="color:#111">interrupted</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">false</span><span style="color:#f92672">;</span>
+    <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">while</span> <span style="color:#f92672">(</span><span style="color:#00a8c8">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
+                <span style="color:#00a8c8">return</span> <span style="color:#111">queue</span><span style="color:#f92672">.</span><span style="color:#75af00">take</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#00a8c8">catch</span> <span style="color:#f92672">(</span><span style="color:#111">InterruptedException</span> <span style="color:#111">e</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#111">interrupted</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">true</span><span style="color:#f92672">;</span>
+                <span style="color:#75715e">// fall through and retry
+</span><span style="color:#75715e"></span>            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#00a8c8">finally</span> <span style="color:#f92672">{</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#f92672">(</span><span style="color:#111">interrupted</span><span style="color:#f92672">)</span>
+            <span style="color:#111">Thread</span><span style="color:#f92672">.</span><span style="color:#75af00">currentThread</span><span style="color:#f92672">().</span><span style="color:#75af00">interrupt</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="总结">总结</h2>
+<p>您可以用 Java 平台提供的协作中断机制来构造灵活的取消策略。各活动可以自行决定它们是可取消的还是不可取消的，以及如何对中断作出响应，如果立即返回会危害应用程序完整性的话，它们还可以推迟中断。即使您想在代码中完全忽略中断，也应该确保在捕捉到 <code>InterruptedException</code> 但是没有重新抛出它的情况下，恢复中断状态，以免调用它的代码无法获知中断的发生。</p>
+<blockquote>
+<p>原文地址：https://www.ibm.com/developerworks/cn/java/j-jtp05236.html</p>
+</blockquote>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="">Scott</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="/post/java-interrupted-exception/">/post/java-interrupted-exception/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/groovy-deffence-java/">Groovy 与 Java 的区别</a></li>
+        
+        <li><a href="/post/jdk-tools-trouble-shooting/">JDK 故障排除工具介绍</a></li>
+        
+        <li><a href="/post/J2SE-HotSpot-VM-GC-tuning/">J2SE HotSpot 虚拟机 GC 调优指南</a></li>
+        
+        <li><a href="/post/ubuntu-install-jdk8/">Ubuntu 安装 JDK 8 </a></li>
+        
+        <li><a href="/post/java-integer/">Java 整数类型与取值范围</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Java'>Java</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="/post/quanxue/" title="劝学">劝学</a>
+    </li>
+    
+    <li>
+        <a href="/post/git-branch/" title="Git 分支管理">Git 分支管理</a>
+    </li>
+    
+    <li>
+        <a href="/post/tail-latency/" title="高并发系统中的尾延迟">高并发系统中的尾延迟</a>
+    </li>
+    
+    <li>
+        <a href="/post/inotify/" title="Linux Inotify 机制简介">Linux Inotify 机制简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/numpy-excrise-numpy/" title="101 个 NumPy 数据分析练习（1～20）">101 个 NumPy 数据分析练习（1～20）</a>
+    </li>
+    
+    <li>
+        <a href="/post/maven-deploy-plugin/" title="Maven Deploy Plugin 使用方法">Maven Deploy Plugin 使用方法</a>
+    </li>
+    
+    <li>
+        <a href="/post/intellij-google-code-style-config/" title="Intellij IDEA 配置 Google Code Style">Intellij IDEA 配置 Google Code Style</a>
+    </li>
+    
+    <li>
+        <a href="/post/mysql-innodb-transaction/" title="MySQL 事务处理简介">MySQL 事务处理简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/java-basic-wiki/" title="Java 基础知识总结">Java 基础知识总结</a>
+    </li>
+    
+    <li>
+        <a href="/post/microservice-manage/" title="微服务架构体系治理">微服务架构体系治理</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="/tags/AMQP/">AMQP</a>
+    
+    <a href="/tags/HTML/">HTML</a>
+    
+    <a href="/tags/InfluxDB/">InfluxDB</a>
+    
+    <a href="/tags/InnoDB/">InnoDB</a>
+    
+    <a href="/tags/JMX/">JMX</a>
+    
+    <a href="/tags/JVM/">JVM</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/Linux/">Linux</a>
+    
+    <a href="/tags/Lock/">Lock</a>
+    
+    <a href="/tags/Maven/">Maven</a>
+    
+    <a href="/tags/MySQL/">MySQL</a>
+    
+    <a href="/tags/Numpy/">Numpy</a>
+    
+    <a href="/tags/OpenCV/">OpenCV</a>
+    
+    <a href="/tags/Python/">Python</a>
+    
+    <a href="/tags/data/">data</a>
+    
+    <a href="/tags/dubbo/">dubbo</a>
+    
+    <a href="/tags/git/">git</a>
+    
+    <a href="/tags/groovy/">groovy</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/scikit-learn/">scikit-learn</a>
+    
+    <a href="/tags/servlet/">servlet</a>
+    
+    <a href="/tags/spring/">spring</a>
+    
+    <a href="/tags/ubuntu/">ubuntu</a>
+    
+    <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+    
+    <a href="/tags/%E5%8D%8F%E8%AE%AE/">协议</a>
+    
+    <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="/tags/%E6%96%87%E5%8F%B2/">文史</a>
+    
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+    
+    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+    
+    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    
+    <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    
+    <a href="/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/">高并发</a>
+    
+    <a href="/tags/%E9%AC%BC%E8%B0%B7%E5%AD%90/">鬼谷子</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="">Mehameha By Scott</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+
+</html>

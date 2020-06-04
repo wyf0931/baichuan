@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mehameha</title>
@@ -431,24 +431,8 @@
       <pubDate>Tue, 02 Jul 2019 16:03:00 +0000</pubDate>
       
       <guid>/post/java-integer/</guid>
-      <description>&lt;style&gt;
-table th:nth-of-type(1){
-width: 10%;
-}
-table th:nth-of-type(2){
-width: 20%;
-}
-table th:nth-of-type(3){
-width: 30%;
-}
-table th:nth-of-type(4){
-width: 30%;
-}
-table th:nth-of-type(5){
-width: 10%;
-}
-&lt;/style&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;本文主要介绍JVM中整数类型以及各类型值的范围区间。&lt;/p&gt;</description>
     </item>
     
@@ -512,7 +496,7 @@ width: 10%;
       <pubDate>Fri, 28 Jun 2019 18:20:00 +0000</pubDate>
       
       <guid>/post/groovy-servlet/</guid>
-      <description>我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 .groovy 源文件并转换为字节码。 Groovlet使用示例如下： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } println &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Groovy Servlet&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt; Hello, ${request.remoteHost}: ${session.counter}! ${new Date()} &amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot; session.counter = session.counter + 1 或者，使用 MarkupBuilder 执行相同的操作： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } html.html { // html is implicitly bound</description>
+      <description>我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 .groovy 源文件并转换为字节码。 Groovlet使用示例如下： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } println &amp;#34;&amp;#34;&amp;#34; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Groovy Servlet&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt; Hello, ${request.remoteHost}: ${session.counter}! ${new Date()} &amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;#34;&amp;#34;&amp;#34; session.counter = session.counter + 1 或者，使用 MarkupBuilder 执行相同的操作： if (!session) { session = request.getSession(true) } if (!session.counter) { session.counter = 1 } html.html { // html is implicitly bound</description>
     </item>
     
     <item>
@@ -548,7 +532,7 @@ width: 10%;
       <pubDate>Fri, 28 Jun 2019 17:41:00 +0000</pubDate>
       
       <guid>/post/groovy-syntax-comment/</guid>
-      <description>Groovy 的语法源自 Java 语法，但 Groovy 的特定构造对其进行了增强，并允许某些简化。 单行注释 单行注释以 // 开头，可以在行中的任何位置找到。// 直到行尾的字符被视为注释的一部分。 // a standalone single line comment println &amp;quot;hello&amp;quot; // a comment till the end of the line 多行注释 多行注释以 /* 开头，可以在行中的任何位置找到。/* 后面的字符将被视为注释的一部分，包</description>
+      <description>Groovy 的语法源自 Java 语法，但 Groovy 的特定构造对其进行了增强，并允许某些简化。 单行注释 单行注释以 // 开头，可以在行中的任何位置找到。// 直到行尾的字符被视为注释的一部分。 // a standalone single line comment println &amp;#34;hello&amp;#34; // a comment till the end of the line 多行注释 多行注释以 /* 开头，可以在行中的任何位置找到。/* 后面的字符将被视为注释的一部分，包</description>
     </item>
     
     <item>
@@ -575,7 +559,7 @@ width: 10%;
       <pubDate>Fri, 28 Jun 2019 17:00:00 +0000</pubDate>
       
       <guid>/post/groovy-syntax-map/</guid>
-      <description>Map 有时在其他语言中称为字典或关联数组，Groovy 也有 Map 功能。 Map 将键与值相关联，用冒号分隔键和值，使用逗号分隔每个键/值对，以及用方括号括起的整个键和值。 // 我们定义了一个颜色名称的 map，与它们的十六进制编码的 html 色值相映射 def colors = [red: &#39;#FF0000&#39;, green: &#39;#00FF00&#39;, blue: &#39;#0000FF&#39;] // 我们使用下标符号来检查与 red 键相关联的内</description>
+      <description>Map 有时在其他语言中称为字典或关联数组，Groovy 也有 Map 功能。 Map 将键与值相关联，用冒号分隔键和值，使用逗号分隔每个键/值对，以及用方括号括起的整个键和值。 // 我们定义了一个颜色名称的 map，与它们的十六进制编码的 html 色值相映射 def colors = [red: &amp;#39;#FF0000&amp;#39;, green: &amp;#39;#00FF00&amp;#39;, blue: &amp;#39;#0000FF&amp;#39;] // 我们使用下标符号来检查与 red 键相关联的内</description>
     </item>
     
     <item>
@@ -584,7 +568,7 @@ width: 10%;
       <pubDate>Fri, 28 Jun 2019 14:17:00 +0000</pubDate>
       
       <guid>/post/linux-generate-ssh-key/</guid>
-      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
+      <description>在命令行输入以下命令（把 your_email@example.com 替换为自己的邮箱），然后按下回车键： ssh-keygen -t rsa -b 4096 -C &amp;#34;your_email@example.com&amp;#34; 系统会提示： Generating public/private rsa key pair. Enter a file in which to save the key (/home/ubuntu/.ssh/id_rsa): 按回车键，表示接受默认生成文件路径 /home/ubuntu/.ssh/id_rsa 然后系统提示输入安全码，以及确认安全码： Enter passphrase (empty for no passphrase): Enter same passphrase again: 此处可以不用输入，直接按回车键就行，然后系统提示如下： Your identification has been saved in</description>
     </item>
     
     <item>
@@ -593,7 +577,7 @@ width: 10%;
       <pubDate>Fri, 28 Jun 2019 11:27:00 +0000</pubDate>
       
       <guid>/post/groovy-syntax-arrays/</guid>
-      <description>Groovy 复用了列表的方括号作为数组的符号，但是为了制作这样的文字数组，你需要通过强制或类型声明来明确地定义数组的类型。 // 使用显式变量类型声明定义字符串数组 String[] arrStr = [&#39;Ananas&#39;, &#39;Banana&#39;, &#39;Kiwi&#39;] // 断言我们创建了一个字符串数组 assert arrStr instanceof String[] assert !(arrStr instanceof List) // 使用 as 运算符创建一个 int 数组 def numArr = [1, 2, 3] as int[] // 断言我们创建了一个原始 int 数组</description>
+      <description>Groovy 复用了列表的方括号作为数组的符号，但是为了制作这样的文字数组，你需要通过强制或类型声明来明确地定义数组的类型。 // 使用显式变量类型声明定义字符串数组 String[] arrStr = [&amp;#39;Ananas&amp;#39;, &amp;#39;Banana&amp;#39;, &amp;#39;Kiwi&amp;#39;] // 断言我们创建了一个字符串数组 assert arrStr instanceof String[] assert !(arrStr instanceof List) // 使用 as 运算符创建一个 int 数组 def numArr = [1, 2, 3] as int[] // 断言我们创建了一个原始 int 数组</description>
     </item>
     
     <item>

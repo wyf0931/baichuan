@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MySQL InnoDB Table 最佳实践 | Mehameha</title>
+    <meta property="og:title" content="MySQL InnoDB Table 最佳实践 - Mehameha">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-07-03T14:32:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-07-03T14:32:00&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="MySQL InnoDB Table 最佳实践">
+        <meta name="author" content="Scott">
+        
+    <meta property="og:url" content="/post/mysql-table-best-practice/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="">
+                        Mehameha
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="">首页</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">MySQL InnoDB Table 最佳实践</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年7月3日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>本文总结了一些 MySQL InnoDB 引擎中关于表的一些最佳实践。</p>
+<ul>
+<li>
+<p>给每张表指定一个<a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_primary_key">主键</a>，可以用最常用的单列或多列，假如没有明显的主键，也可以用<a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_auto_increment">自增</a> 值作为主键；</p>
+</li>
+<li>
+<p>基于表中共同的ID，可以使用 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_join" title="join">join</a> 方式从多张表中获取数据。为了性能更好，建议在 join 相关列上定义 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_foreign_key" title="foreign key">外键</a>，并且要与其他表中相同列的字段类型保持一致。加外键的列要保证被引用的列已经建了索引，这样可以提高性能。外键还会将删除、更新传播到所有受影响的表，如果父表中不存在相应的ID，则会阻止在子表中插入数据。</p>
+</li>
+<li>
+<p>关闭 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_autocommit" title="autocommit">autocommit</a>，每秒数以百计次的提交会影响性能（受存储设备写入速度的限制）；</p>
+</li>
+<li>
+<p>将相关 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_dml">DML</a> 操作集合分组到 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_transaction" title="transaction">事务</a> 中，用 <code>START TRANSACTION</code> 和 <code>COMMIT</code> 语句括起来。虽然我们不想时时 COMMIT，但也不希望积累大量没有 COMMIT 的 <a href="https://dev.mysql.com/doc/refman/5.7/en/insert.html" title="13.2.5 INSERT Syntax"><code>INSERT</code></a>、<a href="https://dev.mysql.com/doc/refman/5.7/en/update.html" title="13.2.11 UPDATE Syntax"><code>UPDATE</code></a> 或 <a href="https://dev.mysql.com/doc/refman/5.7/en/delete.html" title="13.2.2 DELETE Syntax"><code>DELETE</code></a> 语句；</p>
+</li>
+<li>
+<p>不要用  <a href="https://dev.mysql.com/doc/refman/5.7/en/lock-tables.html" title="13.3.5 LOCK TABLES and UNLOCK TABLES Syntax"><code>LOCK TABLES</code></a> 语句，InnoDB 可以在不牺牲可靠性或高性能的前提下，允许多个会话同时读取和写入同一个表。如果想要获得一组行的独占写访问权，可以用 <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-locking-reads.html" title="14.7.2.4 Locking Reads"><code>SELECT ... FOR UPDATE</code></a> 锁定要更新的行；</p>
+</li>
+<li>
+<p>启用 <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_file_per_table"><code>innodb_file_per_table</code></a> 选项，使用通用表空间将表的数据和索引放入单独的文件中，别放在 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_system_tablespace">系统表空间</a> 中， <a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_file_per_table"><code>innodb_file_per_table</code></a> 选项默认是启用的；</p>
+</li>
+<li>
+<p>可以在不牺牲 读/写 性能的情况下使用 InnoDB 表或页 <a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_compression">压缩</a> 功能；</p>
+</li>
+<li>
+<p>推荐在启动应用服务时加上参数 <a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_sql_mode"><code>--sql_mode=NO_ENGINE_SUBSTITUTION</code></a> 。可以防止因 <a href="https://dev.mysql.com/doc/refman/5.7/en/create-table.html" title="13.1.18 CREATE TABLE Syntax"><code>CREATE TABLE</code></a> 语句带 <code>ENGINE=</code> 所导致的将表建在不同引擎上的问题。</p>
+</li>
+</ul>
+<blockquote>
+<p>原文地址：https://dev.mysql.com/doc/refman/5.7/en/innodb-best-practices.html</p>
+</blockquote>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="">Scott</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="/post/mysql-table-best-practice/">/post/mysql-table-best-practice/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/mysql-innodb-lock-type/">MySQL InnoDB 锁类型介绍</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/MySQL'>MySQL</a></li>
+                
+                <li><a href='/tags/InnoDB'>InnoDB</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="/post/quanxue/" title="劝学">劝学</a>
+    </li>
+    
+    <li>
+        <a href="/post/git-branch/" title="Git 分支管理">Git 分支管理</a>
+    </li>
+    
+    <li>
+        <a href="/post/tail-latency/" title="高并发系统中的尾延迟">高并发系统中的尾延迟</a>
+    </li>
+    
+    <li>
+        <a href="/post/inotify/" title="Linux Inotify 机制简介">Linux Inotify 机制简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/numpy-excrise-numpy/" title="101 个 NumPy 数据分析练习（1～20）">101 个 NumPy 数据分析练习（1～20）</a>
+    </li>
+    
+    <li>
+        <a href="/post/maven-deploy-plugin/" title="Maven Deploy Plugin 使用方法">Maven Deploy Plugin 使用方法</a>
+    </li>
+    
+    <li>
+        <a href="/post/intellij-google-code-style-config/" title="Intellij IDEA 配置 Google Code Style">Intellij IDEA 配置 Google Code Style</a>
+    </li>
+    
+    <li>
+        <a href="/post/mysql-innodb-transaction/" title="MySQL 事务处理简介">MySQL 事务处理简介</a>
+    </li>
+    
+    <li>
+        <a href="/post/java-basic-wiki/" title="Java 基础知识总结">Java 基础知识总结</a>
+    </li>
+    
+    <li>
+        <a href="/post/microservice-manage/" title="微服务架构体系治理">微服务架构体系治理</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="/tags/AMQP/">AMQP</a>
+    
+    <a href="/tags/HTML/">HTML</a>
+    
+    <a href="/tags/InfluxDB/">InfluxDB</a>
+    
+    <a href="/tags/InnoDB/">InnoDB</a>
+    
+    <a href="/tags/JMX/">JMX</a>
+    
+    <a href="/tags/JVM/">JVM</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/Linux/">Linux</a>
+    
+    <a href="/tags/Lock/">Lock</a>
+    
+    <a href="/tags/Maven/">Maven</a>
+    
+    <a href="/tags/MySQL/">MySQL</a>
+    
+    <a href="/tags/Numpy/">Numpy</a>
+    
+    <a href="/tags/OpenCV/">OpenCV</a>
+    
+    <a href="/tags/Python/">Python</a>
+    
+    <a href="/tags/data/">data</a>
+    
+    <a href="/tags/dubbo/">dubbo</a>
+    
+    <a href="/tags/git/">git</a>
+    
+    <a href="/tags/groovy/">groovy</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/scikit-learn/">scikit-learn</a>
+    
+    <a href="/tags/servlet/">servlet</a>
+    
+    <a href="/tags/spring/">spring</a>
+    
+    <a href="/tags/ubuntu/">ubuntu</a>
+    
+    <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a>
+    
+    <a href="/tags/%E5%8D%8F%E8%AE%AE/">协议</a>
+    
+    <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="/tags/%E6%96%87%E5%8F%B2/">文史</a>
+    
+    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+    
+    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+    
+    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="/tags/%E7%AE%A1%E7%90%86/">管理</a>
+    
+    <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+    
+    <a href="/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/">高并发</a>
+    
+    <a href="/tags/%E9%AC%BC%E8%B0%B7%E5%AD%90/">鬼谷子</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="">Mehameha By Scott</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+                if (!window.flowchart) return;
+                const blocks = document.querySelectorAll('pre code.language-flowchart, pre code.language-flow');
+                for (let i = 0; i < blocks.length; i++) {
+                    const block = blocks[i];
+                    const rootElement = block.parentNode;
+                    const container = document.createElement('div');
+                    const id = `js-flowchart-diagrams-${i}`;
+                    container.id = id;
+                    container.className = 'align-center';
+                    container.setAttribute("style", "overFlow-x:auto");
+                    rootElement.parentNode.replaceChild(container, rootElement);
+                    const diagram = flowchart.parse(block.childNodes[0].nodeValue);
+                    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+                }
+            })();
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js" crossorigin="anonymous"></script>
+        <script>(function () {
+            if (!window.Diagram) return;
+            const blocks = document.querySelectorAll('pre code.language-sequence');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                
+                const rootElement = block.parentNode;
+                const container = document.createElement('div');
+                const id = `js-sequence-diag-${i}`;
+                container.id = id;
+                container.className = 'align-center';
+                container.setAttribute("style", "overFlow-x:auto");
+                rootElement.parentNode.replaceChild(container, rootElement);
+
+                const diagram = Diagram.parse(block.childNodes[0].nodeValue);
+                diagram.drawSVG(id, window.sequenceDiagramsOptions
+                    ? window.sequenceDiagramsOptions
+                    : { theme: 'simple' });
+            }
+        })();
+        </script><script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+
+</html>
