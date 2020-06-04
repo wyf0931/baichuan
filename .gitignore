@@ -2,3 +2,5 @@ public/
 log/
 .config.toml.*
 .DS_Store
+*.un~
+*~

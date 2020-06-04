@@ -1,3 +1,3 @@
-[submodule "themes/maupassant"]
-	path = themes/maupassant
-	url = https://gitee.com/dotions/maupassant.git
+[submodule "maupassant"]
+	path = maupassant
+	url = git@gitee.com:dotions/maupassant.git
