@@ -1,4 +1,4 @@
-git-pull.sh
+/opt/zhizhiting-blog/bin/git-pull.sh
 
 echo 'start build contents ...'
 cd /opt/zhizhiting-blog
