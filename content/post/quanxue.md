@@ -2,10 +2,10 @@
 title: "劝学"
 date: 2020-06-04T14:17:12+08:00
 author: Scott
-druft: true
 tags:
   - 文史
-categories: []
+categories:
+  - 高中文言文
 ---
 
 原文链接：[https://hanyu.baidu.com/shici/detail?pid=ce5a1d99f57411e59979c8e0eb15ce01](https://hanyu.baidu.com/shici/detail?pid=ce5a1d99f57411e59979c8e0eb15ce01)
