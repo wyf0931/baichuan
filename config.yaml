@@ -1,11 +1,13 @@
 title: Mehameha
 theme: maupassant
 paginate: 10
+PaginatePath: "page"
 enableRobotsTXT: true
 enableEmoji: true
 copyright: ''
 author:
   name: Scott
+  homepage: "http://www.zhizhiting.com"
 sitemap:
   changefreq: weekly
   priority: 0.5
