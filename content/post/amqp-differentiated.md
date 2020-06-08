@@ -1,5 +1,5 @@
 ---
-title: AMQP 与其他中间件标准之间的差异
+title: "AMQP 与其他中间件标准之间的差异"
 author: Scott
 tags:
   - AMQP
