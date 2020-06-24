@@ -1,13 +1,16 @@
 ---
-title: 通过NAT实现虚拟服务器（VS/NAT）
+title: "【转】通过NAT实现虚拟服务器（VS/NAT）"
 author: Scott
 tags:
   - LVS
+  - IP负载均衡
 categories: 
   - 架构设计
 date: 2020-06-24T15:27:24+08:00
-draft: true
+draft: false
 ---
+
+> 原文地址：http://zh.linuxvirtualserver.org/node/26
 
 由于IPv4 中 IP地址空间的日益紧张和安全方面的原因，很多网络使用保留IP地址（`10.0.0.0/255.0.0.0`、`172.16.0.0/255.240.0.0`和`192.168.0.0/255.255.0.0`）`[64, 65, 66]`。这些地址不在Internet上使用，而是专门为内部网络预留的。当内部网络中的主机要访问Internet或被Internet访问时，就需要采用**网络地址转换（Network Address Translation, 以下简称NAT），将内部地址转化为Internets上可用的外部地址。NAT的工作原理是报文头（目标地址、源地址和端口等）被正确改写后，客户相信它们连接一个IP地址，而不同IP地址的服务器组也认为它们是与客户直接相连的。**由此，可以用NAT方法将不同IP地址的并行网络服务变成在一个IP地址上的一个虚拟服务。
 
