@@ -1,5 +1,5 @@
 ---
-title: "【转】通过NAT实现虚拟服务器（VS/NAT）"
+title: "通过NAT实现虚拟服务器（VS/NAT）"
 author: Scott
 tags:
   - 架构设计

@@ -1,5 +1,5 @@
 ---
-title: "【转】通过IP隧道实现虚拟服务器（VS/TUN）"
+title: "通过IP隧道实现虚拟服务器（VS/TUN）"
 author: Scott
 tags:
   - 架构设计
