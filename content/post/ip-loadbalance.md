@@ -2,10 +2,10 @@
 title: "【转】IP负载均衡技术"
 author: Scott
 tags:
-  - LVS
+  - 架构设计
   - IP负载均衡
 categories: 
-  - 架构设计
+  - LVS
 date: 2020-06-24T15:00:48+08:00
 draft: false
 ---

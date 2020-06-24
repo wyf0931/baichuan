@@ -1,10 +1,10 @@
 ---
 title: "【转】通过直接路由实现虚拟服务器（VS/DR）"
 tags:
-  - LVS
+  - 架构设计
   - IP负载均衡
 categories: 
-  - 架构设计
+  - LVS
 date: 2020-06-24T15:50:20+08:00
 draft: false
 ---

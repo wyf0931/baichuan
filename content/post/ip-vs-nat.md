@@ -2,10 +2,10 @@
 title: "【转】通过NAT实现虚拟服务器（VS/NAT）"
 author: Scott
 tags:
-  - LVS
+  - 架构设计
   - IP负载均衡
 categories: 
-  - 架构设计
+  - LVS
 date: 2020-06-24T15:27:24+08:00
 draft: false
 ---
