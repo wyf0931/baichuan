@@ -3,7 +3,6 @@ title: "IP负载均衡技术"
 author: Scott
 tags:
   - 架构设计
-  - IP负载均衡
 categories: 
   - LVS
 date: 2020-06-24T15:00:48+08:00
@@ -20,9 +19,9 @@ draft: false
 
 本文将描述三种IP负载均衡技术：**VS/NAT**、**VS/TUN** 和 **VS/DR** 的工作原理，以及它们的优缺点。在以下描述中，我们称客户的 socket 和服务器的 socket 之间的数据通讯为连接，无论它们是使用 TCP 还是 UDP 协议。
 
-* [通过NAT实现虚拟服务器（VS/NAT）](/ip-vs-nat)
-* [通过IP隧道实现虚拟服务器（VS/TUN）](/ip-vs-tun)
-* [通过直接路由实现虚拟服务器（VS/DR）](/ip-vs-dr)
+* [通过NAT实现虚拟服务器（VS/NAT）](/post/ip-vs-nat/)
+* [通过IP隧道实现虚拟服务器（VS/TUN）](/post/ip-vs-tun/)
+* [通过直接路由实现虚拟服务器（VS/DR）](/post/ip-vs-dr/)
 
 #### 三种方法的优缺点比较
 

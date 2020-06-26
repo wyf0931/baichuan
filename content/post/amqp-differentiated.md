@@ -5,7 +5,7 @@ tags:
   - AMQP
   - 协议
 categories: []
-date: 2019-07-11 15:02:0÷0
+date: 2019-07-11 15:02:00
 ---
 ### 与其他标准之间的差异
 AMQP 与其他中间件标准的不同之处主要有：
@@ -19,8 +19,7 @@ AMQP 与其他中间件标准的不同之处主要有：
 
 ### 用 AMQP 实现 SOA
 
-
-![upload successful](/images/pasted-11.png)
+![upload successful](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/pasted-11.png)
 
 * AMQP 采用了 TCP/IP 进行传输，提供可靠的连接； 
 * 可以利用 XML 提供统一的数据编码； 

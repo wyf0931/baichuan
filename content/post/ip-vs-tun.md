@@ -3,7 +3,6 @@ title: "通过IP隧道实现虚拟服务器（VS/TUN）"
 author: Scott
 tags:
   - 架构设计
-  - IP负载均衡
 categories: 
   - LVS
 date: 2020-06-24T15:41:57+08:00
