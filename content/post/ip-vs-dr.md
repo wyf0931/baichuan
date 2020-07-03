@@ -2,8 +2,9 @@
 title: "通过直接路由实现虚拟服务器（VS/DR）"
 tags:
   - 架构设计
-categories: 
   - LVS
+categories:
+  - 运维技术
 date: 2020-06-24T15:50:20+08:00
 draft: false
 ---

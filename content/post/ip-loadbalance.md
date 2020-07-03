@@ -3,8 +3,9 @@ title: "IP负载均衡技术"
 author: Scott
 tags:
   - 架构设计
-categories: 
   - LVS
+categories:
+  - 运维技术
 date: 2020-06-24T15:00:48+08:00
 draft: false
 ---
