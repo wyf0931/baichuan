@@ -5,7 +5,7 @@ tags:
   - 架构设计
   - LVS
 categories:
-  - 运维技术
+  - 技术
 date: 2020-06-24T15:00:48+08:00
 draft: false
 ---

@@ -5,12 +5,12 @@ tags:
   - 架构设计
   - 灰度部署
 categories:
-  - 运维技术
+  - 技术
 date: 2020-07-03T15:38:20+08:00
 draft: false
 ---
 
-> 原文地址：https://blog.csdn.net/wangyinghong_2013/article/details/78650290
+原文地址：https://blog.csdn.net/wangyinghong_2013/article/details/78650290
 
 在有关微服务、DevOps、Cloud-native、系统部署等的讨论中，蓝绿部署、A/B 测试、灰度发布、滚动发布、红黑部署等概念经常被提到，它们有什么区别呢？通过搜索相关资料，做一个简单的辨析，如下。
 
