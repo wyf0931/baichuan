@@ -1,5 +1,5 @@
 ---
-title: scoop-install
+title: Scoop 安装指南
 author: Scott
 date: 2019-07-02 14:41:32
 draft: false
@@ -36,7 +36,7 @@ iwr -useb get.scoop.sh | iex
 默认配置如下： 
 
 * 所有用户安装的程序和 Scoop 本身都在 `C:\Users\<user>\scoop` 中；
-* 全局安装的程序(`--global`) 使用 `C:\ProgramData\scoop`；
+* 全局安装的程序（`--global`）使用 `C:\ProgramData\scoop`；
 
 可以通过环境变量更改上述配置：
 
