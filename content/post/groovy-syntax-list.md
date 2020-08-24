@@ -3,7 +3,8 @@ title: Groovy 语法 - List
 author: Scott
 tags:
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 18:15:00
 ---
 Groovy 用逗号分隔值，并用方括号括起来，用来表示列表（List）。Groovy 没有自己定义集合类，Groovy 列表本质是 JDK 的 `java.util.List`。List 默认的实现类是 `java.util.ArrayList`，你也可以自己指定其他实现类。

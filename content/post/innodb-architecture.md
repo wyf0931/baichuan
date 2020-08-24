@@ -5,8 +5,8 @@ tags:
   - MySQL
   - InnoDB
   - 架构设计
-  - ''
-categories: []
+categories:
+  - 技术
 date: 2019-08-01 14:20:00
 ---
 InnoDB 是一种通用存储引擎，可以实现高可靠性与高性能。在 MySQL 5.7 中，InnoDB 是默认的 MySQL 存储引擎，若使用 `CREATE TABLE` 语句建表时未带 `ENGINE =` 的子句，系统会默认创建 InnoDB 表。

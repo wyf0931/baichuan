@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Python
   - Numpy
-categories: []
+categories:
+  - 技术
 date: 2020-02-06T20:33:20+08:00
 draft: false
 ---

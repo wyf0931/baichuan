@@ -3,7 +3,8 @@ title: Groovy 环境安装
 author: Scott
 tags:
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 17:13:00
 ---
 以 Groovy  的二进制发行版，安装过程如下：

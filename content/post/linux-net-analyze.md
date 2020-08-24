@@ -3,7 +3,8 @@ title: Linux实时查看网络带宽占用情况
 author: Scott
 tags:
   - Linux
-categories: []
+categories:
+  - 技术
 date: 2020-06-08T17:24:28+08:00
 ---
 

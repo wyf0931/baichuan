@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Java
   - JVM
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 12:24:00
 ---
 下面的工具可以用来解决特定的故障排除任务。

@@ -3,7 +3,8 @@ title: InfluxDB 安装包下载
 author: Scott
 tags:
   - InfluxDB
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 14:56:00
 ---
 本文介绍 InfluxDB 的多种下载方式，以 v1.7.1 版本为例。

@@ -4,7 +4,8 @@ author: Scott
 tags:
   - 高并发
   - 网络
-categories: []
+categories:
+  - 技术
 date: 2020-05-26T20:32:26+08:00
 ---
 尾延迟（Tail Latency）是指系统中那些总会存在的少量延迟高于均值的响应。

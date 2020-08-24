@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Linux
   - 工具
-categories: []
+categories:
+  - 技术
 date: 2020-05-25T19:49:39+08:00
 draft: false
 ---

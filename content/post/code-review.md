@@ -3,6 +3,8 @@ title: "Code Review 评审员指南"
 author: Scott
 tags:
   - 管理
+categories:
+  - 技术
 date: 2020-01-13T20:30:48+08:00
 ---
 

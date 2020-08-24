@@ -4,7 +4,8 @@ author: Scott
 tags:
   - ubuntu
   - Linux
-categories: []
+categories:
+  - 技术
 date: 2019-08-19 12:03:00
 ---
 由于国内网络环境问题，apt 安装会很慢，可以改为国内镜像站，提高速度。

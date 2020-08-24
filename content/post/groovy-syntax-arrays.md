@@ -3,7 +3,8 @@ title: Groovy 语法 - 数组
 author: Scott
 tags:
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 11:27:00
 ---
 Groovy 复用了列表的方括号作为数组的符号，但是为了制作这样的文字数组，你需要通过强制或类型声明来明确地定义数组的类型。

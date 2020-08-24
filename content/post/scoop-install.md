@@ -4,6 +4,9 @@ author: Scott
 date: 2019-07-02 14:41:32
 draft: true
 tags:
+  - 工具
+categories:
+  - 技术
 ---
 Scoop 是 Windows 的命令行安装程序。
 <!--more-->

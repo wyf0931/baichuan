@@ -3,8 +3,9 @@ title: 捭阖（鬼谷子）
 author: Scott
 tags:
   - 鬼谷子
-  - 文史
   - 管理
+categories:
+  - 文史
 date: 2019-07-10 10:56:00
 ---
 

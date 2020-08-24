@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Java
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 15:13:00
 ---
 在 Groovy 语言设计之初，就遵从了 Least Surprise 原则，可以让 Java 程序员更快适应 Groovy。

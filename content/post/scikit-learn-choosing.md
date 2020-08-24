@@ -4,7 +4,8 @@ author: Scott
 tags:
   - scikit-learn
   - 机器学习
-categories: []
+categories:
+  - 技术
 date: 2019-07-11 17:11:00
 ---
 机器学习最麻烦的问题是找到合适的评估器（estimator）。评估器的选择依赖于数据类型和问题本身。针对不同数据集和问题类型，下图可以作为评估器选择的一个参考指南：

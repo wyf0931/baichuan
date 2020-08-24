@@ -4,7 +4,8 @@ author: Scott
 tags:
   - 架构设计
   - dubbo
-categories: []
+categories:
+  - 技术
 date: 2019-07-08 16:01:00
 ---
 这篇文章是梁飞在设计dubbo时总结的一些经验，非常有价值。

@@ -5,7 +5,8 @@ tags:
   - MySQL
   - InnoDB
   - Lock
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 12:24:00
 ---
 

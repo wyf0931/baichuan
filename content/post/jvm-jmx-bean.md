@@ -4,7 +4,8 @@ author: Scott
 tags:
   - JVM
   - JMX
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 12:05:00
 ---
 本文介绍JVM 平台自带的一些 MXBean，及其所管理的虚拟机模块。

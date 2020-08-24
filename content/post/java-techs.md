@@ -3,7 +3,8 @@ title: Java服务端开发常用技术总结
 author: Scott
 tags:
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-06-29 00:00:00
 ---
 

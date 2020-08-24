@@ -4,7 +4,8 @@ author: Scott
 tags:
   - spring
   - 架构设计
-categories: []
+categories:
+  - 技术
 date: 2019-08-15 19:15:00
 ---
 基于spring boot 实现一个简易的动态配置注入功能。

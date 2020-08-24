@@ -3,7 +3,8 @@ title: 查看Linux端口使用情况
 author: Scott
 tags:
   - Linux
-categories: []
+categories:
+  - 技术
 date: 2019-08-05 16:35:00
 ---
 本文将会介绍如何根据端口号来查找对应的进程。

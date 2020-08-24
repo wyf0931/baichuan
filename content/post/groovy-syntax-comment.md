@@ -3,7 +3,8 @@ title: Groovy 语法 - 注释
 author: Scott
 tags:
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 17:41:00
 ---
 Groovy 的语法源自 Java 语法，但 Groovy 的特定构造对其进行了增强，并允许某些简化。

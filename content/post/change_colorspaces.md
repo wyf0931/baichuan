@@ -3,7 +3,8 @@ title: 使用 OpenCV 转换图像颜色空间
 author: Scott
 tags:
   - OpenCV
-categories: []
+categories:
+  - 技术
 date: 2019-07-15 16:23:00
 ---
 本文介绍如何通过 opencv 来修改图像的色彩空间，比如：*BGR ↔ Gray,  BGR ↔ HSV*

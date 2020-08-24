@@ -3,7 +3,8 @@ title: 怎样处理 InterruptedException
 author: Scott
 tags:
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-07-22 21:45:00
 ---
 您在编写一个测试程序，程序需要暂停一段时间，于是调用`Thread.sleep()`。但是编译器或 IDE 报错说没有处理检查到的 `InterruptedException`。`InterruptedException` 是什么呢，为什么必须处理它？

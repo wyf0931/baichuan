@@ -1,8 +1,10 @@
 ---
 title: Java Enum 类型介绍
 author: Scott
-tags: []
-categories: []
+tags:
+  - Java
+categories:
+  - 技术
 date: 2019-07-03 10:24:00
 ---
 本文主要介绍 Java 中枚举类型的定义及使用方法。

@@ -4,7 +4,8 @@ author: Scott
 tags:
   - 架构设计
   - 管理
-categories: []
+categories:
+  - 技术
 date: 2019-08-27 16:58:00
 ---
 

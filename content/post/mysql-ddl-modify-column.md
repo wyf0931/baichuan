@@ -3,7 +3,8 @@ title: 怎样修改 MySQL 中列大小或增删列？
 author: Scott
 tags:
   - MySQL
-categories: []
+categories:
+  - 技术
 date: 2019-08-07 11:14:00
 ---
 在系统运行过程中，经常会遇到实际数据长度超过预先设计的长度，此时就需要调整列大小。本文主要介绍如何在MySQL中调整列大小与列类型。

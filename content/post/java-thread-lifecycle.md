@@ -3,7 +3,8 @@ title: Java 线程生命周期
 author: Scott
 tags:
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-06-29 00:00:00
 ---
 

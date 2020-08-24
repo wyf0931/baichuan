@@ -3,7 +3,8 @@ title: 查看Linux版本信息
 author: Scott
 tags:
   - Linux
-categories: []
+categories:
+  - 技术
 date: 2019-08-05 16:18:00
 ---
 本文介绍一些用于查看linux系统版本信息的常用命令。

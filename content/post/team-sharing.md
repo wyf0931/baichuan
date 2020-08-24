@@ -3,7 +3,8 @@ title: 团队分享制度
 author: Scott
 tags:
   - 管理
-categories: []
+categories:
+  - 技术
 date: 2019-06-27 19:26:00
 ---
 #### 背景

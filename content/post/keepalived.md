@@ -3,7 +3,8 @@ title: "Keepalived介绍"
 author: Scott
 tags:
   - 高可用
-categories: []
+categories:
+  - 技术
 date: 2020-06-24T16:43:03+08:00
 draft: false
 ---

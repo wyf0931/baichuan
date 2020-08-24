@@ -3,7 +3,8 @@ title: 中文分词算法介绍
 author: Scott
 tags:
   - 算法
-categories: []
+categories:
+  - 技术
 date: 2019-07-08 14:38:00
 ---
 

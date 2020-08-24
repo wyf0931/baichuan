@@ -3,8 +3,8 @@ title: Linux 生成 SSH Key
 author: Scott
 tags:
   - Linux
-  - ''
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 14:17:00
 ---
 在命令行输入以下命令（把 `your_email@example.com` 替换为自己的邮箱），然后按下回车键：

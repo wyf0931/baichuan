@@ -3,7 +3,8 @@ title: Groovy 语法 - Map
 author: Scott
 tags:
   - groovy
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 17:00:00
 ---
 Map 有时在其他语言中称为字典或关联数组，Groovy 也有 Map 功能。

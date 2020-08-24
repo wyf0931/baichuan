@@ -4,7 +4,8 @@ author: Scott
 tags:
   - groovy
   - servlet
-categories: []
+categories:
+  - 技术
 date: 2019-06-28 18:20:00
 ---
 我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 `.groovy` 源文件并转换为字节码。

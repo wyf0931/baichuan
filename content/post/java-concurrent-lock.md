@@ -4,7 +4,8 @@ author: Scott
 tags:
   - 高并发
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-07-01 15:25:00
 ---
 本文主要介绍 Java 并发控制中常用的 `Lock` 对象。

@@ -3,7 +3,8 @@ title: 使用 OpenCV 对图像进行几何变换
 author: Scott
 tags:
   - OpenCV
-categories: []
+categories:
+  - 技术
 date: 2019-07-14 13:20:00
 ---
 本文介绍如何使用 OpenCV 对图像进行平移、旋转、仿射变换等几何变换操作。

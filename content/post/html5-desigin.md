@@ -4,7 +4,8 @@ author: Scott
 tags:
   - 架构设计
   - HTML
-categories: []
+categories:
+  - 技术
 date: 2019-07-09 14:33:00
 ---
 原文是 Jeremy Keith 在 Fronteers 2010 上的主题演讲。

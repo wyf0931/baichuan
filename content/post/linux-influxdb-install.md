@@ -4,7 +4,8 @@ author: Scott
 tags:
   - InfluxDB
   - Linux
-categories: []
+categories:
+  - 技术
 date: 2019-07-03 14:47:00
 ---
 本文介绍如何在 Red Hat 或 CentOS 上安装 InfluxDB。

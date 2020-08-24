@@ -3,7 +3,8 @@ title: 什么是云计算？
 author: Scott
 tags:
   - 云计算
-categories: []
+categories:
+  - 技术
 date: 2019-07-08 14:21:00
 ---
 云计算会租用其他公司计算机上的存储空间或 CPU 周期等资源。 只需为所用的部分付费。 提供这些服务的公司称为云提供商。 某些提供商包括 Microsoft、Amazon 和 Google。

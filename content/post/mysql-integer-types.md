@@ -3,7 +3,8 @@ title: MySQL 整数类型介绍
 author: Scott
 tags:
   - MySQL
-categories: []
+categories:
+  - 技术
 date: 2019-08-01 14:43:00
 ---
 MySQL 支持 SQL 标准整数类型 `INTEGER`（`INT`）和 `SMALLINT`。作为标准的扩展，MySQL 还支持整数类型`TINYINT`、`MEDIUMINT` 和 `BIGINT`。

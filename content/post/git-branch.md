@@ -3,7 +3,8 @@ title: "Git 分支管理"
 author: Scott
 tags:
   - git
-categories: []
+categories:
+  - 技术
 date: 2020-06-01T13:37:49+08:00
 ---
 

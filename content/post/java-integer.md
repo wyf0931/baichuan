@@ -3,7 +3,8 @@ title: Java 整数类型与取值范围
 author: Scott
 tags:
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-07-02 16:03:00
 ---
 <style>

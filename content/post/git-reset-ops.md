@@ -3,7 +3,8 @@ title: "Git 代码回滚操作"
 author: Scott
 tags:
   - git
-categories: []
+categories:
+  - 技术
 date: 2019-07-22 17:34:00
 ---
 本文介绍在不同场景下回滚代码的常用命令。

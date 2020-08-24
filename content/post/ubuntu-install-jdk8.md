@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Java
   - ubuntu
-categories: []
+categories:
+  - 技术
 date: 2019-07-02 16:17:00
 ---
 本文介绍如何在 Ubuntu 环境安装 Oracle JDK。

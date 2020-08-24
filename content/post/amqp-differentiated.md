@@ -4,7 +4,8 @@ author: Scott
 tags:
   - AMQP
   - 协议
-categories: []
+categories:
+  - 技术
 date: 2019-07-11 15:02:00
 ---
 ### 与其他标准之间的差异

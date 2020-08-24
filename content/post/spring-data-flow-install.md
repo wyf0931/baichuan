@@ -4,7 +4,8 @@ author: Scott
 tags:
   - spring
   - data
-categories: []
+categories:
+  - 技术
 date: 2019-07-01 11:40:00
 ---
 本文主要介绍 Spring cloud dataflow 的二进制包在 Linux 环境的安装与启动。

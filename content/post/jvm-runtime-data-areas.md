@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Java
   - JVM
-categories: []
+categories:
+  - 技术
 date: 2019-07-02 14:47:00
 ---
 JVM 定义了在执行程序期间使用的各种运行时数据区（Run-Time Data Areas），其中一些数据区的生命周期与 JVM 进程相同，其他数据区是每个线程拥有一个，其生命周期与线程的生命周期相同。

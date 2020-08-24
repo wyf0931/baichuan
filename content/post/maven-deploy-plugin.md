@@ -4,7 +4,8 @@ author: Scott
 tags:
   - Maven
   - Java
-categories: []
+categories:
+  - 技术
 date: 2020-01-02 11:23:00
 ---
 
