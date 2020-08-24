@@ -5,7 +5,8 @@ author: Scott
 tags: 
   - java
   - 工具
-categories: []
+categories: 
+  - 技术
 ---
 本文介绍如何在 Intellij IDEA 中配置Google 开源的  Java Code Style。
 <!--more-->

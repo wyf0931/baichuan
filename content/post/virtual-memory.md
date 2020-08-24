@@ -9,7 +9,7 @@ date: 2020-07-03T17:29:01+08:00
 draft: false
 ---
 
-原文地址：https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory,-Part-1:-Introduction-to-Virtual-Memory 
+原文地址：[Introduction-to-Virtual-Memory](https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory,-Part-1:-Introduction-to-Virtual-Memory)
 
 ## 一、什么是虚拟内存？
 

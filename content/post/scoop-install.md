@@ -2,7 +2,7 @@
 title: scoop-install
 author: Scott
 date: 2019-07-02 14:41:32
-draft: false
+draft: true
 tags:
 ---
 Scoop 是 Windows 的命令行安装程序。
@@ -10,3 +10,4 @@ Scoop 是 Windows 的命令行安装程序。
 
 
 > Github 地址：https://github.com/lukesampson/scoop
+

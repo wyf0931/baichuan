@@ -2,8 +2,7 @@
 title: Linux实时查看网络带宽占用情况
 author: Scott
 tags:
-  - AMQP
-  - 协议
+  - Linux
 categories: []
 date: 2020-06-08T17:24:28+08:00
 ---

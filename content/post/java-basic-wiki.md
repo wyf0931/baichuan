@@ -3,7 +3,8 @@ title: Java 基础知识总结
 author: Scott
 tags:
   - Java
-categories: []
+categories:
+  - 技术
 date: 2019-09-04 15:41:00
 ---
 ## 一、线程

@@ -3,7 +3,8 @@ title: MySQL 事务处理简介
 author: Scott
 tags:
   - MySQL
-categories: []
+categories:
+  - 技术
 date: 2019-09-06 18:38:00
 ---
 本文简单介绍事务特性、事务并发问题、 MySQL 事务隔离级别和相关操作语句。
