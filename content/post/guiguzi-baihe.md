@@ -1,6 +1,6 @@
 ---
-title: 捭阖（鬼谷子）
-author: Scott
+title: 捭阖
+author: 鬼谷子
 tags:
   - 鬼谷子
   - 管理

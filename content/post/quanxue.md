@@ -1,7 +1,7 @@
 ---
-title: "劝学"
+title: 劝学
 date: 2020-06-04T14:17:12+08:00
-author: Scott
+author: 荀子
 tags:
   - 古文
 categories:
