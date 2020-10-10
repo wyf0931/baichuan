@@ -1,5 +1,5 @@
 ---
-title: "Netty架构概述"
+title: "Netty 架构概览"
 date: 2020-10-10T10:20:34+08:00
 author: Scott
 tags:
@@ -30,7 +30,7 @@ Netty 用自己的 buffer API 代替了 NIO 的 `ByteBuffer` 来表示字节序�
 
 ![Combining and Slicing ChannelBuffers](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/combine-slice-buffer.png)
 
-###2.  通用异步 I/O API
+### 2. 通用异步 I/O API
 
 Java 中 I/O API 的已知问题：
 
@@ -57,31 +57,31 @@ Netty 设计了一套通用的异步 I/O 接口，称为 [Channel](http://static
 例如，可以定义从 socket 读取数据时应该做什么：
 
 ```java
-  1 public class MyReadHandler implements SimpleChannelHandler {
-  2     public void messageReceived(ChannelHandlerContext ctx, MessageEvent evt) {
+public class MyReadHandler implements SimpleChannelHandler {
+    public void messageReceived(ChannelHandlerContext ctx, MessageEvent evt) {
             Object message = evt.getMessage();
-  4         // Do something with the received message.
-            ...
-  6 
-            // And forward the event to the next handler.
-  8         ctx.sendUpstream(evt);
-        }
- 10 }
+        // Do something with the received message.
+        ...
+
+        // And forward the event to the next handler.
+        ctx.sendUpstream(evt);
+    }
+}
 ```
 
 当处理程序接收到写请求时，你也可以定义该做什么:
 
 ```java
-  1 public class MyWriteHandler implements SimpleChannelHandler {
-  2     public void writeRequested(ChannelHandlerContext ctx, MessageEvent evt) {
-            Object message = evt.getMessage();
-  4         // Do something with the message to be written.
-            ...
-  6 
-            // And forward the event to the next handler.
-  8         ctx.sendDownstream(evt);
-        }
- 10 }
+public class MyWriteHandler implements SimpleChannelHandler {
+    public void writeRequested(ChannelHandlerContext ctx, MessageEvent evt) {
+        Object message = evt.getMessage();
+        // Do something with the message to be written.
+        ...
+
+        // And forward the event to the next handler.
+        ctx.sendDownstream(evt);
+    }
+}
 ```
 > 相关 API 链接：
 > * [SimpleChannelHandler](http://static.netty.io/3.5/api/org/jboss/netty/channel/SimpleChannelHandler.html)
