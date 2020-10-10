@@ -8,6 +8,10 @@ categories:
   - 技术
 ---
 
+Netty 是一个 NIO 框架，基于它可以快速、简单地开发网络应用程序，如协议服务器、客户端等等。它极大地简化了网络编程，如 TCP 和 UDP socket 服务器。
+
+“快速和简单“并不意味着产生的应用程序会有可维护性或性能问题的影响。Netty 从多种协议（如 FTP、 SMTP、 HTTP 以及各种二进制和基于文本的遗留协议）的实现获得经验，从而精心设计而成。Netty 已经成功地找到了一种实现易于开发、高性能、稳定性和灵活性的方法。
+
 在本文中，我们将了解 Netty 提供了哪些核心功能，以及它们如何在核心之上组成一个完整的网络应用程序开发栈。下图是Netty总体架构示意图，在读本文时对照此图有助于理解。
 
 ![The Architecture Diagram of Netty](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/architecture.png)
@@ -100,13 +104,13 @@ public class MyWriteHandler implements SimpleChannelHandler {
 
 Netty 提供了许多基本的和高级的编解码器来解决您在编写协议编解码器时遇到的大多数问题，无论它是简单的还是非简单的，二进制的还是文本的。
 
-#### 4.2 SSL/TLS 支持
+#### 4.2 支持 SSL/TLS 
 
 与旧的阻塞 I/O 不同，在 NIO 中支持 SSL 是一项非常重要的任务。不能简单地封装一个流来加密或解密数据，但必须使用 `javax.net.ssl.SSLEngine`。`SSLEngine` 是一个状态机，它和 SSL 本身一样复杂。您必须管理所有可能的状态，例如密码套件和加密密钥协商(或重新协商)、证书交换和验证。此外，`SSLEngine` 甚至不像人们预期的那样完全是线程安全的。 
 
 在 Netty 中，[SslHandler](http://static.netty.io/3.5/api/org/jboss/netty/handler/ssl/SslHandler.html) 处理 SSLEngine 的所有血淋淋的细节和缺陷。您所需要做的就是配置 `SslHandler` 并将其插入到 `ChannelPipeline` 中。它还允许您非常容易地实现诸如 [StartTLS](https://en.wikipedia.org/wiki/Starttls) 之类的高级功能。
 
-#### 4.3 HTTP 实现
+#### 4.3 支持 HTTP 
 
 HTTP 无疑是互联网上最流行的协议。现在已经有许多 HTTP 实现，比如 Servlet 容器。那么为什么 Netty 的核心上有 HTTP 呢？
 
@@ -119,7 +123,7 @@ Netty 的 HTTP 支持与现有的 HTTP 库非常不同。它使您能够完全�
 * 允许在没有内存压力的情况下上传大文件的文件服务器（例如，每个请求上传 1GB）；
 * 可扩展的 mash-up 客户端，异步连接到数以万计的第三方 web 服务；
 
-#### 4.4. WebSockets 实现
+#### 4.4. 支持 WebSockets 
 
 通过一个单传输控制协议(TCP)套接字，[websocket](https://en.wikipedia.org/wiki/WebSockets) 允许双向、全双工通信信道。它被设计成允许在网络浏览器和网络服务器之间传输数据。
 
@@ -127,8 +131,12 @@ WebSocket 协议已经被 IETF 标准化为 [RFC 6455](https://tools.ietf.org/ht
 
 Netty 实现了 RFC 6455和许多旧版本的规范。请参考 [org.jboss. net ty.handler.codec.http.websocketx](http://static.netty.io/3.5/api/org/jboss/netty/handler/codec/http/websocketx/package-summary#package_description) 包和相关[示例](http://static.netty.io/3.5/xref/org/jboss/netty/example/http/websocketx/server/package-summary.html)。
 
-#### 4.5. Google Protocol Buffer 集成
+#### 4.5. 支持 Google Protocol Buffer
 
-对于快速实现随时间演变的高效二进制协议来说，[Google 协议缓冲](https://code.google.com/apis/protocolbuffers/docs/overview.html)是一个理想的解决方案。使用 [ProtobufEncoder](http://static.netty.io/3.5/api/org/jboss/netty/handler/codec/protobuf/ProtobufEncoder.html) 和 [ProtobufDecoder](http://static.netty.io/3.5/api/org/jboss/netty/handler/codec/protobuf/ProtobufDecoder.html)，可以将由 Google 协议缓冲编译器(protoc)生成的消息类转换为 Netty 编解码器。请查看一下[“ LocalTime”示例](http://static.netty.io/3.5/xref/org/jboss/netty/example/localtime/package-summary.html)，它展示了如何轻松地从示例协议定义创建高性能的二进制协议客户机和服务器。
+对于快速实现前后兼容的高效二进制协议来说，[Google Protocol Buffer](https://code.google.com/apis/protocolbuffers/docs/overview.html)是一个理想的解决方案。使用 [ProtobufEncoder](http://static.netty.io/3.5/api/org/jboss/netty/handler/codec/protobuf/ProtobufEncoder.html) 和 [ProtobufDecoder](http://static.netty.io/3.5/api/org/jboss/netty/handler/codec/protobuf/ProtobufDecoder.html)，可以将由 Google 协议缓冲编译器(protoc)生成的消息类转换为 Netty 编解码器。请查看一下[“ LocalTime”示例](http://static.netty.io/3.5/xref/org/jboss/netty/example/localtime/package-summary.html)，它展示了如何轻松地从示例协议定义创建高性能的二进制协议客户机和服务器。
+
+### 5. 总结
+
+在这一章中，我们从特性的角度回顾了 Netty 的总体架构。Netty 有一个简单而强大的架构。**它由三个组件组成：缓冲区、通道和事件模型，所有高级特性都建立在这三个核心组件之上。**一旦您理解了这三个特性是如何协同工作的，就不难理解本章中简要介绍的更高级的特性。
 
 原文地址：https://netty.io/3.8/guide/#architecture
