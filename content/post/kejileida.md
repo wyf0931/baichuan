@@ -13,7 +13,7 @@ date: 2020-11-29T14:59:42+08:00
 
 <!--more-->
 
-### 民主化编程
+### 编程大众化
 
 我们这个月雷达的主题之一，可能也是当今技术最大的持续趋势之一，就是我们所说的编程的“民主化”。这意味着将编程交到任何想要编程的人手中，并使编程机器或系统的能力变得更容易获得。这并不是什么新想法; [COBOL](https://en.wikipedia.org/wiki/COBOL) ——“通用的、面向商业的语言”——是上世纪60年代的一种尝试，目的是使用一种更容易为非程序员所理解的类似英语的语言来编写计算机程序。今天，我们看到了对“傻瓜式代码（low-code）“平台的巨大兴趣，这些平台允许我们不需要程序员就可以创建软件。还有一些平台，比如以消费者为中心的 [IFTTT](https://ifttt.com/) 或者以企业为中心的 [Zapier](https://zapier.com/)，它们允许技术水平较低的用户将各种设备、 SaaS 平台、端点（endpoints）和工作流（workflows）连接起来，做一些有趣且有用的事情。如果你正在寻找一个集成框架，[Apiant](https://apiant.com/)，[Blendr](https://www.blendr.io/)，[Microsoft Flow](https://flow.microsoft.com/)，[Pipedream](https://pipedream.com/)，[Quickwork](https://quickwork.co/) 和 [Tray.io](https://tray.io/) （仅举几个例子）可以帮助你。在应用程序创建方面，[Amazon Honeycode](https://www.honeycode.aws/) 已经取得了一些进展，尽管其中一位 Radar 的作者将其描述为“微软云端访问”。
 
@@ -31,7 +31,7 @@ date: 2020-11-29T14:59:42+08:00
 
 那么，是什么让 Rust 如此受欢迎呢？就我个人而言，我发现它结合了强大的表现力和编译时的安全性是独一无二的。[Stack Overflow notes](https://stackoverflow.blog/2020/06/05/why-the-developers-who-use-rust-love-it-so-much/) 上说 Rust 是一种编程语言，“看起来像是由用户体验设计师开发的” ，他们对这种语言有着清晰的认识，并仔细地选择了要包含的内容。所有这些良好的意愿已经创造了一个支持的，可访问的社区锈和一个不断改善的生态系统的库和工具。
 
-### 可视化
+### 可视化一切
 
 这个版本的雷达包括一些可视化工具的很好的例子。对于理解我们今天构建的复杂系统来说，比以往任何时候都更有能力创建一幅关于某些事物的良好愿景——架构、代码复杂性、系统性能或微服务生态系统中的分布式跟踪（traces）—— 至关重要。我们讨论过的可视化工具包括:
 
@@ -49,7 +49,7 @@ date: 2020-11-29T14:59:42+08:00
 
 那么什么是将基础设施作为代码呢？简而言之，它是基础设施自动化和自动化的精心管理。权威的描述来自我们的同事 Kief Morris 的书[《代码的基础设施: 云中的服务器管理》（Infrastructure as Code: Managing Servers in the Cloud）](https://www.thoughtworks.com/books/infrastructure-as-code) ，该书的第二版即将出版。根据Morris 的说法，不同的思想流派正在以代码的形式出现在基础设施领域: Pulumi 迷们谈论“基础设施即软件（infrastructure as software）” ，Hightower 谈论“基础设施即数据（infrastructure as data）” ，WeaveWorks 催生了“ GitOps”这些不同的哲学最终会走向何方还有待观察，但是现在我们会把它们描述为基础设施的一种特点，即代码，而不是对代码的重大背离。这一领域的工具已经得到了飞跃性的改进，[CDK](https://thoughtworks.com/radar/platforms/aws-cloud-development-kit) 和 Pulumi 的例子表明生态系统正在变得越来越成熟。
 
-### 浏览器作为应用平台
+### 与浏览器的斗争
 
 老牌的互联网浏览器刚开始只是一个浏览 HTML 文档并使用超链接在这些文档之间导航的工具。随着浏览器的普及，HTML 2.0添加了更多的标签，并且能够向服务器提交“表单”以获得更多交互式网页。在 Netscape 与微软的较量中，他们意识到了浏览器需要一个脚本语言，所以 JavaScript （初期叫 Mocha）匆忙地通过了10天的开发周期，并加入到了 Netscape 中。历史上这一次被称为“浏览器战争” ，因为 Netscape 和微软等公司在 HTML 中添加了专有扩展，试图在竞争中占据优势。你可能会记得这个时候网页上的徽章上写着“在 Internet Explorer 工作效率最高”。Flash 和嵌入式 Java 小应用程序也为页面增加了交互性，Ajax 标准诞生了，JavaScript 被开发者再次发掘，甚至开始被用作后端语言(例如在 node.js 中)。
 
