@@ -3,18 +3,13 @@ title: "科技行业的宏观趋势 | 2020年10月"
 author: Scott
 tags:
   - 资讯
+  - 翻译
 categories:
   - 技术
 date: 2020-11-29T14:59:42+08:00
 ---
 
-原文链接：https://www.thoughtworks.com/insights/blog/macro-trends-tech-industry-oct-2020
-
-
-
 作为 ThoughtWorks 技术雷达组装团队的一员是一种荣幸，现在是我们的第十个年头了，我很自豪地说，迄今为止，我一直是每个雷达的一部分。每次都充满了有趣的讨论和洞察力，我们想说的总是比雷达本身要多。这篇文章是我的一个续篇，我花了一些时间（和一些词语）来阐述科技产业中正在发生的更大趋势。
-
-
 
 <!--more-->
 
@@ -60,7 +55,7 @@ date: 2020-11-29T14:59:42+08:00
 
 这里的要点是，浏览器开始时只是一个简单的文档查看器，但后来被迫成为一个应用程序平台。我在 Google Docs 上写这篇文章，在 YouTube 上听音乐，通过 Google Chat 与同事聊天。这个聊天窗口看起来像是一个本地应用程序窗口，但实际上只是一个包含网页的窗格。我现在使用的大部分应用程序都是通过浏览器发布的。
 
-> 事实上，浏览器意外地成为了一个应用平台，而且从一开始就不是这样设计的，这继续给 IT 行业带来压力。
+> 事实上，浏览器意外地成为了一个应用平台，而且从一开始就不是这样设计的，这持续的给 IT 行业带来很大压力。
 
 多年来，我们一直在说服浏览器做更多令人惊叹的事情，浏览器已经成为一个复杂的平台和生态系统。一般来说，各种浏览器都具有广泛的兼容性，多种浏览器弥补了这一差距，使开发人员更容易针对多种浏览器开发。但是 JavaScript 的生态系统本身仍然是令人困惑的复杂，而且还在不断变化。我们讨论过将 [Redux](https://www.thoughtworks.com/radar/languages-and-frameworks/redux) 从“ Adopt” 移回 “Trial” ，因为开发人员开始在 React 应用程序中寻找其他地方来管理状态(例如 [Recol](https://www.thoughtworks.com/radar/languages-and-frameworks/recoil))。但即使在今天，构建 web 应用程序的正确方式仍在继续发展: [Svelte](https://thoughtworks.com/radar/languages-and-frameworks/svelte) 已经获得了越来越多的关注，并且正在挑战流行的应用框架 [React](https://thoughtworks.com/radar/languages-and-frameworks/react-js) 和 [Vue.js](https://thoughtworks.com/radar/languages-and-frameworks/vue-js) 应用的一个既定概念: 虚拟 DOM。
 
@@ -69,3 +64,7 @@ date: 2020-11-29T14:59:42+08:00
 我们也看到了浏览器向“本地”代码平台的演变，[WebAssembly](https://webassembly.org/)  提供了一个高效的虚拟机，旨在以接近本地的速度运行代码。例如，在你的浏览器中查看运行速度为[ 60 FPS 的 Doom 3](https://wasm.continuation-labs.com/d3demo/)。
 
 浏览器是不会离开任何地方的，但事实上，它基本上是一个偶然的应用程序平台，这一事实继续在科技界引起反响，每个项目都应该至少花一些时间来关注最新的浏览器相关开发。
+
+
+
+原文链接：[Macro trends in the tech industry | Oct 2020](https://www.thoughtworks.com/insights/blog/macro-trends-tech-industry-oct-2020)
