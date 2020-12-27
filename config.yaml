@@ -1,5 +1,5 @@
 title: Mehameha
-baseURL: http://www.zhizhiting.com
+baseURL: http://blog.zhizhiting.com
 languageCode: zh-CN
 theme: maupassant
 paginate: 10
@@ -9,7 +9,7 @@ enableEmoji: true
 copyright: ''
 author:
   name: Scott
-  homepage: "http://www.zhizhiting.com"
+  homepage: "http://blog.zhizhiting.com"
 sitemap:
   changefreq: weekly
   priority: 0.5
