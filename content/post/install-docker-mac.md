@@ -11,24 +11,30 @@ categories:
 Docker Desktop for Mac 是 Docker 的 Mac 社区版。
 <!-- more -->
 
-下载地址：https://hub.docker.com/editions/community/docker-ce-desktop-mac
+下载地址：[https://hub.docker.com/editions/community/docker-ce-desktop-mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 
 ## 一、安装 Docker Desktop
 
 ### 1.1 安装说明
 
-**Docker Desktop for Mac 与 Docker Machine 的关系：**
-
+** Docker Desktop for Mac 与 Docker Machine 的关系：**  
 在 Mac 上安装 Docker Desktop 不会影响你之前用 Docker Machine 创建的机器。你可以将容器（container）和镜像（image）从本地默认计算机（如果存在）复制到 Docker Desktop [HyperKit](https://github.com/docker/HyperKit/) VM。在运行 Docker Desktop 时，不需要在本地运行 Docker Machine 节点。使用 Docker Desktop，你将有一个新的、本地运行的虚拟化系统（HyperKit），将取代 VirtualBox 系统。
 
 ### 1.2 系统要求
 
 你的 Mac 必须满足以下要求才能成功安装 Docker Desktop：
 
-- **Mac 硬件必须是2010年或更新的型号且是英特尔（Intel）处理器版。**英特尔的硬件支持内存管理单元（MMU, memory management unit）虚拟化，包括扩展页面表(EPT, Extended Page Tables )和无限制模式。你可以在命令行终端中运行以下命令来检查你的机器是否支持: `sysctl kern.hv_support`。如果输出：`kern.hv_support: 1` 则表示该 Mac 支持 Hypervisor 框架。
+- **Mac 硬件必须是2010年或更新的型号且是英特尔（Intel）处理器版。** 
+
+  > - 英特尔的硬件支持内存管理单元（MMU, memory management unit）虚拟化，包括扩展页面表(EPT, Extended Page Tables )和无限制模式。
+  > 
+  > - 可以在命令行终端中运行以下命令来检查你的机器是否支持: `sysctl kern.hv_support`。如果输出：`kern.hv_support: 1` 则表示该 Mac 支持 Hypervisor 框架。
+
 - **macOS 必须是10.14或更新版本。** 也就是：Mojave、Catalina 或 Big Sur。推荐升级到最新版本。
+
 - 至少 4GB 内存（RAM）。
-- 不能安装 4.3.30 之前版本的 VirtualBox，因为它与 Docker Desktop 不兼容。
+
+- 不能安装 4.3.30 之前版本的 VirtualBox，它与 Docker Desktop 不兼容。
 
 ### 1.3 安装器（Installer）中包含的内容
 
