@@ -1,5 +1,5 @@
 ---
-title: "【译】Docker 安装/卸载指南 - Mac版"
+title: "【译】Docker 安装与卸载指南 - Mac版"
 date: 2021-01-17T17:07:23+08:00
 draft: false
 tags:
@@ -17,7 +17,7 @@ Docker Desktop for Mac 是 Docker 的 Mac 社区版。
 
 ### 1.1 安装说明
 
-** Docker Desktop for Mac 与 Docker Machine 的关系：**  
+**Docker Desktop for Mac 与 Docker Machine 的关系：**
 
 在 Mac 上安装 Docker Desktop 不会影响你之前用 Docker Machine 创建的机器。你可以将容器（container）和镜像（image）从本地默认计算机（如果存在）复制到 Docker Desktop [HyperKit](https://github.com/docker/HyperKit/) VM。在运行 Docker Desktop 时，不需要在本地运行 Docker Machine 节点。使用 Docker Desktop，你将有一个新的、本地运行的虚拟化系统（HyperKit），将取代 VirtualBox 系统。
 
