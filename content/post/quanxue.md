@@ -6,6 +6,7 @@ tags:
   - 古文
 categories:
   - 文史
+draft: false
 ---
 
 原文链接：[https://hanyu.baidu.com/shici/detail?pid=ce5a1d99f57411e59979c8e0eb15ce01](https://hanyu.baidu.com/shici/detail?pid=ce5a1d99f57411e59979c8e0eb15ce01)
