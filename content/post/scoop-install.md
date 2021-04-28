@@ -7,6 +7,7 @@ tags:
   - 工具
 categories:
   - 技术
+draft: false
 ---
 Scoop 是 Windows 系统下的一个开源的包管理器，类似于Mac 上的 brew。
 <!--more-->
