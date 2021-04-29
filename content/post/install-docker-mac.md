@@ -1,5 +1,5 @@
 ---
-title: "【译】Docker 安装与卸载指南 - Mac版"
+title: "Docker 安装与卸载指南 - Mac版"
 date: 2021-01-17T17:07:23+08:00
 draft: false
 tags:

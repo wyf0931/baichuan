@@ -2,7 +2,7 @@
 title: Groovy 语法 - 注释
 author: Scott
 tags:
-  - groovy
+  - Groovy
 categories:
   - 技术
 date: 2019-06-28 17:41:00

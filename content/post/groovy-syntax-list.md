@@ -2,7 +2,7 @@
 title: Groovy 语法 - List
 author: Scott
 tags:
-  - groovy
+  - Groovy
 categories:
   - 技术
 date: 2019-06-28 18:15:00

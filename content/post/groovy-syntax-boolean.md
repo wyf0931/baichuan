@@ -2,7 +2,7 @@
 title: Groovy 语法 - Boolean
 author: Scott
 tags:
-  - groovy
+  - Groovy
 categories:
   - 技术
 date: 2019-06-28 17:05:00

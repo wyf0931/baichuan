@@ -2,7 +2,7 @@
 title: Groovy 程序结构
 author: Scott
 tags:
-  - groovy
+  - Groovy
 categories:
   - 技术
 date: 2019-06-27 19:15:00

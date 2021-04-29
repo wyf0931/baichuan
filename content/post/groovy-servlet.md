@@ -2,8 +2,7 @@
 title: Groovy Servlet 使用指南
 author: Scott
 tags:
-  - groovy
-  - servlet
+  - Groovy
 categories:
   - 技术
 date: 2019-06-28 18:20:00

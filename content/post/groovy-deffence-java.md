@@ -3,7 +3,7 @@ title: Groovy 与 Java 的区别
 author: Scott
 tags:
   - Java
-  - groovy
+  - Groovy
 categories:
   - 技术
 date: 2019-07-03 15:13:00
