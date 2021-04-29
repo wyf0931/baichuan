@@ -1,5 +1,5 @@
 ---
-title: "【转】IP负载均衡技术"
+title: "IP负载均衡技术"
 author: Scott
 tags:
   - 架构设计
@@ -9,8 +9,6 @@ categories:
 date: 2020-06-24T15:00:48+08:00
 draft: false
 ---
-
-> 原文地址：http://zh.linuxvirtualserver.org/node/25
 
 #### 概述
 
@@ -58,6 +56,4 @@ draft: false
 
 本文主要讲述了可伸缩网络服务 LVS 框架中的三种IP负载均衡技术。在分析网络地址转换方案（VS/NAT）的缺点和网络服务的非对称性的基础上，给出了通过IP隧道实现虚拟服务器的方案（VS/TUN），和通过直接路由实现虚拟服务器方案（VS/DR），极大地提高了系统的伸缩性。
 
-
-
-
+> 原文地址：http://zh.linuxvirtualserver.org/node/25

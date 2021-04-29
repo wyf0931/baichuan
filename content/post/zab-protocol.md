@@ -1,5 +1,5 @@
 ---
-title: "【转】Zab协议详解"
+title: "Zab协议详解"
 date: 2021-04-28T20:38:50+08:00
 author: Scott
 tags:
@@ -164,3 +164,5 @@ SNAP 和 DIFF 用于保证集群中 Follower 节点上已经 Committed 的数据
 具体消息流程如下：
 
 ![img](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/zab_recovery_phase.png)
+
+> 原文地址：https://github.com/baidu/braft/blob/master/docs/cn/zab_protocol.md

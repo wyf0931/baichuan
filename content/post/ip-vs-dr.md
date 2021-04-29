@@ -9,7 +9,6 @@ date: 2020-06-24T15:50:20+08:00
 draft: false
 ---
 
-> 原文地址：http://zh.linuxvirtualserver.org/node/28
 
 跟 VS/TUN 方法相同，VS/DR利用大多数Internet服务的非对称特点，负载调度器中只负责调度请求，而服务器直接将响应返回给客户，可以极大地提高整个集群系统的吞吐量。该方法与IBM的NetDispatcher产品中使用的方法类似，但IBM的NetDispatcher是非常昂贵的商品化产品，我们也不知道它内部所使用的机制，其中有些是IBM的专利。
 
@@ -24,3 +23,5 @@ VS/DR的工作流程如图3.7所示：它的连接调度和管理与VS/NAT和VS/
 在VS/DR中，请求报文的目标地址为VIP，响应报文的源地址也为VIP，所以响应报文不需要作任何修改，可以直接返回给客户，客户认为得到正常的服务，而不会知道是哪一台服务器处理的。
 
 VS/DR负载调度器也只处于从客户到服务器的半连接中，按照半连接的TCP有限状态机进行状态迁移。
+
+> 原文地址：http://zh.linuxvirtualserver.org/node/28
