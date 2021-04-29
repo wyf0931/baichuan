@@ -7,7 +7,7 @@ tags:
 categories:
   - 技术
 date: 2019-07-03 14:32:00
-draft:true
+draft: false
 ---
 本文总结了一些 MySQL InnoDB 引擎中关于表的一些最佳实践。
 <!--more-->
