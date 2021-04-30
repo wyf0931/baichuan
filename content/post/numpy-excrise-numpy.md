@@ -7,7 +7,7 @@ tags:
 categories:
   - 技术
 date: 2020-02-06T20:33:20+08:00
-draft: false
+draft: true
 ---
 
 此练习的目的是灵活应用 Numpy，成为一种参考。**练习题分为4个难度级别，其中 L1 最容易，L4 最困难。**

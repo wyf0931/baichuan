@@ -9,6 +9,12 @@ categories:
   - 技术
 ---
 
+本文中收录了一些工作中常用的SQL处理语句。
+
+<!-- more -->
+
+### 一、系统配置
+
 **1、查看MySQL数据库版本：**
 
 ```mysql
@@ -21,13 +27,15 @@ select version();
 show create table table_xxx;
 ```
 
-**3、在 table_xxx 表中增加索引 idx_hhh：**
+### 二、索引
+
+**1、在 table_xxx 表中增加索引 idx_hhh：**
 
 ```mysql
 ALTER TABLE `table_xxx` ADD INDEX `idx_hhh`(`col_a`, `col_b`, `col_c`);
 ```
 
-**4、查看 table_xxx 表的 idx_hhh 索引详情：**
+**2、查看 table_xxx 表的 idx_hhh 索引详情：**
 
 ```mysql
 show index from table_xxx where key_name = 'idx_hhh';
@@ -71,7 +79,7 @@ Index_comment:
 | Index_type   | 显示索引使用的类型和方法（`BTREE`、`FULLTEXT`、`HASH`、`RTREE`）。 |
 | Comment      | 显示备注信息。                                               |
 
-**5、删除 table_xxx 表中的 idx_hhh 索引：**
+**3、删除 table_xxx 表中的 idx_hhh 索引：**
 
 ```mysql
 ALTER TABLE table_xxx DROP INDEX idx_hhh;
@@ -81,3 +89,37 @@ ALTER TABLE table_xxx DROP INDEX idx_hhh;
 >
 > MySQL中没有修改索引的逻辑，需要删除后重新建索引。
 
+### 三、表结构
+
+**1、调整列大小：**
+
+```sql
+ALTER TABLE table_name MODIFY col_name VARCHAR(size);
+```
+> 注：`VARCHAR` 类型是可变长度，所以`size` 指的是列长度的最大值；
+
+例如：
+```sql
+ALTER TABLE students MODIFY name VARCHAR(30);
+```
+
+**2、新增列：**
+
+```sql
+ALTER TABLE table_name ADD column_name datatype;
+```
+例如：
+```sql
+ALTER TABLE students ADD remark VARCHAR(100);
+```
+
+**3、删除列：**
+
+```sql
+ALTER TABLE table_name DROP COLUMN column_name；
+```
+
+例如：
+```sql
+ALTER TABLE students DROP COLUMN remark;
+```
