@@ -11,7 +11,7 @@ categories:
 draft: false
 ---
 
-### 0、简介
+### 0、概述
 
 [ZAB](https://github.com/baidu/braft/blob/master/docs/cn/attachments/164310517/252150191.pdf) 是 Zookeeper Atomic Broadcast 协议的简称，是为分布式协调服务 Zookeeper 专门设计的一种支持崩溃恢复的原子广播协议。其实现类似 Raft 构建了一个树形主备模式的架构来保持集群中各副本间数据的一致性。采用单一的主进程接受并处理客户端的全部请求，采用 ZAB 的原子广播协议，将服务状态变更通过 proposal 的形式广播给其他副本进程。ZAB 协议保证了任意时刻一个集群中同时只有一个主进程来广播 proposal，所有 proposal 在副本间保证有序提交。
 
@@ -27,7 +27,7 @@ ZAB 协议中每个进程有三种状态：
 
 ZooKeeper 启动时所有节点初始状态为 `Looking`，这时集群会尝试选举出一个 Leader 节点，选举出的 Leader 节点切换为 `Leading` 状态；当节点发现集群中已经选举出 Leader 则该节点会切换到 `Following` 状态，然后和 Leader 节点保持同步；当 Follower 节点与Leader 失去联系时 Follower 节点则会切换到 `Looking` 状态，开始新一轮选举；在 ZooKeeper 的整个生命周期中每个节点都会在`Looking`、`Following`、`Leading`状态间不断转换。
 
-### 2、持久化数据
+### 2、数据持久化
 
 - **history**：当前节点接收到事务提议的 log；
 - **acceptedEpoch**：follower 已经接受的 leader 更改 epoch 的 NEWEPOCH 提议；
@@ -153,9 +153,9 @@ FastLeaderElection是标准的Fast Paxos的实现，它首先向所有Server提�
 
 ZAB 中 Leader 会根据 Follower 数据情况使用多种同步策略：
 
-- SNAP：如果Follower数据太老，Leader将发送快照SNAP指令给Follower同步数据
-- DIFF：Leader发送从Follower.lastZxid到Leader.lastZxid之间的提案DIFF数据给Follower同步数据
-- TRUNC：当Follower.lastZxid比Leader.lastZxid大时，Leader发送从Leader.lastZxid到Follower.lastZxid的TRUNC指令让Follower丢弃该段数据
+- SNAP：如果 Follower数据太老，Leader将发送快照SNAP指令给Follower同步数据
+- DIFF：Leader发送从 Follower.lastZxid 到 Leader.lastZxid 之间的提案DIFF数据给Follower同步数据
+- TRUNC：当 Follower.lastZxid 比 Leader.lastZxid 大时，Leader发送从Leader.lastZxid到 Follower.lastZxid 的 `TRUNC` 指令让Follower丢弃该段数据
 
 SNAP 和 DIFF 用于保证集群中 Follower 节点上已经 Committed 的数据的一致性，TRUNC 用于抛弃已经被处理但是还没有Committed的数据。Follower接收 `SNAP/DIFF/TRUNC` 指令同步数据与 `ZXID`，同步成功之后向Leader发送 `ACK-LD`，Leader才会将其加入到可用Follower列表。
 
