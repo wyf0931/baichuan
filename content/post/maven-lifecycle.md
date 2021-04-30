@@ -1,5 +1,5 @@
 ---
-title: "Maven生命周期"
+title: "Maven 生命周期"
 author: Scott
 tags:
   - Maven

@@ -1,5 +1,5 @@
 ---
-title: "IP负载均衡技术"
+title: "IP 负载均衡技术"
 author: Scott
 tags:
   - 架构设计
