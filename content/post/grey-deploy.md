@@ -12,7 +12,7 @@ draft: false
 
 在微服务、DevOps、Cloud-native系统部署等相关讨论中，**蓝绿部署**、**A/B 测试**、**灰度发布**、**滚动发布**、**红黑部署** 等概念经常被提到，它们有什么区别呢？
 
-<!-- more -->
+<!--more-->
 
 ### 一、蓝绿部署（Blue/Green Deployment）
 

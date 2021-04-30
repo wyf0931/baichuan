@@ -9,7 +9,7 @@ categories:
   - 技术
 ---
 Docker Desktop for Mac 是 Docker 的 Mac 社区版。
-<!-- more -->
+<!--more-->
 
 下载地址：[https://hub.docker.com/editions/community/docker-ce-desktop-mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 
