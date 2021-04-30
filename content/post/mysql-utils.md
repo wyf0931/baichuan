@@ -36,7 +36,7 @@ show index from table_xxx where key_name = 'idx_hhh';
 例如：
 
 ```mysql
-mysql> SHOW INDEX FROM table_xxx\G
+mysql> SHOW INDEX FROM table_xxx
 *************************** 1. row ***************************
         Table: table_xxx
    Non_unique: 0
