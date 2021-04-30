@@ -1,5 +1,5 @@
 ---
-title: "Paxos算法"
+title: "Paxos协议"
 date: 2021-04-30T15:49:10+08:00
 author: Scott
 tags:

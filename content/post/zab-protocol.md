@@ -1,5 +1,5 @@
 ---
-title: "Zab协议详解"
+title: "Zab协议"
 date: 2021-04-28T20:38:50+08:00
 author: Scott
 tags:
