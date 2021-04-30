@@ -7,9 +7,14 @@ categories:
   - 技术
 date: 2019-06-28 18:20:00
 ---
-我们可以在 Groovy 中写 Java Servlet，称为 Groovlet 或 GroovyServlet。它能自动编译 `.groovy` 源文件并转换为字节码。
+我们可以在 Groovy 中写 Java Servlet，称为 `Groovlet` 或 `GroovyServlet`。它能自动编译 `.groovy` 源文件并转换为字节码。
+
+<!-- more -->
+
+
 
 Groovlet使用示例如下：
+
 ```groovy
 if (!session) {
   session = request.getSession(true)
@@ -56,7 +61,7 @@ session.counter = session.counter + 1
 > 注意：代码中使用隐式变量来访问 session、request、out，由于没有类包装，感觉像是个脚本。
 
 ### 隐式变量
-以下变量可以在 Groovlet 中直接使用：
+以下变量可以在 `Groovlet` 中直接使用：
 
 |变量名|	绑定	|备注|
 |---|---|---|
@@ -73,7 +78,7 @@ session.counter = session.counter + 1
 |json|new StreamingJsonBuilder(out)|参考<2>|
 
 1. 如果已存在 `session` 对象，则仅设置 `session` 变量。请参阅上面示例中的 `if (session == null)` 检查。
-2. 无法在 Groovlet 中重新分配这些变量。它们在第一次访问时受到约束，允许例如在使用之前调用`response` 对象上的`out`方法。
+2. 无法在 `Groovlet` 中重新分配这些变量。它们在第一次访问时受到约束，允许例如在使用之前调用`response` 对象上的`out`方法。
 
 ### groovylet 配置
 在`web.xml` 中添加以下代码：
