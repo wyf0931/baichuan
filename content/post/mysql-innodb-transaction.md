@@ -1,5 +1,5 @@
 ---
-title: MySQL 事务处理简介
+title: "MySQL事务处理"
 author: Scott
 tags:
   - MySQL

@@ -1,5 +1,5 @@
 ---
-title: "MySQL 常用语句"
+title: "MySQL常用语句"
 date: 2021-04-29T16:53:21+08:00
 draft: false
 author: Scott
