@@ -15,7 +15,7 @@ categories:
 
 ### 一、系统配置
 
-**1、查看MySQL数据库版本：**
+**1、查看数据库版本：**
 
 ```mysql
 select version();
@@ -27,12 +27,18 @@ select version();
 show create table table_xxx;
 ```
 
+**3、查看当前数据库中所有表信息：**
+
+```mysql
+show table status
+```
+
 ### 二、索引
 
 **1、在 table_xxx 表中增加索引 idx_hhh：**
 
 ```mysql
-ALTER TABLE `table_xxx` ADD INDEX `idx_hhh`(`col_a`, `col_b`, `col_c`);
+alter table `table_xxx` add index `idx_hhh`(`col_a`, `col_b`, `col_c`);
 ```
 
 **2、查看 table_xxx 表的 idx_hhh 索引详情：**
@@ -44,7 +50,7 @@ show index from table_xxx where key_name = 'idx_hhh';
 例如：
 
 ```mysql
-mysql> SHOW INDEX FROM table_xxx
+mysql> show index from table_xxx
 *************************** 1. row ***************************
         Table: table_xxx
    Non_unique: 0
@@ -82,7 +88,7 @@ Index_comment:
 **3、删除 table_xxx 表中的 idx_hhh 索引：**
 
 ```mysql
-ALTER TABLE table_xxx DROP INDEX idx_hhh;
+alter table table_xxx drop index idx_hhh;
 ```
 
 > 说明：
@@ -94,32 +100,32 @@ ALTER TABLE table_xxx DROP INDEX idx_hhh;
 **1、调整列大小：**
 
 ```sql
-ALTER TABLE table_name MODIFY col_name VARCHAR(size);
+alter table table_name modify col_name varchar(size);
 ```
 > 注：`VARCHAR` 类型是可变长度，所以`size` 指的是列长度的最大值；
 
 例如：
 ```sql
-ALTER TABLE students MODIFY name VARCHAR(30);
+alter table students modify name varchar(30);
 ```
 
 **2、新增列：**
 
 ```sql
-ALTER TABLE table_name ADD column_name datatype;
+alter table table_name add column_name datatype;
 ```
 例如：
 ```sql
-ALTER TABLE students ADD remark VARCHAR(100);
+alter table students add remark varchar(100);
 ```
 
 **3、删除列：**
 
 ```sql
-ALTER TABLE table_name DROP COLUMN column_name；
+alter table table_name drop column column_name；
 ```
 
 例如：
 ```sql
-ALTER TABLE students DROP COLUMN remark;
+alter table students drop column remark;
 ```
