@@ -49,13 +49,13 @@ explain select * from emp where name = '张三';
 
 #### id（JSON 属性名：select_id）
 
-此列是 `SELECT` 标识符，它是查询中 `SELECT` 的顺序号，SQL 从大到小的执行。如果该行引用其他行的 `union` 结果，则该值可以为 `NULL`。在这种情况下，table 列显示一个类似于 `<union M,N>` 的值，表示该行引用 id 值为 `m` 和 `n` 的行的 union。
+此列是 `select` 标识符，它是查询中 `select` 的顺序号，SQL 从大到小的执行。如果该行引用其他行的 `union` 结果，则该值可以为 `NULL`。在这种情况下，table 列显示一个类似于 `<union M,N>` 的值，表示该行引用 id 值为 `m` 和 `n` 的行的 union。
 
-1. `id` 相同时，执行顺序由上至下；
+1. id 相同时，执行顺序由上至下；
 
-2. 如果是子查询，`id` 的序号会递增，`id` 值越大优先级越高，越先被执行；
+2. 如果是子查询，id 的序号会递增，id 值越大优先级越高，越先被执行；
 
-3. `id` 如果相同，可以认为是一组，从上往下顺序执行；在所有组中，`id` 值越大，优先级越高，越先执行；
+3. id 如果相同，可以认为是一组，从上往下顺序执行；在所有组中，id 值越大，优先级越高，越先执行；
 
 ```mysql
 -- 查看在研发部并且名字以Jef开头的员工，经典查询
@@ -94,13 +94,13 @@ table 列表示这一步所访问数据库中表名称（显示这一行的数�
 
 ### partitions（JSON 属性名：partitions）
 
-partitions 列表示与查询结果匹配的分区，对于未分区的表，该值为 NULL。
+partitions 列表示与查询结果匹配的分区，对于未分区的表，该值为 `NULL`。
 
 #### type（JSON 属性名：access_type）
 
 type 列表示在表中找到所需行的方式。
 
-**常用的类型有： ALL、index、range、 ref、eq_ref、const、system、NULL（从左到右，性能从差到好）。** 
+**常用的类型有：NULL、system、const、eq_ref、 ref、range、index、 ALL（从左到右，性能从好到差）。** 
 
 - **NULL**： MySQL 在优化过程中分解语句，执行时甚至不用访问表或索引，例如从一个索引列里选取最小值可以通过单独索引查找完成；
 - **system**：system 是 const 类型的特例，当查询的表只有一行的情况下，使用 system；
