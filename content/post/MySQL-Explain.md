@@ -13,7 +13,7 @@ draft: false
 
 <!--more-->
 
-以
+以下面的 SQL 为例：
 
 ```mysql
 -- 实际SQL，查找用户名为张三的员工
@@ -25,6 +25,25 @@ explain select * from emp where name = '张三';
 ![img](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/512541-20180803142201303-545775900.png)
 
 `expain` 的结果会有 10 列，分别是：id、select_type、table、type、possible_keys、key、key_len、ref、rows、Extra。
+
+当使用 `FORMAT = JSON` 时，第二列在输出中显示的等效属性名。
+
+| Column          | **JSON Name**   | **含义**                           |
+| --------------- | --------------- | ---------------------------------- |
+| `id`            | `select_id`     | `SELECT`  标识符                   |
+| `select_type`   | `None`          | `SELECT`  类型                     |
+| `table`         | `table_name`    | 输出行所对应的表                   |
+| `partitions`    | `partitions`    | 匹配的分区                         |
+| `type`          | `access_type`   | 连接（`join`）类型                 |
+| `possible_keys` | `possible_keys` | 可以选择的可能索引                 |
+| `key`           | `key`           | 实际上选择的索引                   |
+| `key_len`       | `key_length`    | 所选 `key` 的长度                  |
+| `ref`           | `ref`           | 与索引相比较的列                   |
+| `rows`          | `rows`          | 要检查的行的估计数                 |
+| `filtered`      | `filtered`      | 按表条件过滤的行占全表数据的百分比 |
+| `Extra`         | `None`          | 执行情况的描述和补充说明           |
+
+
 
 ### 概要描述：
 
