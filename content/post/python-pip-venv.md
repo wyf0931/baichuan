@@ -292,8 +292,8 @@ urllib3==1.22
 
 这个文件对重建环境并准确安装所有包非常有用。
 
+### 相关链接
 
-
-相关链接：
-
-- https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
+- [Virtualenv：https://virtualenv.pypa.io/en/latest/](https://virtualenv.pypa.io/en/latest/)
+- [安装和使用pip、虚拟环境](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
+- [virtualenvwrapper：https://virtualenvwrapper.readthedocs.io/en/latest/ ](https://virtualenvwrapper.readthedocs.io/en/latest/)
