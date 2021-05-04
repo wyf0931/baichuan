@@ -1,5 +1,5 @@
 ---
-title: " pip 和虚拟环境的安装与使用"
+title: "Python pip 和虚拟环境的安装与使用"
 date: 2020-12-22T18:03:35+08:00
 author: Scott
 tags:
