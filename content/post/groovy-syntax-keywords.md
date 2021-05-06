@@ -17,16 +17,16 @@ date: 2019-06-28 17:49:00
 |||||
 |---|---|---|---|
 |`as`|`assert`|`break`|`case`|
-|`catch`|class|const|continue|
-|def|default|do|else|
-|enum|extends|false|finally|
-|for|goto|if|implements|
-|import|in|instanceof|interface|
-|new|null|package|return|
-|super|switch|this|throw|
-|throws|trait|true|try|
-|while||||
+|`catch`|`class`|`const`|`continue`|
+|`def`|`default`|`do`|`else`|
+|`enum`|`extends`|`false`|`finally`|
+|`for`|`goto`|`if`|`implements`|
+|`import`|`in`|`instanceof`|`interface`|
+|`new`|`null`|`package`|`return`|
+|`super`|`switch`|`this`|`throw`|
+|`throws`|`trait`|`true`|`try`|
+|`while`||||
 
-### 相关链接：
+### 相关链接
 
 - 原文地址：[http://groovy-lang.org/syntax.html](http://groovy-lang.org/syntax.html)
