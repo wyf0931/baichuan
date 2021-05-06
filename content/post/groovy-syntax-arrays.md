@@ -4,6 +4,7 @@ author: Scott
 tags:
   - Groovy
 categories:
+  - Groovy
   - 技术
 date: 2019-06-28 11:27:00
 ---

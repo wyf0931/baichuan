@@ -4,15 +4,20 @@ author: Scott
 tags:
   - Groovy
 categories:
+  - Groovy
   - 技术
 date: 2019-06-28 17:49:00
 ---
-以下是 Groovy 语言的所有关键字：
+本文介绍 Groovy 语言中预留的关键字。
+
+<!--more-->
+
+### 关键字清单
 
 |||||
 |---|---|---|---|
-|as|assert|break|case|
-|catch|class|const|continue|
+|`as`|`assert`|`break`|`case`|
+|`catch`|class|const|continue|
 |def|default|do|else|
 |enum|extends|false|finally|
 |for|goto|if|implements|
@@ -22,4 +27,6 @@ date: 2019-06-28 17:49:00
 |throws|trait|true|try|
 |while||||
 
-> 原文地址：http://groovy-lang.org/syntax.html
+### 相关链接：
+
+- 原文地址：[http://groovy-lang.org/syntax.html](http://groovy-lang.org/syntax.html)
