@@ -134,7 +134,7 @@ Leader 会接收 Client 的请求，并扮演 Proposer 和 Acceptor；其他节�
 
 #### 2.3 Other
 
-通过选主和消除 Prepare 之后，Multi Paxos依然不够完整，还需要解决：
+通过选主和消除 Prepare 之后，Multi Paxos 依然不够完整，还需要解决：
 
 - Full Replication：全部节点都需要复制得到全部的Log；
 - All Server Know about chosen value：全部节点需要知道Log中哪些值被chosen了 对于Full Replication可以通过Leader一直重试Accept 请求，来保证 Acceptor 上数据尽可能的最新。
@@ -166,4 +166,5 @@ Acceptor 返回 `firstUnChosenIndex` 给 Proposer，Proposer 再继续发送 Suc
 ### 相关链接：
 
 - 原文：[https://github.com/baidu/braft/blob/master/docs/cn/paxos_protocol.md](https://github.com/baidu/braft/blob/master/docs/cn/paxos_protocol.md)
-- Paxos 算法_百度百科：https://baike.baidu.com/item/Paxos 算法/10688635
+- Paxos算法 - 维基百科：[https://zh.wikipedia.org/wiki/Paxos算法](https://zh.wikipedia.org/wiki/Paxos算法)
+
