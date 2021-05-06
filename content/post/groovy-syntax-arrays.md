@@ -8,7 +8,12 @@ categories:
   - 技术
 date: 2019-06-28 11:27:00
 ---
-Groovy 复用了列表的方括号作为数组的符号，但是为了制作这样的文字数组，你需要通过强制或类型声明来明确地定义数组的类型。
+Groovy 复用了列表的方括号作为数组的符号，由于花括号可能与Groovy闭包的符号含义有冲突， **Groovy 中是不支持 Java 数组花括号的初始化方式**。
+
+<!--more-->
+
+为了定义字符串数组，需要通过强制或类型声明来明确地定义数组的类型。
+
 ```groovy
 // 使用显式变量类型声明定义字符串数组
 String[] arrStr = ['Ananas', 'Banana', 'Kiwi']  
@@ -47,6 +52,6 @@ assert names[0] == 'Cédric'
 names[2] = 'Blackdrag'          
 assert names[2] == 'Blackdrag'
 ```
-**Groovy 中是不支持 Java 数组花括号的初始化方式**，因为花括号可能与Groovy闭包的符号含义有冲突。
+### 相关链接
 
-> 原文地址：http://groovy-lang.org/syntax.html
+- 原文地址：[http://groovy-lang.org/syntax.html](http://groovy-lang.org/syntax.html)
