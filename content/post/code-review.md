@@ -173,6 +173,7 @@ Code Review 的主要目的是确保仓库中的代码越来越好，所有的 C
 
 ### 相关链接
 
-- Google Code Review Developer Guide：https://google.github.io/eng-practices/review/ 
-- Google Code Style：http://google.github.io/styleguide/
-- [What to look for in a code review | eng-practices (google.github.io)](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
+- Google Code Review Developer Guide：[https://google.github.io/eng-practices/review/](https://google.github.io/eng-practices/review/) 
+- Google Code Style：[http://google.github.io/styleguide/](http://google.github.io/styleguide/)
+- Code Review 关注点：[https://google.github.io/eng-practices/review/reviewer/looking-for.html](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
+
