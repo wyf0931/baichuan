@@ -11,8 +11,7 @@ categories:
 draft: false
 ---
 
-Paxos 算法是基于**消息传递**且具有**高度容错特性**的**一致性算法**，是目前公认的解决**分布式一致性**问题**最有效**的算法之一。
-
+**Paxos 算法**是[莱斯利·兰伯特](https://zh.wikipedia.org/wiki/莱斯利·兰伯特)（英语：Leslie Lamport，[LaTeX](https://zh.wikipedia.org/wiki/LaTeX)中的“La”，此人现在在微软研究院）于1990年提出的一种**基于消息传递**且具有高度容错特性的共识（consensus）算法，是目前公认的解决**分布式一致性**问题**最有效**的算法之一。需要注意的是，Paxos 常被误称为“一致性算法”。但是“[一致性（consistency）](https://zh.wikipedia.org/wiki/线性一致性)”和“共识（consensus）”并不是同一个概念。Paxos是一个共识（consensus）算法。
 <!--more-->
 
 ### 概述
@@ -167,3 +166,4 @@ Acceptor 返回 `firstUnChosenIndex` 给 Proposer，Proposer 再继续发送 Suc
 ### 相关链接：
 
 - 原文：[https://github.com/baidu/braft/blob/master/docs/cn/paxos_protocol.md](https://github.com/baidu/braft/blob/master/docs/cn/paxos_protocol.md)
+- Paxos 算法_百度百科：https://baike.baidu.com/item/Paxos 算法/10688635
