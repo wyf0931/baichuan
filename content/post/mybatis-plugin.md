@@ -250,7 +250,7 @@ boolean isClosed()
 该方法会在除存储过程及返回值类型为 `Cursor<T>`(`org.apache.ibatis. cursor.Cursor<T>`)以外的查询方法中被调用。接口方法对应的签名如下。
 
 ```java
-@Signature(type = ResultSetHandler.class, method = "handle ResultSets", args = {Statement.class})
+@Signature(type = ResultSetHandler.class, method = "handleResultSets", args = {Statement.class})
 ```
 
 - `handleCursorResultSets` (since 3.4.0)
@@ -262,7 +262,7 @@ boolean isClosed()
 该方法是 3.4.0 版本中新增加的，只会在返回值类型为 `Cursor<T>` 的查询方法中被调用， 接口方法对应的签名如下。
 
 ```java
-@Signature(type = ResultSetHandler.class, method = "handle CursorResultSets", args = {Statement.class})
+@Signature(type = ResultSetHandler.class, method = "handleCursorResultSets", args = {Statement.class})
 ```
 
 - `handleOutputParameters`
@@ -274,12 +274,54 @@ void handleOutputParameters(CallableStatement cs) throws SQLException;
 该方法只在使用存储过程处理出参时被调用，接口方法对应的签名如下。
 
 ```java
-@Signature(type = ResultSetHandler.class, method = "handle OutputParameters", args = {CallableStatement.class})
+@Signature(type = ResultSetHandler.class, method = "handleOutputParameters", args = {CallableStatement.class})
 ```
 
 `ResultSetHandler` 接口的第一个方法对于拦截处理 MyBatis 的查询结果非常有用，并且由于这个接口被调用的位置在处理二级缓存之前，因此通过这种方式处理的结果可以执行二级缓存。在后面一节中会就该方法提供一个针对 `Map` 类型结果处理 `key` 值的插件。
 
-### 2.3 StatementHandler接口
+
+
+### 2.3 ResultSetHandler接口
+
+ResultSetHandler 接口包含以下三个方法。
+
+- `handleResultSets`
+
+```java
+<E> List<E> handleResultSets(Statementstmt) throws SQLException;
+```
+
+该方法会在除存储过程及返回值类型为 `Cursor<T>`(`org.apache.ibatis. cursor.Cursor<T>`)以外的查询方法中被调用。接口方法对应的签名如下。
+
+```java
+@Signature(type = ResultSetHandler.class, method = "handleResultSets", args = {Statement.class})
+```
+
+- `handleCursorResultSets` (since 3.4.0)
+
+```java
+<E> Cursor<E> handleCursorResultSets(Statement stmt) throws SQLException;
+```
+
+该方法是 3.4.0 版本中新增加的，只会在返回值类型为 `Cursor<T>` 的查询方法中被调用， 接口方法对应的签名如下。
+
+```java
+@Signature(type = ResultSetHandler.class, method = "handleCursorResultSets", args = {Statement.class})
+```
+
+```java
+void handleOutputParameters(CallableStatement cs) throws SQLException;
+```
+
+该方法只在使用存储过程处理出参时被调用，接口方法对应的签名如下。
+
+```java
+@Signature(type = ResultSetHandler.class, method = "handleOutputParameters", args = {CallableStatement.class})
+```
+
+`ResultSetHandler` 接口的第一个方法对于拦截处理 MyBatis 的查询结果非常有用，并且由于这个接口被调用的位置在处理二级缓存之前，因此通过这种方式处理的结果可以执行二 级缓存。在后面一节中会就该方法提供一个针对 `Map` 类型结果处理 `key` 值的插件。
+
+### 2.4 StatementHandler接口
 
 `StatementHandler` 接口包含以下几个方法。
 
@@ -340,7 +382,7 @@ int batch(Statement statement) throws SQLException;
 该方法是 3.4.0 版本中新增加的，只会在返回值类型为 `Cursor<T>` 的查询中被调用，接口 方法对应的签名如下。
 
 ```java
-@Signature( type =methodargs =StatementHandler.class, = "queryCursor", {Statement.class})
+@Signature( type = StatementHandler.class, method = "queryCursor", args ={Statement.class})
 ```
 
 在介绍了以上签名后，下面要动手实现两个简单的拦截器了。
