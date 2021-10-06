@@ -1,5 +1,5 @@
-title: Mehameha
-baseURL: http://blog.zhizhiting.com
+title: 百川东到海
+baseURL: http://zhizhiting.com
 languageCode: zh-CN
 theme: maupassant
 paginate: 10
@@ -9,7 +9,7 @@ enableEmoji: true
 copyright: ''
 author:
   name: Scott
-  homepage: "http://blog.zhizhiting.com"
+  homepage: "http://zhizhiting.com"
 sitemap:
   changefreq: weekly
   priority: 0.5
@@ -48,6 +48,7 @@ params:
     options: ""
   localSearch: true
   disqusShortname: "Scott"
+  beian: "陇ICP备15003023号-2"
   cc:
     name: "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
     link: "https://creativecommons.org/licenses/by-nc-nd/4.0/"
