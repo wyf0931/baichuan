@@ -45,6 +45,9 @@ Intellij IDEA 是 Java 服务端开发最常用的 IDE 工具，其强大的插�
 |  21  | [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok)   | Lombok插件                      |      |
 |  22  | [activate-power-mode](https://plugins.jetbrains.com/plugin/8330-activate-power-mode) | 炫酷的屏幕动效                  |      |
 |  23  | [Rainbow Brackets](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets) | 彩虹括号，提升效率              |      |
+|  24  | [Background Image Plus](https://plugins.jetbrains.com/plugin/8502-background-image-plus) | 背景图                          |      |
+|  25  | [RestfulTool](https://plugins.jetbrains.com/plugin/14280-restfultool) | 根据uri定位controller           |      |
+|  26  | [MyBatis Log Plugin](https://plugins.jetbrains.com/plugin/10065-mybatis-log-plugin) | 格式化mybatis日志               |      |
 
 
 
