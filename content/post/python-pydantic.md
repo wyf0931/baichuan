@@ -17,9 +17,9 @@ Python 的类型验证和数据校验是一个比较麻烦的事情，幸好已�
 
 
 
-Pydantic 官方文档地址：https://pydantic-docs.helpmanual.io/
+Pydantic 官方文档地址：[https://pydantic-docs.helpmanual.io/](https://pydantic-docs.helpmanual.io/)
 
-Pydantic Github地址：https://github.com/samuelcolvin/pydantic/
+Pydantic Github地址：[https://github.com/samuelcolvin/pydantic/](https://github.com/samuelcolvin/pydantic/)
 
 
 
@@ -65,7 +65,7 @@ print(user.dict())
 
 代码说明：
 
-1. 指定`id` 的类型为 `int` ，如果传入的 id 数据是 `string`、`byte` 或 `float` ，则将强制为 `int` ， 转换失败会引发异常；
+1. 指定 `id` 的类型为 `int` ，如果传入的数据是 `string`、`byte` 或 `float` ，则将强制为 `int` ， 转换失败会抛异常；
 2. `name` 如果不传，则默认值为 `John Doe`；
 3. `signup_ts` 是一个可选的 `datetime` 字段(如果没有提供，则赋值为 `None` 。
 4. `friends` 是一个整数列表，与 `id` 一样，类似整数的对象将被转换为整数。
