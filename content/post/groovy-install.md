@@ -51,11 +51,11 @@ Groovy 3.0 是 Groovy 的最新稳定[版本](https://groovy.apache.org/versioni
 
 [3.0.9 发行版](http://groovy-lang.org/changelogs/changelog-3.0.9.html)：
 
-- 二进制分发包：https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-3.0.9.zip
-- 源码包：https://www.apache.org/dyn/closer.cgi/groovy/3.0.9/sources/apache-groovy-src-3.0.9.zip
-- 文档包：https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-docs-3.0.9.zip
-- SDK包：https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-3.0.9.zip
-- Windows安装包：https://groovy.jfrog.io/artifactory/dist-release-local/groovy-windows-installer/groovy-3.0.9/
+- [二进制分发包](https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-3.0.9.zip)
+- [源码](https://www.apache.org/dyn/closer.cgi/groovy/3.0.9/sources/apache-groovy-src-3.0.9.zip)
+- [文档](https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-docs-3.0.9.zip)
+- [SDK](https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-sdk-3.0.9.zip)
+- [Windows安装包](https://groovy.jfrog.io/artifactory/dist-release-local/groovy-windows-installer/groovy-3.0.9/)
 
 
 
@@ -174,7 +174,7 @@ sdk install groovy
 > 打包方案：
 >
 > *2.4.X：*核心加上所有模块合并为一个“fat jar”。可选的依赖被标记为可选的，所以你可能需要包含一些可选的依赖来使用 Groovy 的一些特性，例如 AntBuilder、GroovyMBeans...
-> *2.5+：*一个“fat pom”`groovy-all-x.y.z.pom`指的是核心加上所有模块（不包括可选的）那些）。为了迎合Java 9+的模块系统，该`groovy-all-x.y.z.jar`文件被废弃。
+> *2.5+：*一个“fat pom” `groovy-all-x.y.z.pom`指的是核心加上所有模块（不包括可选的）那些）。为了迎合Java 9+的模块系统，该`groovy-all-x.y.z.jar`文件被废弃。
 
 您可以使用“indy”分类器访问核心或模块 jar 的 indy 版本。
 
@@ -182,8 +182,8 @@ sdk install groovy
 
 | Groovy 版本 | 存储仓库                                                     |
 | ----------- | ------------------------------------------------------------ |
-| 1.x～3.x    | Maven Central：https://repo1.maven.org/maven2/org/codehaus/groovy/<br/>Groovy 发布存储库：https://groovy.jfrog.io/artifactory/libs-release-local/org/codehaus/groovy |
-| 4.x+        | Maven Central：https://repo1.maven.org/maven2/org/apache/groovy/<br />Groovy发布仓库：https://groovy.jfrog.io/artifactory/libs-release-local/org/apache/groovy |
+| 1.x～3.x    | Maven Central：https://repo1.maven.org/maven2/org/codehaus/groovy/<br/> Groovy 发布存储库：https://groovy.jfrog.io/artifactory/libs-release-local/org/codehaus/groovy |
+| 4.x+        | Maven Central：https://repo1.maven.org/maven2/org/apache/groovy/<br /> Groovy发布仓库：https://groovy.jfrog.io/artifactory/libs-release-local/org/apache/groovy |
 
 ### 2.3 环境变量配置
 
