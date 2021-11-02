@@ -1,5 +1,5 @@
 ---
-title: "Linux kernel版本分类"
+title: "Linux 内核版本分类"
 date: 2021-11-01T16:24:44+08:00
 author: Scott
 tags: 
@@ -9,7 +9,7 @@ categories:
   - 笔记
 ---
 
-Linux 内核版本有几种类型：`Prepatch`、`Mainline`、`Stable`、`Longterm`。
+Linux Kernel（内核）版本有几种类型：`Prepatch`、`Mainline`、`Stable`、`Longterm`。
 
 <!--more-->
 
