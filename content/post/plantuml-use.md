@@ -1,5 +1,5 @@
 ---
-title: "Plantuml日常使用总结"
+title: "PlantUML 日常使用总结"
 date: 2021-09-03T17:08:59+08:00
 author: Scott
 tags:
