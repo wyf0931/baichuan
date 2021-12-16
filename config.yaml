@@ -1,5 +1,5 @@
 title: 百川东到海
-baseURL: http://zhizhiting.com
+baseURL: https://baichuan.netlify.app/
 languageCode: zh-CN
 theme: maupassant
 paginate: 10
@@ -9,7 +9,7 @@ enableEmoji: true
 copyright: ''
 author:
   name: Scott
-  homepage: "http://zhizhiting.com"
+  homepage: "https://baichuan.netlify.app/"
 sitemap:
   changefreq: weekly
   priority: 0.5
