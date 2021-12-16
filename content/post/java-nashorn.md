@@ -9,7 +9,11 @@ date: 2020-07-09T11:58:00+08:00
 draft: false
 ---
 
-本文将通过简单易懂的代码示例来了解 Nashorn Javascript 引擎。Nashorn Javascript 引擎是 Java SE 8 的一部分，与其他独立的引擎如 Google V8 (为 Google Chrome 和 Node.js 提供动力的引擎) 竞争。Nashorn 通过在 JVM 上本地运行动态 javascript 代码来扩展 Java 功能。
+本文将通过简单易懂的代码示例来了解 Java 内置的 Nashorn Javascript 引擎。本文是翻译而来，[原文看这里](https://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/)。
+
+<!--more-->
+
+Nashorn Javascript 引擎是 Java SE 8 的一部分，与其他独立的引擎如 Google V8 (为 Google Chrome 和 Node.js 提供动力的引擎) 竞争。Nashorn 通过在 JVM 上本地运行动态 javascript 代码来扩展 Java 功能。
 
 在接下来的15分钟里，您将学习如何在运行时动态地执行  JVM 上的 Javascript。最新的 Nashorn 语言特性通过一些小的代码示例进行了演示。您将学习如何从 Java 代码调用 Javascript 函数，反之亦然。最后，您可以将动态脚本集成到您的日常 Java 业务中。
 
@@ -508,6 +512,4 @@ loadWithNewGlobal('script.js');
 相关链接：
 
 - [Stream.js](https://github.com/winterbe/streamjs) ：用 Javascript 浏览器的 Java8 streams API 实现。 
-
-> 原文地址：https://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/
 
