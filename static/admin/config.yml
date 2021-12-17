@@ -4,6 +4,22 @@ backend:
 media_folder: static/img
 public_folder: /img
 collections:
+  - name: 'post'
+    identifier_field: identifier
+    label: '博客'
+    folder: 'content/post'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'ID', name: 'identifier', widget: 'string'}
+      - { label: '标题', name: 'title', widget: 'string' }
+      - { label: '作者', name: 'author', widget: 'string', default: 'Scott'}
+      - { label: '日期', name: 'date', widget: 'datetime' }
+      - { label: '标签', name: 'tags', widget: 'list', allow_add: true, default: ['随笔']}
+      - { label: '分类', name: 'categories', widget: 'list', allow_add: true, default: ['随笔']}
+      - { label: '内容', name: 'body', widget: 'markdown' }
   - name: 'notes'
     identifier_field: identifier
     label: '随笔'
