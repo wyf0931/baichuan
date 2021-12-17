@@ -13,7 +13,7 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'ID', name: 'ID', widget: 'string'}
+      - { label: 'ID', name: 'identifier', widget: 'string'}
       - { label: '标题', name: 'title', widget: 'string' }
       - { label: '作者', name: 'author', widget: 'string', default: 'Scott'}
       - { label: '日期', name: 'date', widget: 'datetime' }
