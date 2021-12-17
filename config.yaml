@@ -25,6 +25,10 @@ menu:
       name: 归档
       url: /archives/
       weight: 3
+    - identifier: notes
+      name: 随笔
+      url: /notes/
+      weight: 5
     - 
       identifier: about
       name: 关于

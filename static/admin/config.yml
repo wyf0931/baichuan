@@ -4,10 +4,10 @@ backend:
 media_folder: static/img
 public_folder: /img
 collections:
-  - name: 'note'
+  - name: 'notes'
     identifier_field: identifier
     label: '随笔'
-    folder: 'content/note'
+    folder: 'content/notes'
     create: true
     slug: '{{slug}}'
     editor:
