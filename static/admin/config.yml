@@ -12,7 +12,9 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: '标题', name: 'title', widget: 'string' }
+      - { label: '发布日期', name: 'date', widget: 'datetime' }
+      - { label: '描述', name: 'description', widget: 'string' }
+      - { label: '标签', name: 'tags', widget: 'list', allow_add: true, default: ['读书']}
+      - { label: '分类', name: 'categories', widget: 'list', allow_add: true, default: ['笔记']}
+      - { label: '内容', name: 'body', widget: 'markdown' }
