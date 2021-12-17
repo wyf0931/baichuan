@@ -24,11 +24,11 @@ menu:
       identifier: archives
       name: 归档
       url: /archives/
-      weight: 3
+      weight: 2
     - identifier: notes
       name: 随笔
       url: /notes/
-      weight: 5
+      weight: 3
     - 
       identifier: about
       name: 关于
