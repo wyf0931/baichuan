@@ -1,5 +1,5 @@
 ---
-identifier: demo-123
+identifier: guoqinlun
 title: 过秦论
 author: 贾谊
 date: 2021-12-17T05:46:59.346Z
