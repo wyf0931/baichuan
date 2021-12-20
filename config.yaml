@@ -1,5 +1,5 @@
 title: 百川东到海
-baseURL: https://baichuan.netlify.app/
+baseURL: https://wyf0931.me/
 languageCode: zh-CN
 theme: maupassant
 paginate: 10
@@ -9,7 +9,7 @@ enableEmoji: true
 copyright: ''
 author:
   name: Scott
-  homepage: "https://baichuan.netlify.app/"
+  homepage: "https://wyf0931.me/"
 sitemap:
   changefreq: weekly
   priority: 0.5
