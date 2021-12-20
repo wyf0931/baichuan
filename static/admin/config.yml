@@ -13,8 +13,8 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'ID', name: 'identifier', widget: 'string'}
       - { label: '标题', name: 'title', widget: 'string' }
+      - { label: 'ID', name: 'identifier', widget: 'string'}
       - { label: '作者', name: 'author', widget: 'string', default: 'Scott'}
       - { label: '日期', name: 'date', widget: 'datetime' }
       - { label: '标签', name: 'tags', widget: 'list', allow_add: true, default: ['随笔']}
@@ -29,8 +29,8 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'ID', name: 'identifier', widget: 'string'}
       - { label: '标题', name: 'title', widget: 'string' }
+      - { label: 'ID', name: 'identifier', widget: 'string'}
       - { label: '作者', name: 'author', widget: 'string', default: 'Scott'}
       - { label: '日期', name: 'date', widget: 'datetime' }
       - { label: '标签', name: 'tags', widget: 'list', allow_add: true, label_singular: '+', collapsed=false, default: ['随笔']}
