@@ -1,5 +1,5 @@
 ---
-title: Maven密码加密功能
+title: Maven 密码加密功能
 identifier: maven-password-encrypt
 author: Scott
 date: 2021-12-20T11:09:12.546Z
@@ -70,7 +70,7 @@ mvn --encrypt-master-password <password>
 mvn --encrypt-password <password>
 ```
 
-**注意： **就像 `--encrypt-master-password` 一样，自从 Maven 3.2.1 以后，password 参数就不再使用了(更多信息请参见[下面的提示](https://maven.apache.org/guides/mini/guide-encryption.html#Tips))。
+**注意：** 就像 `--encrypt-master-password` 一样，自从 Maven 3.2.1 以后，password 参数就不再使用了(更多信息请参见[下面的提示](https://maven.apache.org/guides/mini/guide-encryption.html#Tips))。
 
 这个命令生成的密文类似于这样：
 
@@ -186,9 +186,9 @@ mvn --encrypt-master-password "a!$%^b"
 
 ### 4、密码安全
 
-编辑 settings.xml 文件，并执行上述命令，可能会让密码的原文保存在本地，你需要检查以下地方：
+编辑 `settings.xml` 文件，并执行上述命令，可能会让密码的原文保存在本地，你需要检查以下地方：
 
-1、Shell 历史记录：（例如：执行 history），密码加密后记得清楚历史记录；
+1、Shell 历史记录：（例如：执行 `history`），密码加密后记得清楚历史记录；
 
 2、编辑器缓存：（例如：～/.viminfo）
 
