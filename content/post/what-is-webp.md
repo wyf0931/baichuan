@@ -1,5 +1,5 @@
 ---
-title: WebP 是什么东西？
+title: WebP 是什么？
 identifier: what-is-webp
 author: Scott
 date: 2022-01-07T13:23:56.869Z
