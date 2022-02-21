@@ -12,8 +12,6 @@ Portainer 由两部分组成：Portainer Server、Portainer Agent。这两部分
 
 <!--more-->
 
-
-
 ### 准备工作
 
 1、在机器上装好最新版的 Docker 并启动起来；
@@ -21,8 +19,6 @@ Portainer 由两部分组成：Portainer Server、Portainer Agent。这两部分
 2、要部署 Portainer Server 的机器必须要有 sudo 权限；
 
 3、默认情况下，Portainer Server 将**通过端口 9443 来访问 Web 页面**，并通过端口8000公开 TCP 隧道服务（这个是可配置的，只有在计划使用 Edge 代理程序计算边缘特性时才需要。）
-
-
 
 ### 部署步骤
 
@@ -58,12 +54,10 @@ CONTAINER ID   IMAGE                           COMMAND        CREATED         ST
 
 > 如果需要，用相关的 IP 地址或 FQDN 替换本地主机，如果更早更改了端口，则调整端口。
 
-
-
 初始化配置页面如下：
 
-<img src="https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/image-20220221142545782.png" alt="初始化配置页面" style="zoom: 67%;" />
+![初始化配置页面](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/image-20220221142545782.png "初始化配置页面")
 
 输入两次密码（**密码长度最少8位**），然后点击 【**Create user**】按钮即可进入主页：
 
-<img src="https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/image-20220221142806359.png" alt="image-20220221142806359" style="zoom:67%;" />
+![主页](https://blog-1252438081.cos.ap-shanghai.myqcloud.com/img/image-20220221142806359.png "主页")
